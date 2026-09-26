@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why KSA | Crescent Nova International</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'gold-btn': '#d8ae57',
+            'cni-navy': '#061B2B',
+            'cni-navy-sec': '#0B293B',
+            'cni-gold': '#E3BC70',
+            'cni-ivory': '#F5F0E7',
+          },
+          fontFamily: {
+            'sans-clean': ['Inter', 'sans-serif'],
+            'serif-luxury': ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    html { scroll-behavior: smooth; }
+    
+    /* Scroll Header transition */
+    .scrolled-nav {
+      background-color: rgba(6, 27, 43, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(227, 188, 112, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+    
+    .gold-gradient-text {
+      background: linear-gradient(to right, #E3BC70, #fff2c8, #E3BC70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shine 5s linear infinite;
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .glass-card {
+      background: rgba(11, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+    }
+    .accordion-button.active .accordion-icon {
+      transform: rotate(45deg);
+    }
+    .accordion-button.active .accordion-title {
+      color: #E3BC70;
+    }
+  </style>
+</head>
+<body class="font-sans-clean text-slate-100 bg-[#061B2B] antialiased selection:bg-[#E3BC70] selection:text-[#061B2B]">
+
+  <!-- HEADER -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 w-full px-5 sm:px-8 xl:px-14 pt-6 pb-4 transition-all duration-300">
+    <div class="w-full flex items-center justify-between max-w-7xl mx-auto">
+      <!-- Logo -->
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="/index.html">
+          <img src="/public/logo.png" alt="CNI Logo" class="h-16 sm:h-20 w-auto object-contain rounded" onerror="this.src='/public/logo.png'"/>
+        </a>
+      </div>
+
+      <!-- Nav Links -->
+      <div class="hidden lg:flex flex-1 justify-center">
+        <nav class="flex items-center gap-7 xl:gap-9 text-[14px]">
+          <a href="/index.html" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Home</a>
+          <a href="/about.html" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">About</a>
+          
+          <div class="relative group" tabindex="0">
+            <button class="flex items-center gap-1 relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal transition-colors">
+              Divisions
+              <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[280px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+              <div class="w-full bg-[#061B2B]/95 backdrop-blur-md border border-[#E3BC70]/20 rounded-lg shadow-2xl overflow-hidden flex flex-col py-2">
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Automotive Division</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Business Facilitation</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Tour & Travel</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Real Estate & Advisory</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Home Services — Mundus</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Hospitality Management</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Logistics — My Truck</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">CNI AI & Digital</a>
+              </div>
+            </div>
+          </div>
+          <a href="/investors" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Investors</a>
+          <a href="/why-ksa" class="relative py-1 cursor-pointer text-[#f0d08a] font-semibold">
+            Why KSA
+            <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#d8ae57] rounded-full shadow-[0_0_8px_rgba(216,174,87,0.8)]"></span>
+          </a>
+          <a href="/contact" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Right CTA -->
+      <div class="flex items-center gap-4 sm:gap-6 shrink-0">
+        <button class="bg-[#d8ae57] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(214,171,88,0.25)] hover:shadow-[0_6px_22px_rgba(214,171,88,0.4)] transition-all">
+          <span>Request a Proposal</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+        <div class="flex items-center text-xs tracking-wider font-semibold text-slate-300">
+          <button class="px-1 py-0.5 text-[#f0d08a] font-bold">EN</button>
+          <span class="text-slate-600 px-1 font-light">|</span>
+          <a href="/why-ksa-ar.html" class="px-1 py-0.5 text-slate-400 hover:text-white">عربي</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+      <img src="/riyadh-cta.jpg" alt="Riyadh Skyline" class="w-full h-full object-cover object-center scale-105 animate-[pulse_30s_ease-in-out_infinite_alternate]" />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#061B2B]/80 via-[#061B2B]/60 to-[#061B2B] mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#061B2B] via-transparent to-transparent"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-5 text-center flex flex-col items-center">
+      <span class="text-[#E3BC70] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase mb-6 reveal">The Future is Taking Shape</span>
+      <h1 class="text-5xl sm:text-6xl md:text-8xl font-serif-luxury text-white mb-6 leading-tight reveal" style="transition-delay: 100ms;">
+        WHY SAUDI <span class="italic font-light">ARABIA?</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-white/90 font-light mb-8 max-w-2xl reveal" style="transition-delay: 200ms;">
+        A Nation of Ambition. A World of Opportunity.
+      </p>
+      <p class="text-sm sm:text-base text-white/70 max-w-3xl mb-12 leading-relaxed reveal" style="transition-delay: 300ms;">
+        Discover an evolving economic landscape where ambitious national transformation, strategic global connectivity and emerging opportunities are opening new possibilities for international businesses.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 reveal" style="transition-delay: 400ms;">
+        <button class="bg-[#d8ae57] text-[#120f09] font-semibold px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(214,171,88,0.3)] hover:shadow-[0_6px_25px_rgba(214,171,88,0.5)] transition-all flex items-center justify-center gap-2">
+          Explore the Opportunities
+        </button>
+        <button class="bg-transparent border border-white/30 text-white hover:border-[#E3BC70] hover:text-[#E3BC70] font-semibold px-8 py-3.5 rounded-full transition-all backdrop-blur-sm">
+          Request a Consultation
+        </button>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+      <span class="text-[10px] uppercase tracking-widest text-white/50">Scroll</span>
+      <div class="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- INTRO: THE SAUDI OPPORTUNITY -->
+  <section class="py-24 sm:py-32 px-5 relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div class="lg:col-span-5 reveal">
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-serif-luxury text-white leading-tight">
+          A New Era of <br/><span class="gold-gradient-text italic">Global Business</span>
+        </h2>
+        <div class="w-16 h-[1px] bg-[#E3BC70] mt-8 mb-6"></div>
+      </div>
+      <div class="lg:col-span-7 flex flex-col gap-6 text-white/80 font-light leading-relaxed text-lg reveal" style="transition-delay: 200ms;">
+        <p>
+          Saudi Arabia is advancing an ambitious economic transformation designed to diversify its economy, develop new industries and strengthen its position as an international investment destination.
+        </p>
+        <p>
+          Supported by Vision 2030, the Kingdom is pursuing major initiatives across infrastructure, tourism, technology, logistics, real estate and other sectors.
+        </p>
+        <p>
+          For international businesses, understanding these developments is an essential starting point for evaluating opportunities in the Saudi market.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION 2030 -->
+  <section class="py-24 bg-[#0B293B] relative border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center mb-16 reveal">
+        <span class="text-[#E3BC70] font-semibold tracking-widest text-xs uppercase mb-3 block">Saudi Vision 2030</span>
+        <h2 class="text-4xl sm:text-5xl font-serif-luxury text-white">Transforming Ambition into Possibility</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Col 1 -->
+        <div class="glass-card rounded-2xl overflow-hidden reveal group" style="transition-delay: 100ms;">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/2/20/Riyadh_Skyline.jpg&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Thriving Economy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B293B] to-transparent"></div>
+          </div>
+          <div class="p-8 relative">
+            <div class="w-10 h-[1px] bg-[#E3BC70] mb-4"></div>
+            <h3 class="text-xl font-serif-luxury text-white mb-3">A Thriving Economy</h3>
+            <p class="text-sm text-white/60 font-light leading-relaxed">
+              Economic diversification, investment, entrepreneurship and private-sector development aiming to create a sustainable and robust financial future.
+            </p>
+          </div>
+        </div>
+        <!-- Col 2 -->
+        <div class="glass-card rounded-2xl overflow-hidden reveal group" style="transition-delay: 200ms;">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/1/13/Al_Ula_%286748577917%29.jpg&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Vibrant Society" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B293B] to-transparent"></div>
+          </div>
+          <div class="p-8 relative">
+            <div class="w-10 h-[1px] bg-[#E3BC70] mb-4"></div>
+            <h3 class="text-xl font-serif-luxury text-white mb-3">A Vibrant Society</h3>
+            <p class="text-sm text-white/60 font-light leading-relaxed">
+              Tourism, culture, entertainment, quality of life and urban development ensuring citizens and residents enjoy a modern, fulfilling lifestyle.
+            </p>
+          </div>
+        </div>
+        <!-- Col 3 -->
+        <div class="glass-card rounded-2xl overflow-hidden reveal group" style="transition-delay: 300ms;">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/9/94/Riyadh_Metro_-_innoTrans_2016.jpg&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ambitious Nation" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B293B] to-transparent"></div>
+          </div>
+          <div class="p-8 relative">
+            <div class="w-10 h-[1px] bg-[#E3BC70] mb-4"></div>
+            <h3 class="text-xl font-serif-luxury text-white mb-3">An Ambitious Nation</h3>
+            <p class="text-sm text-white/60 font-light leading-relaxed">
+              Government modernization, institutional development, digital transformation and improved public services establishing operational excellence.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center reveal" style="transition-delay: 400ms;">
+        <a href="https://www.vision2030.gov.sa/en/" target="_blank" class="inline-flex items-center gap-2 text-[#E3BC70] text-sm tracking-wide uppercase hover:text-white transition-colors">
+          Explore the Official Vision 2030 Strategy 
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EXPLORE KSA (6 BLOCKS) -->
+  <section class="py-24 sm:py-32 px-5 max-w-7xl mx-auto">
+    
+    <div class="text-center mb-24 reveal">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif-luxury text-white mb-4">Why International Businesses Explore KSA</h2>
+      <p class="text-white/60 max-w-2xl mx-auto font-light">A convergence of strategic advantages driving unprecedented regional growth.</p>
+    </div>
+
+    <div class="space-y-32">
+      <!-- Block 1 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <div class="order-2 lg:order-1 relative h-[400px] rounded-lg overflow-hidden group">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/c/ce/Jeddah-seaport-saudiarabia.PNG&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Location" />
+        </div>
+        <div class="order-1 lg:order-2 flex flex-col gap-4">
+          <span class="text-[#E3BC70] font-serif-luxury text-5xl opacity-40">01</span>
+          <h3 class="text-2xl sm:text-3xl font-serif-luxury text-white">Strategic Global Location</h3>
+          <p class="text-white/70 font-light leading-relaxed">
+            Saudi Arabia connects important markets across Asia, Africa and Europe, offering geographic advantages for regional operations, trade and logistics.
+          </p>
+        </div>
+      </div>
+
+      <!-- Block 2 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <div class="flex flex-col gap-4">
+          <span class="text-[#E3BC70] font-serif-luxury text-5xl opacity-40">02</span>
+          <h3 class="text-2xl sm:text-3xl font-serif-luxury text-white">Economic Diversification</h3>
+          <p class="text-white/70 font-light leading-relaxed">
+            Explore opportunities arising from the development of non-oil industries and the Kingdom's long-term diversification strategy, creating vast new ecosystems for investment.
+          </p>
+        </div>
+        <div class="relative h-[400px] rounded-lg overflow-hidden group">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/d/da/Waterfront_King_Abdullah_Economic_City.jpg&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Diversification" />
+        </div>
+      </div>
+
+      <!-- Block 3 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <div class="order-2 lg:order-1 relative h-[400px] rounded-lg overflow-hidden group">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/b/b2/Kingdom_Centre_Riyadh_2024.jpeg&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Domestic Market" />
+        </div>
+        <div class="order-1 lg:order-2 flex flex-col gap-4">
+          <span class="text-[#E3BC70] font-serif-luxury text-5xl opacity-40">03</span>
+          <h3 class="text-2xl sm:text-3xl font-serif-luxury text-white">Large Domestic Market</h3>
+          <p class="text-white/70 font-light leading-relaxed">
+            Understand the opportunities associated with Saudi Arabia's youthful domestic consumer base, rapid industrial demand and a burgeoning digital-first business ecosystem.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Block 4 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <div class="flex flex-col gap-4">
+          <span class="text-[#E3BC70] font-serif-luxury text-5xl opacity-40">04</span>
+          <h3 class="text-2xl sm:text-3xl font-serif-luxury text-white">Infrastructure Development</h3>
+          <p class="text-white/70 font-light leading-relaxed">
+            Examine the Kingdom's unprecedented investment in transport, logistics, smart urban development, and giga-projects that are redefining the built environment.
+          </p>
+        </div>
+        <div class="relative h-[400px] rounded-lg overflow-hidden group">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/1/18/Riyadh-airport.jpg&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Infrastructure" />
+        </div>
+      </div>
+
+      <!-- Block 5 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <div class="order-2 lg:order-1 relative h-[400px] rounded-lg overflow-hidden group">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/9/9d/KAPSARC_aerial_view%2C_2024.jpeg&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Digital" />
+        </div>
+        <div class="order-1 lg:order-2 flex flex-col gap-4">
+          <span class="text-[#E3BC70] font-serif-luxury text-5xl opacity-40">05</span>
+          <h3 class="text-2xl sm:text-3xl font-serif-luxury text-white">Digital Transformation</h3>
+          <p class="text-white/70 font-light leading-relaxed">
+            Discover developments in digital infrastructure, financial technology, e-commerce and technology-enabled business services that are propelling the knowledge economy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Block 6 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <div class="flex flex-col gap-4">
+          <span class="text-[#E3BC70] font-serif-luxury text-5xl opacity-40">06</span>
+          <h3 class="text-2xl sm:text-3xl font-serif-luxury text-white">Regional Business Expansion</h3>
+          <p class="text-white/70 font-light leading-relaxed">
+            Explore how establishing a Saudi presence may serve as a strategic cornerstone for a broader GCC or Middle East market-entry strategy.
+          </p>
+        </div>
+        <div class="relative h-[400px] rounded-lg overflow-hidden group">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/2/20/Riyadh_Skyline.jpg&w=800&output=webp&q=70" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Expansion" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGH-POTENTIAL SECTORS -->
+  <section class="py-24 bg-[#0B293B] relative border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif-luxury text-white mb-4">Industries Shaping the Next Chapter</h2>
+        <p class="text-white/60 max-w-2xl mx-auto font-light">
+          We identify sectors showing remarkable alignment with Saudi Arabia's economic development goals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Sector Items -->
+        <div class="group relative h-64 rounded-xl overflow-hidden cursor-pointer reveal">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/7/70/Jeddah_Tower_in_its_100th_floor_on_4th_of_May%2C_2026_%28cropped%29.jpg&w=800&output=webp&q=70" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-[#061B2B]/70 group-hover:bg-[#061B2B]/40 transition-colors duration-500"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+            <h4 class="text-white font-serif-luxury text-lg mb-2 group-hover:text-[#E3BC70] transition-colors">Construction & Infrastructure</h4>
+            <div class="h-0 overflow-hidden group-hover:h-20 transition-all duration-500 ease-in-out">
+              <p class="text-white/80 text-xs leading-relaxed mt-2">Fueling giga-projects and urban expansions across the Kingdom.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="group relative h-64 rounded-xl overflow-hidden cursor-pointer reveal" style="transition-delay: 50ms;">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/9/9d/KAPSARC_aerial_view%2C_2024.jpeg&w=800&output=webp&q=70" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-[#061B2B]/70 group-hover:bg-[#061B2B]/40 transition-colors duration-500"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+            <h4 class="text-white font-serif-luxury text-lg mb-2 group-hover:text-[#E3BC70] transition-colors">Technology & Digital</h4>
+            <div class="h-0 overflow-hidden group-hover:h-20 transition-all duration-500 ease-in-out">
+              <p class="text-white/80 text-xs leading-relaxed mt-2">Advancing e-commerce, AI integration, and digital business services.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-xl overflow-hidden cursor-pointer reveal" style="transition-delay: 100ms;">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/1/13/Al_Ula_%286748577917%29.jpg&w=800&output=webp&q=70" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-[#061B2B]/70 group-hover:bg-[#061B2B]/40 transition-colors duration-500"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+            <h4 class="text-white font-serif-luxury text-lg mb-2 group-hover:text-[#E3BC70] transition-colors">Tourism & Hospitality</h4>
+            <div class="h-0 overflow-hidden group-hover:h-20 transition-all duration-500 ease-in-out">
+              <p class="text-white/80 text-xs leading-relaxed mt-2">Opening the Kingdom's heritage and landscapes to the world.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-xl overflow-hidden cursor-pointer reveal" style="transition-delay: 150ms;">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/c/ce/Jeddah-seaport-saudiarabia.PNG&w=800&output=webp&q=70" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-[#061B2B]/70 group-hover:bg-[#061B2B]/40 transition-colors duration-500"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+            <h4 class="text-white font-serif-luxury text-lg mb-2 group-hover:text-[#E3BC70] transition-colors">Logistics & Transport</h4>
+            <div class="h-0 overflow-hidden group-hover:h-20 transition-all duration-500 ease-in-out">
+              <p class="text-white/80 text-xs leading-relaxed mt-2">Establishing a leading regional hub connecting three continents.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-xl overflow-hidden cursor-pointer reveal" style="transition-delay: 200ms;">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/d/da/Waterfront_King_Abdullah_Economic_City.jpg&w=800&output=webp&q=70" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-[#061B2B]/70 group-hover:bg-[#061B2B]/40 transition-colors duration-500"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+            <h4 class="text-white font-serif-luxury text-lg mb-2 group-hover:text-[#E3BC70] transition-colors">Manufacturing</h4>
+            <div class="h-0 overflow-hidden group-hover:h-20 transition-all duration-500 ease-in-out">
+              <p class="text-white/80 text-xs leading-relaxed mt-2">Driving industrial localization and non-oil export growth.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-xl overflow-hidden cursor-pointer reveal" style="transition-delay: 250ms;">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/a/aa/KFMC_Main_Hospital.jpg&w=800&output=webp&q=70" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-[#061B2B]/70 group-hover:bg-[#061B2B]/40 transition-colors duration-500"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+            <h4 class="text-white font-serif-luxury text-lg mb-2 group-hover:text-[#E3BC70] transition-colors">Healthcare & Life Sciences</h4>
+            <div class="h-0 overflow-hidden group-hover:h-20 transition-all duration-500 ease-in-out">
+              <p class="text-white/80 text-xs leading-relaxed mt-2">Modernizing medical infrastructure and biotechnology innovation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-xl overflow-hidden cursor-pointer reveal" style="transition-delay: 300ms;">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/9/9d/KAPSARC_aerial_view%2C_2024.jpeg&w=800&output=webp&q=70" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-[#061B2B]/70 group-hover:bg-[#061B2B]/40 transition-colors duration-500"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+            <h4 class="text-white font-serif-luxury text-lg mb-2 group-hover:text-[#E3BC70] transition-colors">Renewable Energy</h4>
+            <div class="h-0 overflow-hidden group-hover:h-20 transition-all duration-500 ease-in-out">
+              <p class="text-white/80 text-xs leading-relaxed mt-2">Pioneering sustainable power solutions and green initiatives.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-xl overflow-hidden cursor-pointer reveal" style="transition-delay: 350ms;">
+          <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/b/b2/Kingdom_Centre_Riyadh_2024.jpeg&w=800&output=webp&q=70" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-[#061B2B]/70 group-hover:bg-[#061B2B]/40 transition-colors duration-500"></div>
+          <div class="absolute inset-0 p-6 flex flex-col justify-end">
+            <h4 class="text-white font-serif-luxury text-lg mb-2 group-hover:text-[#E3BC70] transition-colors">Real Estate Development</h4>
+            <div class="h-0 overflow-hidden group-hover:h-20 transition-all duration-500 ease-in-out">
+              <p class="text-white/80 text-xs leading-relaxed mt-2">Meeting the demand for modern commercial and residential spaces.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS LANDSCAPE -->
+  <section class="py-24 sm:py-32 px-5 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div class="lg:col-span-5 reveal">
+        <h2 class="text-3xl sm:text-4xl font-serif-luxury text-white leading-tight mb-6">
+          Understanding the Saudi Business Environment
+        </h2>
+        <div class="w-16 h-[1px] bg-[#E3BC70] mb-6"></div>
+        <p class="text-white/70 font-light leading-relaxed mb-6">
+          Entering a new market requires careful preparation. International companies must evaluate regulatory, structural, and operational frameworks to establish a successful Saudi presence.
+        </p>
+        <p class="text-white/50 text-sm font-light leading-relaxed italic">
+          Note: Requirements depend entirely on the proposed business activity, legal structure, and applicable regulations which are continually updated.
+        </p>
+      </div>
+      
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 reveal" style="transition-delay: 200ms;">
+        <div>
+          <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Foreign Investment Licensing
+          </h4>
+          <p class="text-white/60 text-sm font-light">Navigating MISA requirements, eligibility criteria, and capital thresholds.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Legal Structures
+          </h4>
+          <p class="text-white/60 text-sm font-light">Choosing between an LLC, branch office, or regional headquarters setup.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Sector Approvals
+          </h4>
+          <p class="text-white/60 text-sm font-light">Understanding specific restrictions, local partnerships, and municipal compliance.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Taxation & Finance
+          </h4>
+          <p class="text-white/60 text-sm font-light">Adhering to ZATCA regulations, corporate tax, VAT, and banking setups.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Saudization (Nitaqat)
+          </h4>
+          <p class="text-white/60 text-sm font-light">Integrating local workforce requirements and understanding talent acquisition.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Regional Headquarters
+          </h4>
+          <p class="text-white/60 text-sm font-light">Evaluating the RHQ program for companies pursuing government contracts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW CNI SUPPORTS YOUR MARKET ENTRY -->
+  <section class="py-24 bg-[#0B293B] relative border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-5 text-center reveal">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif-luxury text-white mb-6">Your Ambition. Our Local Expertise.</h2>
+      <p class="text-white/60 max-w-3xl mx-auto font-light leading-relaxed mb-16">
+        Entering a new market requires a clear strategy, careful preparation and an understanding of the local business environment. Crescent Nova International provides structural guidance for your Saudi expansion.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left max-w-5xl mx-auto mb-16">
+        <div class="glass-card p-8 rounded-xl border-t border-[#E3BC70]/30 hover:-translate-y-1 transition-transform duration-300">
+          <span class="text-[#E3BC70] text-sm font-bold mb-3 block">01</span>
+          <h4 class="text-white text-lg font-serif-luxury mb-2">Market Entry Consultation</h4>
+          <p class="text-white/60 text-sm font-light">Strategic alignment and preliminary assessment of your business viability in KSA.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-t border-[#E3BC70]/30 hover:-translate-y-1 transition-transform duration-300">
+          <span class="text-[#E3BC70] text-sm font-bold mb-3 block">02</span>
+          <h4 class="text-white text-lg font-serif-luxury mb-2">Business Setup Guidance</h4>
+          <p class="text-white/60 text-sm font-light">Advising on appropriate legal entity structures to meet your operational goals.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-t border-[#E3BC70]/30 hover:-translate-y-1 transition-transform duration-300">
+          <span class="text-[#E3BC70] text-sm font-bold mb-3 block">03</span>
+          <h4 class="text-white text-lg font-serif-luxury mb-2">Company Formation Support</h4>
+          <p class="text-white/60 text-sm font-light">Navigating the registration and establishment processes efficiently.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-t border-[#E3BC70]/30 hover:-translate-y-1 transition-transform duration-300">
+          <span class="text-[#E3BC70] text-sm font-bold mb-3 block">04</span>
+          <h4 class="text-white text-lg font-serif-luxury mb-2">Licensing & Documentation</h4>
+          <p class="text-white/60 text-sm font-light">Assisting in compiling and submitting necessary regulatory documentation.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-t border-[#E3BC70]/30 hover:-translate-y-1 transition-transform duration-300">
+          <span class="text-[#E3BC70] text-sm font-bold mb-3 block">05</span>
+          <h4 class="text-white text-lg font-serif-luxury mb-2">Regulatory Coordination</h4>
+          <p class="text-white/60 text-sm font-light">Liaising with government entities to ensure compliance with local requirements.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-t border-[#E3BC70]/30 hover:-translate-y-1 transition-transform duration-300">
+          <span class="text-[#E3BC70] text-sm font-bold mb-3 block">06</span>
+          <h4 class="text-white text-lg font-serif-luxury mb-2">Ongoing Business Advisory</h4>
+          <p class="text-white/60 text-sm font-light">Continued support as your operations scale and evolve within the Kingdom.</p>
+        </div>
+      </div>
+
+      <a href="" class="inline-flex items-center gap-2 bg-transparent border border-white/30 text-white hover:border-[#E3BC70] hover:text-[#E3BC70] font-semibold px-8 py-3.5 rounded-full transition-all">
+        Explore Our Services
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="py-24 sm:py-32 px-5 max-w-4xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-3xl sm:text-4xl font-serif-luxury text-white mb-4">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="space-y-4 reveal" style="transition-delay: 200ms;">
+      <!-- FAQ 1 -->
+      <div class="border-b border-white/10">
+        <button class="accordion-button w-full py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+          <span class="accordion-title text-white text-lg font-serif-luxury transition-colors">Can foreign investors establish a company in Saudi Arabia?</span>
+          <span class="accordion-icon text-white/50 transition-transform duration-300 text-2xl font-light">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-6 text-white/60 font-light text-sm leading-relaxed">
+            Yes, foreign investors can establish companies in Saudi Arabia. This is typically facilitated through a foreign investment license issued by the Ministry of Investment (MISA). Eligibility depends on the nature of the business and fulfilling specific capital and operational requirements.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="border-b border-white/10">
+        <button class="accordion-button w-full py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+          <span class="accordion-title text-white text-lg font-serif-luxury transition-colors">What types of business activities are available to international companies?</span>
+          <span class="accordion-icon text-white/50 transition-transform duration-300 text-2xl font-light">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-6 text-white/60 font-light text-sm leading-relaxed">
+            A wide range of sectors is open to international investment, including technology, manufacturing, logistics, healthcare, and consulting. However, some specific sectors may have restrictions or require a minimum percentage of local ownership.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="border-b border-white/10">
+        <button class="accordion-button w-full py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+          <span class="accordion-title text-white text-lg font-serif-luxury transition-colors">What licenses might a foreign company need?</span>
+          <span class="accordion-icon text-white/50 transition-transform duration-300 text-2xl font-light">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-6 text-white/60 font-light text-sm leading-relaxed">
+            Generally, a MISA license and a Commercial Registration (CR) from the Ministry of Commerce are required. Depending on the activity, additional sector-specific licenses (e.g., from the Communications, Space & Technology Commission for IT, or the Ministry of Tourism) may be mandatory.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 4 -->
+      <div class="border-b border-white/10">
+        <button class="accordion-button w-full py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+          <span class="accordion-title text-white text-lg font-serif-luxury transition-colors">Can an international company own 100% of a Saudi business?</span>
+          <span class="accordion-icon text-white/50 transition-transform duration-300 text-2xl font-light">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-6 text-white/60 font-light text-sm leading-relaxed">
+            Yes, 100% foreign ownership is permitted in many sectors, including services, manufacturing, and trading (subject to high capital requirements for trading). Certain restricted sectors still mandate a Saudi partner.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 5 -->
+      <div class="border-b border-white/10">
+        <button class="accordion-button w-full py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+          <span class="accordion-title text-white text-lg font-serif-luxury transition-colors">How can Crescent Nova International assist?</span>
+          <span class="accordion-icon text-white/50 transition-transform duration-300 text-2xl font-light">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-6 text-white/60 font-light text-sm leading-relaxed">
+            CNI offers structural guidance, market entry consultation, and administrative support to help international companies navigate the setup process, ensuring documentation and procedures align with current Saudi regulations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="relative py-32 flex items-center justify-center overflow-hidden border-t border-[#E3BC70]/20">
+    <div class="absolute inset-0 z-0">
+      <img src="/riyadh-cta.jpg" class="w-full h-full object-cover object-center" alt="Night Skyline" />
+      <div class="absolute inset-0 bg-[#061B2B]/90"></div>
+    </div>
+    
+    <div class="relative z-10 text-center px-5 reveal">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-serif-luxury text-white mb-6">Your Next Chapter Starts Here.</h2>
+      <p class="text-white/70 font-light text-lg mb-10 max-w-2xl mx-auto">
+        Explore your business opportunities in Saudi Arabia with guidance tailored to your objectives.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-[#d8ae57] text-[#120f09] font-semibold px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(214,171,88,0.3)] hover:shadow-[0_6px_25px_rgba(214,171,88,0.5)] transition-all flex items-center justify-center gap-2">
+          Request a Proposal →
+        </button>
+        <button class="bg-transparent border border-white/30 text-white hover:border-[#E3BC70] hover:text-[#E3BC70] font-semibold px-8 py-3.5 rounded-full transition-all">
+          Contact Our Team
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-[#061B2B] border-t border-[#D4A574]/20 pt-16 pb-8 px-5 sm:px-8 xl:px-14 relative z-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
+      
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col items-start text-left">
+        <a href="/index.html" class="inline-block mb-4">
+          <img src="/public/logo.png" alt="CNI Logo" class="h-20 w-auto object-contain rounded" onerror="this.src='/public/logo.png'" />
+        </a>
+        <p class="text-white/80 font-light text-sm leading-relaxed mb-6 max-w-xs">
+          Bridging Pakistani Ambition with Saudi Opportunity
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="/contact.html" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE COLUMN 1: Quick Links -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Quick Links</h3>
+        <nav class="flex flex-col gap-3">
+          <a href="/index.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Home</a>
+          <a href="/about.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">About</a>
+          <a href="investors.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Investors</a>
+          <a href="/why-ksa.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Why KSA</a>
+          <a href="/contact.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Contact</a>
+        </nav>
+      </div>
+
+      <!-- MIDDLE COLUMN 2: Our Divisions -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Our Divisions</h3>
+        <nav class="flex flex-col gap-3">
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Automotive Division</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Business Facilitation</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Tour & Travel</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Real Estate & Advisory</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Home Services — Mundus</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Hospitality Management</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Logistics — My Truck</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">CNI AI & Digital</a>
+        </nav>
+      </div>
+
+      <!-- RIGHT COLUMN: Regional Offices -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Regional Offices</h3>
+        
+        <div class="mb-5">
+          <h4 class="text-white font-semibold text-sm mb-2 uppercase tracking-wider opacity-90">Pakistan Head Office</h4>
+          <p class="text-white/70 text-sm leading-relaxed mb-1">
+            Attari Group of Companies<br />
+            Office # 004, Ground Floor<br />
+            Green Trust Tower, Jinnah Avenue<br />
+            Blue Area, Islamabad
+          </p>
+          <a href="tel:+923311110210" class="text-[#D4A574] hover:text-white transition-colors text-sm font-medium">+92 331 11 10 210</a>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2 uppercase tracking-wider opacity-90">KSA Regional Offices</h4>
+          <div class="text-white/70 text-sm leading-relaxed mb-1 flex items-center gap-2">
+            <span class="font-medium text-white/90">Riyadh</span> 
+            <span class="text-[#D4A574] opacity-50">&bull;</span>
+            <a href="tel:+966593209505" class="text-[#D4A574] hover:text-white transition-colors text-sm">+966 59 320 9505</a>
+          </div>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Jeddah <span class="text-[#D4A574] opacity-50 mx-1">&bull;</span> Jazan
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="max-w-7xl mx-auto border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <p>&copy; 2026 Crescent Nova International. All Rights Reserved.</p>
+      <p>Registered in Saudi Arabia | Riyadh</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar Scroll Effect
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled-nav');
+      } else {
+        nav.classList.remove('scrolled-nav');
+      }
+    });
+
+    // Scroll Reveal Animation
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal(); // initial check
+
+    // Accordion Logic
+    function toggleAccordion(btn) {
+      const content = btn.nextElementSibling;
+      const isActive = btn.classList.contains('active');
+      
+      // Close all other accordions
+      document.querySelectorAll('.accordion-button').forEach(b => {
+        b.classList.remove('active');
+        b.nextElementSibling.style.maxHeight = null;
+      });
+
+      if (!isActive) {
+        btn.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    }
+  </script>
+</body>
+</html>

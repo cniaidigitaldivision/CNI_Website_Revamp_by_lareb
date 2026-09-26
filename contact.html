@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Crescent Nova International</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'gold-btn': '#d8ae57',
+            'cni-navy': '#061B2B',
+            'cni-navy-sec': '#0B293B',
+            'cni-gold': '#E3BC70',
+            'cni-ivory': '#F5F0E7',
+          },
+          fontFamily: {
+            'sans-clean': ['Inter', 'sans-serif'],
+            'serif-luxury': ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    html { scroll-behavior: smooth; }
+    
+    /* Scroll Header transition */
+    .scrolled-nav {
+      background-color: rgba(6, 27, 43, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(227, 188, 112, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+    
+    .gold-gradient-text {
+      background: linear-gradient(to right, #E3BC70, #fff2c8, #E3BC70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shine 5s linear infinite;
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .glass-card {
+      background: rgba(11, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body class="font-sans-clean text-slate-100 bg-[#061B2B] antialiased selection:bg-[#E3BC70] selection:text-[#061B2B]">
+
+  <!-- HEADER -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 w-full px-5 sm:px-8 xl:px-14 pt-6 pb-4 transition-all duration-300">
+    <div class="w-full flex items-center justify-between max-w-7xl mx-auto">
+      <!-- Logo -->
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="/index.html">
+          <img src="/public/logo.png" alt="CNI Logo" class="h-16 sm:h-20 w-auto object-contain rounded" onerror="this.src='/public/logo.png'"/>
+        </a>
+      </div>
+
+      <!-- Nav Links -->
+      <div class="hidden lg:flex flex-1 justify-center">
+        <nav class="flex items-center gap-7 xl:gap-9 text-[14px]">
+          <a href="/index.html" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Home</a>
+          <a href="/about.html" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">About</a>
+          
+          <div class="relative group" tabindex="0">
+            <button class="flex items-center gap-1 relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal transition-colors">
+              Divisions
+              <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[280px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+              <div class="w-full bg-[#061B2B]/95 backdrop-blur-md border border-[#E3BC70]/20 rounded-lg shadow-2xl overflow-hidden flex flex-col py-2">
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Automotive Division</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Business Facilitation</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Tour & Travel</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Real Estate & Advisory</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Home Services — Mundus</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Hospitality Management</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Logistics — My Truck</a>
+                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">CNI AI & Digital</a>
+              </div>
+            </div>
+          </div>
+          <a href="/investors" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Investors</a>
+          <a href="/why-ksa" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Why KSA</a>
+          <a href="/contact" class="relative py-1 cursor-pointer text-[#f0d08a] font-semibold">
+            Contact
+            <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#d8ae57] rounded-full shadow-[0_0_8px_rgba(216,174,87,0.8)]"></span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Right CTA -->
+      <div class="flex items-center gap-4 sm:gap-6 shrink-0">
+        <a href="#contact-form" class="bg-[#d8ae57] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(214,171,88,0.25)] hover:shadow-[0_6px_22px_rgba(214,171,88,0.4)] transition-all">
+          <span>Request a Proposal</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <div class="flex items-center text-xs tracking-wider font-semibold text-slate-300">
+          <button class="px-1 py-0.5 text-[#f0d08a] font-bold">EN</button>
+          <span class="text-slate-600 px-1 font-light">|</span>
+          <a href="/contact-ar.html" class="px-1 py-0.5 text-slate-400 hover:text-white">عربي</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+      <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/2/20/Riyadh_Skyline.jpg&w=2000&output=webp&q=75" alt="Riyadh Skyline" class="w-full h-full object-cover object-center scale-105 animate-[pulse_30s_ease-in-out_infinite_alternate]" />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#061B2B]/90 via-[#061B2B]/70 to-[#061B2B] mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#061B2B] via-transparent to-transparent"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-5 text-center flex flex-col items-center">
+      <span class="text-[#E3BC70] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase mb-6 reveal">GET IN TOUCH</span>
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-serif-luxury text-white mb-6 leading-tight reveal" style="transition-delay: 100ms;">
+        LET'S START A CONVERSATION.
+      </h1>
+      <p class="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-light leading-relaxed reveal" style="transition-delay: 200ms;">
+        Whether you're exploring business opportunities in Saudi Arabia or planning your next international venture, our team is here to guide your next step.
+      </p>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+      <span class="text-[10px] uppercase tracking-widest text-[#E3BC70]">Scroll</span>
+      <div class="w-[1px] h-12 bg-gradient-to-b from-[#E3BC70] to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM & INFO -->
+  <section id="contact-form" class="py-24 sm:py-32 px-5 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+      
+      <!-- Left Column: Form (Span 7) -->
+      <div class="lg:col-span-7 reveal">
+        <span class="text-[#E3BC70] font-semibold tracking-[0.2em] text-xs uppercase mb-3 block">SEND AN INQUIRY</span>
+        <h2 class="text-3xl sm:text-4xl font-serif-luxury text-white mb-4">TELL US ABOUT YOUR PLANS.</h2>
+        <p class="text-white/60 font-light mb-10">Share your business objectives with us, and our team will help you explore the appropriate next steps.</p>
+        
+        <form id="contactForm" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-wider mb-2">Full Name *</label>
+              <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E3BC70] transition-colors" placeholder="John Doe" />
+            </div>
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-wider mb-2">Business Email *</label>
+              <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E3BC70] transition-colors" placeholder="john@company.com" />
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-wider mb-2">Phone Number *</label>
+              <input type="tel" name="phone" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E3BC70] transition-colors" placeholder="+1 234 567 8900" />
+            </div>
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-wider mb-2">Company Name</label>
+              <input type="text" name="company" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E3BC70] transition-colors" placeholder="Optional" />
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-wider mb-2">Country *</label>
+              <select name="country" required class="w-full bg-[#0B293B] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#E3BC70] transition-colors">
+                 <option value="" disabled selected>Select a Country</option>
+                 <option value="Pakistan">Pakistan</option>
+                 <option value="Saudi Arabia">Saudi Arabia</option>
+                 <option value="United Kingdom">United Kingdom</option>
+                 <option value="United States">United States</option>
+                 <option value="United Arab Emirates">United Arab Emirates</option>
+                 <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs text-white/50 uppercase tracking-wider mb-2">Service Required *</label>
+              <select name="service" required class="w-full bg-[#0B293B] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#E3BC70] transition-colors">
+                 <option value="" disabled selected>Select Service</option>
+                 <option value="Business Setup">Business Setup in Saudi Arabia</option>
+                 <option value="Company Formation">Company Formation</option>
+                 <option value="Investment Consultation">Investment Consultation</option>
+                 <option value="Licensing">Licensing & Documentation</option>
+                 <option value="Market Entry">Market Entry Advisory</option>
+                 <option value="General Inquiry">General Inquiry</option>
+                 <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-xs text-white/50 uppercase tracking-wider mb-2">Preferred Office *</label>
+            <select name="office" required class="w-full bg-[#0B293B] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#E3BC70] transition-colors">
+               <option value="" disabled selected>Select Office</option>
+               <option value="Pakistan">Pakistan — Head Office</option>
+               <option value="Riyadh">Riyadh — KSA</option>
+               <option value="Jeddah">Jeddah — KSA</option>
+               <option value="Jazan">Jazan — KSA</option>
+               <option value="No Preference">No Preference</option>
+            </select>
+          </div>
+          
+          <div>
+            <label class="block text-xs text-white/50 uppercase tracking-wider mb-2">Your Message *</label>
+            <textarea name="message" required rows="6" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-[#E3BC70] transition-colors resize-none" placeholder="Tell us a little about your business and how we can help."></textarea>
+          </div>
+          
+          <div class="flex items-start gap-3">
+            <input type="checkbox" required id="privacy" class="mt-1 w-4 h-4 rounded border-gray-300 text-[#d8ae57] focus:ring-[#d8ae57] bg-white/5 cursor-pointer" />
+            <label for="privacy" class="text-sm text-white/60 font-light cursor-pointer select-none">
+              I consent to the processing of my personal data for the purpose of handling this inquiry, in accordance with the Privacy Policy.
+            </label>
+          </div>
+          
+          <button type="submit" id="submitBtn" class="w-full bg-[#d8ae57] text-[#120f09] font-semibold px-8 py-4 rounded-lg shadow-[0_4px_20px_rgba(214,171,88,0.3)] hover:shadow-[0_6px_25px_rgba(214,171,88,0.5)] transition-all flex items-center justify-center gap-2 mt-4 relative overflow-hidden group">
+            <span id="btnText">SEND YOUR INQUIRY →</span>
+            <div id="btnSpinner" class="hidden absolute inset-0 bg-[#d8ae57] flex items-center justify-center">
+              <svg class="animate-spin h-5 w-5 text-[#120f09]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            </div>
+          </button>
+          <div id="formMessage" class="hidden mt-4 p-4 rounded-lg text-sm text-center font-medium"></div>
+        </form>
+      </div>
+      
+      <!-- Right Column: Info Panel (Span 5) -->
+      <div class="lg:col-span-5 reveal" style="transition-delay: 200ms;">
+        <div class="glass-card rounded-2xl p-8 sm:p-12 h-full border-t border-[#E3BC70]/30 flex flex-col">
+          <h3 class="text-2xl font-serif-luxury text-white mb-8">WE'RE HERE TO HELP.</h3>
+          
+          <div class="space-y-10 flex-grow">
+            <div>
+              <h4 class="text-[#E3BC70] text-xs font-semibold uppercase tracking-wider mb-5">Pakistan Head Office</h4>
+              <div class="flex items-start gap-4 mb-5">
+                <div class="mt-1 text-white/40">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                </div>
+                <div>
+                  <a href="tel:+923311110210" class="text-white hover:text-[#E3BC70] transition-colors text-lg font-light block">+92 331 11 10 210</a>
+                  <span class="text-white/50 text-xs">Available Mon-Fri, 9am - 6pm</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="mt-1 text-white/40">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                  <a href="mailto:invest@crescentnovainternational.com" class="text-white hover:text-[#E3BC70] transition-colors text-base font-light break-all">invest@crescentnovainternational.com</a>
+                  <span class="text-white/50 text-xs block mt-1">General Inquiries & Proposals</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="w-full h-[1px] bg-white/10"></div>
+            
+            <div>
+              <h4 class="text-[#E3BC70] text-xs font-semibold uppercase tracking-wider mb-4">Saudi Arabia Regional Offices</h4>
+              <p class="text-white/60 font-light text-sm leading-relaxed mb-6">
+                Our established presence in the Kingdom enables us to provide on-the-ground support and direct regulatory coordination across major economic centers.
+              </p>
+              <div class="flex items-center gap-4 text-white/80 font-light text-sm flex-wrap">
+                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Riyadh</div>
+                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Jeddah</div>
+                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#E3BC70]"></span> Jazan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR OFFICES -->
+  <section class="py-24 bg-[#0B293B] relative border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center mb-16 reveal">
+        <span class="text-[#E3BC70] font-semibold tracking-widest text-xs uppercase mb-3 block">OUR PRESENCE</span>
+        <h2 class="text-3xl sm:text-4xl font-serif-luxury text-white mb-4">CONNECTED ACROSS BORDERS.</h2>
+        <p class="text-white/60 max-w-2xl mx-auto font-light">
+          Connect with our team in Pakistan or our regional offices in Saudi Arabia.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Pakistan -->
+        <div class="glass-card rounded-2xl p-8 border-t-2 border-[#E3BC70] reveal flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+          <h3 class="text-white font-serif-luxury text-xl mb-1">Pakistan Head Office</h3>
+          <p class="text-[#E3BC70] text-xs uppercase tracking-wider mb-6">Attari Group of Companies</p>
+          
+          <p class="text-white/70 font-light text-sm mb-6 flex-grow leading-relaxed">
+            Al Ghazi Plaza, Main GT Road,<br/>
+            Wah Cantt, Pakistan
+          </p>
+          
+          <div class="space-y-4 mb-8 text-sm">
+            <div class="flex items-center gap-3">
+              <span class="text-[#E3BC70] font-medium">P:</span>
+              <a href="tel:+923311110210" class="text-white hover:text-[#E3BC70] transition-colors">+92 331 11 10 210</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-[#E3BC70] font-medium">E:</span>
+              <a href="mailto:invest@crescentnovainternational.com" class="text-white hover:text-[#E3BC70] transition-colors truncate" title="invest@crescentnovainternational.com">invest@cni...com</a>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-3 mt-auto">
+            <a href="tel:+923311110210" class="w-full text-center bg-white/10 hover:bg-white/20 text-white text-xs font-semibold py-3.5 rounded-lg transition-colors border border-white/5">CALL OFFICE</a>
+            <a href="#map-section" class="w-full text-center bg-transparent border border-[#E3BC70]/50 hover:border-[#E3BC70] text-[#E3BC70] hover:bg-[#E3BC70]/5 text-xs font-semibold py-3.5 rounded-lg transition-colors">GET DIRECTIONS</a>
+          </div>
+        </div>
+        
+        <!-- Card 2: Riyadh -->
+        <div class="glass-card rounded-2xl p-8 border-t border-[#E3BC70]/30 reveal flex flex-col h-full hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 100ms;">
+          <h3 class="text-white font-serif-luxury text-xl mb-1">Riyadh</h3>
+          <p class="text-[#E3BC70] text-xs uppercase tracking-wider mb-6">Saudi Arabia</p>
+          
+          <p class="text-white/70 font-light text-sm mb-6 flex-grow leading-relaxed">
+            Strategic market entry, corporate structuring and government liaison operations.
+          </p>
+          
+          <div class="space-y-4 mb-8 text-sm">
+            <div class="flex items-center gap-3">
+              <span class="text-[#E3BC70] font-medium">P:</span>
+              <a href="tel:+966593209505" class="text-white hover:text-[#E3BC70] transition-colors">+966 59 320 9505</a>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-3 mt-auto">
+            <a href="tel:+966593209505" class="w-full text-center bg-[#E3BC70]/10 hover:bg-[#E3BC70]/20 text-[#E3BC70] text-xs font-semibold py-3.5 rounded-lg transition-colors border border-[#E3BC70]/20">CALL RIYADH OFFICE</a>
+          </div>
+        </div>
+        
+        <!-- Card 3: Jeddah -->
+        <div class="glass-card rounded-2xl p-8 border-t border-[#E3BC70]/30 reveal flex flex-col h-full hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 200ms;">
+          <h3 class="text-white font-serif-luxury text-xl mb-1">Jeddah</h3>
+          <p class="text-[#E3BC70] text-xs uppercase tracking-wider mb-6">Saudi Arabia</p>
+          
+          <p class="text-white/70 font-light text-sm mb-6 flex-grow leading-relaxed">
+            Commercial hub for logistics, trading and western region business operations.
+          </p>
+          
+          <div class="flex flex-col gap-3 mt-auto">
+            <a href="#contact-form" class="w-full text-center bg-white/5 hover:bg-white/10 text-white text-xs font-semibold py-3.5 rounded-lg transition-colors border border-white/10">CONTACT OUR TEAM</a>
+          </div>
+        </div>
+        
+        <!-- Card 4: Jazan -->
+        <div class="glass-card rounded-2xl p-8 border-t border-[#E3BC70]/30 reveal flex flex-col h-full hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 300ms;">
+          <h3 class="text-white font-serif-luxury text-xl mb-1">Jazan</h3>
+          <p class="text-[#E3BC70] text-xs uppercase tracking-wider mb-6">Saudi Arabia</p>
+          
+          <p class="text-white/70 font-light text-sm mb-6 flex-grow leading-relaxed">
+            Southern region presence for industrial, manufacturing and port-related initiatives.
+          </p>
+          
+          <div class="flex flex-col gap-3 mt-auto">
+            <a href="#contact-form" class="w-full text-center bg-white/5 hover:bg-white/10 text-white text-xs font-semibold py-3.5 rounded-lg transition-colors border border-white/10">CONTACT OUR TEAM</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE MAP -->
+  <section id="map-section" class="py-24 sm:py-32 px-5 max-w-7xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl sm:text-4xl font-serif-luxury text-white mb-4">VISIT OUR HEAD OFFICE.</h2>
+      <p class="text-white/60 font-light max-w-2xl mx-auto">
+        Find us at Al Ghazi Plaza, Main GT Road, Wah Cantt, Pakistan.
+      </p>
+    </div>
+    
+    <div class="relative w-full rounded-2xl overflow-hidden border border-[#E3BC70]/30 shadow-[0_10px_40px_rgba(0,0,0,0.3)] reveal group">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106126.58796710045!2d72.57619857788087!3d33.77472405388731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa7d9550fbc5f%3A0x8d03515400a2c190!2sAttari%20builders%20(pvt)ltd.!5e0!3m2!1sen!2s!4v1790405036891!5m2!1sen!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    
+    <div class="mt-10 text-center reveal">
+      <a href="https://maps.google.com/?q=Attari+builders+(pvt)ltd.+Wah+Cantt" target="_blank" class="inline-flex items-center gap-3 bg-transparent border border-[#E3BC70]/40 text-white hover:border-[#E3BC70] hover:text-[#E3BC70] hover:bg-[#E3BC70]/5 font-semibold px-8 py-3.5 rounded-full transition-all">
+        Open in Google Maps
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="relative py-32 flex items-center justify-center overflow-hidden border-t border-[#E3BC70]/20">
+    <div class="absolute inset-0 z-0">
+      <img src="/riyadh-cta.jpg" class="w-full h-full object-cover object-center" alt="Night Skyline" loading="lazy" />
+      <div class="absolute inset-0 bg-[#061B2B]/90"></div>
+    </div>
+    
+    <div class="relative z-10 text-center px-5 reveal">
+      <span class="text-[#E3BC70] text-xs font-semibold uppercase tracking-wider mb-4 block">YOUR NEXT STEP</span>
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-serif-luxury text-white mb-6 max-w-4xl mx-auto">YOUR AMBITION STARTS WITH A CONVERSATION.</h2>
+      <p class="text-white/70 font-light text-lg mb-10 max-w-2xl mx-auto">
+        Connect with Crescent Nova International to discuss your plans and explore your business opportunities in Saudi Arabia.
+      </p>
+      <a href="#contact-form" class="inline-flex bg-[#d8ae57] text-[#120f09] font-semibold px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(214,171,88,0.3)] hover:shadow-[0_6px_25px_rgba(214,171,88,0.5)] transition-all items-center justify-center gap-2">
+        Request a Consultation →
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-[#061B2B] border-t border-[#D4A574]/20 pt-16 pb-8 px-5 sm:px-8 xl:px-14 relative z-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
+      
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col items-start text-left">
+        <a href="/index.html" class="inline-block mb-4">
+          <img src="/public/logo.png" alt="CNI Logo" class="h-20 w-auto object-contain rounded" onerror="this.src='/public/logo.png'" />
+        </a>
+        <p class="text-white/80 font-light text-sm leading-relaxed mb-6 max-w-xs">
+          Bridging Pakistani Ambition with Saudi Opportunity
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="/contact" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE COLUMN 1: Quick Links -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Quick Links</h3>
+        <nav class="flex flex-col gap-3">
+          <a href="/index.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Home</a>
+          <a href="/about.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">About</a>
+          <a href="/investors" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Investors</a>
+          <a href="/why-ksa" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Why KSA</a>
+          <a href="/contact" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Contact</a>
+        </nav>
+      </div>
+
+      <!-- MIDDLE COLUMN 2: Our Divisions -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Our Divisions</h3>
+        <nav class="flex flex-col gap-3">
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Automotive Division</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Business Facilitation</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Tour & Travel</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Real Estate & Advisory</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Home Services — Mundus</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Hospitality Management</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Logistics — My Truck</a>
+          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">CNI AI & Digital</a>
+        </nav>
+      </div>
+
+      <!-- RIGHT COLUMN: Regional Offices -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Regional Offices</h3>
+        
+        <div class="mb-5">
+          <h4 class="text-white font-semibold text-sm mb-2 uppercase tracking-wider opacity-90">Pakistan Head Office</h4>
+          <p class="text-white/70 text-sm leading-relaxed mb-1">
+            Attari Group of Companies<br />
+            Al Ghazi Plaza, Main GT Road<br />
+            Wah Cantt, Pakistan
+          </p>
+          <a href="tel:+923311110210" class="text-[#D4A574] hover:text-white transition-colors text-sm font-medium">+92 331 11 10 210</a>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2 uppercase tracking-wider opacity-90">KSA Regional Offices</h4>
+          <div class="text-white/70 text-sm leading-relaxed mb-1 flex items-center gap-2">
+            <span class="font-medium text-white/90">Riyadh</span> 
+            <span class="text-[#D4A574] opacity-50">&bull;</span>
+            <a href="tel:+966593209505" class="text-[#D4A574] hover:text-white transition-colors text-sm">+966 59 320 9505</a>
+          </div>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Jeddah <span class="text-[#D4A574] opacity-50 mx-1">&bull;</span> Jazan
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="max-w-7xl mx-auto border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <p>&copy; 2026 Crescent Nova International. All Rights Reserved.</p>
+      <p>Registered in Saudi Arabia | Riyadh</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar Scroll Effect
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled-nav');
+      } else {
+        nav.classList.remove('scrolled-nav');
+      }
+    });
+
+    // Scroll Reveal Animation
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal();
+  </script>
+<script>
+    document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const btn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnSpinner = document.getElementById('btnSpinner');
+      const msgDiv = document.getElementById('formMessage');
+      
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      
+      btn.disabled = true;
+      btnText.classList.add('invisible');
+      btnSpinner.classList.remove('hidden');
+      msgDiv.className = 'hidden';
+      
+      try {
+        const response = await fetch('http://localhost:3001/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+          msgDiv.textContent = 'Thank you! Your inquiry has been sent successfully. We will get back to you shortly.';
+          msgDiv.className = 'mt-4 p-4 rounded-lg text-sm text-center font-medium bg-green-500/10 border border-green-500/20 text-green-400';
+          form.reset();
+        } else {
+          msgDiv.textContent = result.error || 'Failed to send inquiry. Please try again.';
+          msgDiv.className = 'mt-4 p-4 rounded-lg text-sm text-center font-medium bg-red-500/10 border border-red-500/20 text-red-400';
+        }
+      } catch (err) {
+        msgDiv.textContent = 'Network error. Please check your connection and try again.';
+        msgDiv.className = 'mt-4 p-4 rounded-lg text-sm text-center font-medium bg-red-500/10 border border-red-500/20 text-red-400';
+      } finally {
+        btn.disabled = false;
+        btnText.classList.remove('invisible');
+        btnSpinner.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Tour &amp; Travel — Crescent Nova International</title>
+  <title>Tour &amp; Travel � Crescent Nova International</title>
   <meta name="description" content="CNI Tour &amp; Travel: Umrah packages, airline ticketing, hotel bookings and group tours for the Pakistani diaspora across Saudi Arabia."/>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/tailwind-cdn.js"></script>
   <script>tailwind.config={theme:{extend: { colors: { 'cni-gold': '#E3BC70' },fontFamily:{'sans-clean':['Inter','sans-serif'],'serif-luxury':['Playfair Display','serif']}}}}</script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <style>
@@ -56,8 +56,8 @@
 </head>
 <body class="font-sans-clean">
 
-  <!-- ═══ NAVBAR ═══ -->
-  <header style="position:fixed;top:0;left:0;width:100%;z-index:999;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,27,43,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(227,188,112,.08);">
+  <!-- --- NAVBAR --- -->
+  <header style="position:sticky;top:0;width:100%;z-index:999;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:#0B2233;border-bottom:1px solid rgba(227,188,112,.15);">
     <a href="/"><img src="/public/logo.png" alt="CNI" style="height:52px;width:auto;object-fit:contain;"/></a>
     <nav style="display:flex;align-items:center;gap:30px;font-size:14px;">
       <a href="/">Home</a>
@@ -67,24 +67,24 @@
           Divisions <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="dm"><div class="di">
-          <a href="/divisions/automotive.html">Automotive Division <span class="ar">&#8594;</span></a>
-          <a href="/divisions/business-facilitation.html">Business Facilitation Centre <span class="ar">&#8594;</span></a>
-          <a href="/divisions/tour-travel.html" class="act">Tour &amp; Travel <span class="ar">&#8594;</span></a>
-          <a href="/divisions/real-estate.html">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
-          <a href="/divisions/home-services.html">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
-          <a href="/divisions/hospitality.html">Hospitality Management <span class="ar">&#8594;</span></a>
-          <a href="/divisions/logistics.html">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
-          <a href="/divisions/ai-digital.html">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
+          <a href="">Automotive Division <span class="ar">&#8594;</span></a>
+          <a href="">Business Facilitation Centre <span class="ar">&#8594;</span></a>
+          <a href="" class="act">Tour &amp; Travel <span class="ar">&#8594;</span></a>
+          <a href="">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
+          <a href="">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
+          <a href="">Hospitality Management <span class="ar">&#8594;</span></a>
+          <a href="">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
+          <a href="">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
         </div></div>
       </div>
-      <a href="/investors.html">Investors</a>
+      <a href="../investors.html">Investors</a>
       <a href="/">Why KSA</a>
       <a href="/">Contact</a>
     </nav>
     <a href="/" class="btn-gold" style="font-size:12px;padding:10px 22px;">Request a Proposal &#8594;</a>
   </header>
 
-  <!-- ═══ 1. HERO ═══ -->
+  <!-- --- 1. HERO --- -->
   <section class="hero">
     <div class="hbg"></div>
     <div class="hov"></div>
@@ -131,7 +131,7 @@
     </div>
   </section>
 
-  <!-- ═══ 3. SERVICE CARDS ═══ -->
+  <!-- --- 3. SERVICE CARDS --- -->
   <section id="services" style="padding:90px 24px;background:#0B293B;">
     <div style="max-width:1280px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:52px;" class="afu">
@@ -212,7 +212,7 @@
     </div>
   </section>
 
-  <!-- ═══ 4. REVENUE MODEL ═══ -->
+  <!-- --- 4. REVENUE MODEL --- -->
   <section style="padding:90px 24px;background:#061B2B;position:relative;overflow:hidden;">
     <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;background:rgba(216,174,87,.04);border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
     <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;">
@@ -223,7 +223,7 @@
           <span style="font-size:11px;letter-spacing:.25em;color:#d8ae57;font-weight:600;text-transform:uppercase;">Revenue Model</span>
         </div>
         <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,44px);color:white;margin-bottom:18px;line-height:1.2;">Commission-Based, <span style="color:#d8ae57;font-style:italic;">Capital-Light</span></h2>
-        <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;margin-bottom:24px;">Our model requires minimal capital outlay. Revenue is earned on every transaction — no inventory, no heavy overheads. As the Pakistani diaspora in KSA grows and Umrah demand compounds toward Vision 2030's 30M pilgrim target, our transaction volume scales proportionally.</p>
+        <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;margin-bottom:24px;">Our model requires minimal capital outlay. Revenue is earned on every transaction � no inventory, no heavy overheads. As the Pakistani diaspora in KSA grows and Umrah demand compounds toward Vision 2030's 30M pilgrim target, our transaction volume scales proportionally.</p>
         <div class="quote-strip">
           <p style="color:#e2e8f0;font-size:14px;line-height:1.75;font-style:italic;">"Every booking is a relationship. Every relationship is a repeat client. That is the foundation of CNI's Tour &amp; Travel model."</p>
         </div>
@@ -233,7 +233,7 @@
         <div style="background:linear-gradient(135deg,#0B293B,#07202e);border:1px solid rgba(216,174,87,.12);border-radius:20px;padding:40px;">
           <h3 style="color:#d8ae57;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:28px;">Revenue by Service Line</h3>
           <div class="rev-row">
-            <div class="rev-num">8–15%</div>
+            <div class="rev-num">8�15%</div>
             <div>
               <div style="color:white;font-size:14px;font-weight:500;margin-bottom:3px;">Overall Commission Range</div>
               <div style="color:#64748b;font-size:12px;">Across all service lines per transaction</div>
@@ -242,7 +242,7 @@
           <div class="rev-row">
             <div class="rev-num" style="font-size:22px;white-space:nowrap;">SAR 1.5K</div>
             <div>
-              <div style="color:white;font-size:14px;font-weight:500;margin-bottom:3px;">Max Margin — Umrah</div>
+              <div style="color:white;font-size:14px;font-weight:500;margin-bottom:3px;">Max Margin � Umrah</div>
               <div style="color:#64748b;font-size:12px;">Per family or group Umrah booking</div>
             </div>
           </div>
@@ -250,7 +250,7 @@
             <div class="rev-num">12%</div>
             <div>
               <div style="color:white;font-size:14px;font-weight:500;margin-bottom:3px;">Avg. Ticketing Commission</div>
-              <div style="color:#64748b;font-size:12px;">PK–KSA routes, group &amp; corporate fares</div>
+              <div style="color:#64748b;font-size:12px;">PK�KSA routes, group &amp; corporate fares</div>
             </div>
           </div>
           <div class="rev-row">
@@ -266,7 +266,7 @@
     </div>
   </section>
 
-  <!-- ═══ 5. OUR MARKET ═══ -->
+  <!-- --- 5. OUR MARKET --- -->
   <section style="padding:90px 24px;background:#0B293B;">
     <div style="max-width:1280px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:52px;" class="afu">
@@ -323,7 +323,7 @@
     </div>
   </section>
 
-  <!-- ═══ 6. CLOSING CTA ═══ -->
+  <!-- --- 6. CLOSING CTA --- -->
   <section style="padding:96px 24px;background:#080E1A;border-top:1px solid rgba(216,174,87,.15);position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2000');background-size:cover;background-position:center top;opacity:.09;"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(to top,#080E1A 60%,rgba(8,14,26,.6));"></div>
@@ -336,12 +336,12 @@
       <h2 class="font-serif-luxury" style="font-size:clamp(28px,5vw,50px);line-height:1.15;color:white;margin-bottom:22px;">
         Plan Your Journey With Us<br/><span style="color:#d8ae57;font-style:italic;">From Umrah to Family Vacations</span>
       </h2>
-      <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;max-width:540px;margin:0 auto 36px;">Whether it's your first Umrah, a family vacation, or a corporate group trip — CNI's Tour &amp; Travel team is ready to plan every detail so you can focus on the journey.</p>
+      <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;max-width:540px;margin:0 auto 36px;">Whether it's your first Umrah, a family vacation, or a corporate group trip � CNI's Tour &amp; Travel team is ready to plan every detail so you can focus on the journey.</p>
       <a href="/" class="btn-gold" style="font-size:15px;padding:16px 42px;">Get a Quote &#8594;</a>
     </div>
   </section>
 
-  <!-- ═══ FOOTER ═══ -->
+  <!-- --- FOOTER --- -->
   <footer style="padding:28px 48px;background:#061B2B;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
     <div style="font-size:13px;color:#475569;">&copy; 2026 Crescent Nova International. All rights reserved.</div>
     <div style="display:flex;gap:22px;">
