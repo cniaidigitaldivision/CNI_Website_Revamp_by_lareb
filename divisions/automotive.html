@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automotive Division — Crescent Nova International</title>
+  <meta name="description" content="CNI TGA-licensed premium vehicle rental fleet — 62.5% net profit margin." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: { colors: { 'cni-gold': '#E3BC70' },
+          fontFamily: {
+            'sans-clean': ['Inter', 'sans-serif'],
+            'serif-luxury': ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    .afu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+    .afu.vis{opacity:1;transform:translateY(0);}
+    /* NAV DROPDOWN */
+    .nd{position:relative;}
+    .nd .dm{
+      position:absolute;left:50%;top:100%;
+      transform:translateX(-50%);
+      padding-top:12px;width:300px;
+      opacity:0;pointer-events:none;
+      transition:opacity .18s ease;
+      z-index:200;
+    }
+    .nd:hover .dm,.nd:focus-within .dm{opacity:1;pointer-events:auto;}
+    .nd .di{
+      background:rgba(6,27,43,.97);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(227,188,112,.2);
+      border-radius:10px;
+      box-shadow:0 8px 32px rgba(0,0,0,.6);
+      padding:8px 0;
+    }
+    .dm a{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;font-size:13px;color:#cbd5e1;text-decoration:none;transition:background .15s,color .15s;white-space:nowrap;}
+    .dm a:hover,.dm a.act{background:rgba(255,255,255,.05);color:#d8ae57;}
+    .dm a .ar{opacity:0;transform:translateX(-5px);transition:opacity .15s,transform .15s;color:#d8ae57;}
+    .dm a:hover .ar,.dm a.act .ar{opacity:1;transform:translateX(0);}
+    .chev{transition:transform .25s;}
+    .nd:hover .chev{transform:rotate(180deg);}
+    /* HERO */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+    .hbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2000');background-size:cover;background-position:center;opacity:.35;mix-blend-mode:luminosity;}
+    .hov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,27,43,.4) 0%,rgba(6,27,43,.2) 50%,#061B2B 100%);}
+    .sc{padding:24px 0;background:#0B293B;border-top:1px solid rgba(216,174,87,.1);border-bottom:1px solid rgba(216,174,87,.1);}
+    .sc-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;padding:0 24px;}
+    .scard{background:rgba(6,27,43,.5);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:28px;text-align:center;transition:border-color .3s,background .3s;}
+    .scard:hover{border-color:rgba(216,174,87,.3);background:rgba(6,27,43,.9);}
+    .cc{display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.05),transparent);border:1px solid rgba(255,255,255,.1);transition:border-color .3s;}
+    .cc:hover{border-color:rgba(216,174,87,.5);}
+    .mc{background:#061B2B;border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:36px;position:relative;overflow:hidden;transition:transform .3s;}
+    .mc:hover{transform:translateY(-6px);}
+    .rr{display:flex;justify-content:space-between;align-items:flex-end;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+    .bg{display:inline-flex;align-items:center;gap:10px;background:#d8ae57;color:#061B2B;font-weight:700;font-size:14px;padding:14px 32px;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 20px rgba(216,174,87,.3);}
+    .bg:hover{transform:scale(1.04);box-shadow:0 0 30px rgba(216,174,87,.5);}
+    .gh{display:inline-flex;align-items:center;gap:8px;color:#94a3b8;font-size:14px;text-decoration:none;transition:color .2s;}
+    .gh:hover{color:white;}
+  </style>
+</head>
+<body class="font-sans-clean" style="background:#061B2B;color:#f1f5f9;overflow-x:hidden;">
+
+  <!-- NAVBAR -->
+  <header style="position:fixed;top:0;left:0;width:100%;z-index:999;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,27,43,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(227,188,112,.08);">
+    <a href="/"><img src="/public/logo.png" alt="CNI" style="height:52px;width:auto;object-fit:contain;" /></a>
+    <nav style="display:flex;align-items:center;gap:30px;font-size:14px;">
+      <a href="/" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">Home</a>
+      <a href="/#about" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">About</a>
+      <div class="nd">
+        <button style="display:flex;align-items:center;gap:5px;background:none;border:none;color:#d8ae57;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">
+          Divisions <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dm"><div class="di">
+          <a href="/divisions/automotive.html" class="act">Automotive Division <span class="ar">&#8594;</span></a>
+          <a href="/divisions/business-facilitation.html">Business Facilitation Centre <span class="ar">&#8594;</span></a>
+          <a href="/divisions/tour-travel.html">Tour &amp; Travel <span class="ar">&#8594;</span></a>
+          <a href="/divisions/real-estate.html">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
+          <a href="/divisions/home-services.html">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
+          <a href="/divisions/hospitality.html">Hospitality Management <span class="ar">&#8594;</span></a>
+          <a href="/divisions/logistics.html">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
+          <a href="/divisions/ai-digital.html">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
+        </div></div>
+      </div>
+      <a href="/investors.html" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">Investors</a>
+      <a href="/" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">Why KSA</a>
+      <a href="/" style="color:#94a3b8;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">Contact</a>
+    </nav>
+    <a href="/" class="bg" style="font-size:12px;padding:10px 22px;">Request a Proposal &#8594;</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hbg"></div>
+    <div class="hov"></div>
+    <div style="position:relative;z-index:10;text-align:center;padding:130px 24px 60px;max-width:900px;margin:0 auto;" class="afu" id="hero">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;">
+        <div style="width:36px;height:1px;background:rgba(216,174,87,.6);"></div>
+        <span style="font-size:11px;letter-spacing:.28em;color:#d8ae57;font-weight:600;text-transform:uppercase;">CNI Flagship Division</span>
+        <div style="width:36px;height:1px;background:rgba(216,174,87,.6);"></div>
+      </div>
+      <h1 class="font-serif-luxury" style="font-size:clamp(38px,7vw,74px);line-height:1.1;color:white;margin-bottom:18px;">
+        Premium Vehicle<br/><span style="color:#d8ae57;font-style:italic;">Rental Fleet &#8212; KSA</span>
+      </h1>
+      <p style="font-size:clamp(14px,2vw,18px);color:#94a3b8;font-weight:300;margin-bottom:36px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.7;">
+        TGA-Licensed &nbsp;&middot;&nbsp; GPS-Tracked &nbsp;&middot;&nbsp; Fully Insured &nbsp;&middot;&nbsp; Green+ Nitaqat Certified
+      </p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
+        <a href="/" class="bg">Request a Proposal &#8594;</a>
+        <a href="#overview" class="gh">View Fleet Details &#8595;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="pt-[60px] pb-[120px] px-6 relative z-10 bg-gradient-to-b from-[#061B2B] via-[#081f33] to-[#061B2B] flex flex-col items-center text-center">
+    <!-- Small label -->
+    <span class="fade-up inline-block text-[#E3BC70] uppercase tracking-[0.15em] text-[11px] md:text-[12px] font-medium mb-[20px]">
+      Division Overview
+    </span>
+
+    <!-- Large Editorial Heading -->
+    <h2 class="fade-up font-serif-luxury text-[#E3BC70] text-[34px] md:text-[42px] lg:text-[64px] leading-[1.2] max-w-[800px] mx-auto font-normal mb-[32px]" style="transition-delay: 200ms;">
+      Driving Excellence in <em class="italic text-[#E3BC70]">the Kingdom</em>
+    </h2>
+
+    <!-- Paragraphs -->
+    <div class="fade-up text-slate-300 font-sans-clean text-[16px] md:text-[17px] leading-[1.7] max-w-[680px] mx-auto font-light" style="transition-delay: 400ms;">
+      <p class="mb-5 last:mb-0">CNI's Automotive Division operates a TGA-licensed premium vehicle rental fleet designed to serve tourism, corporate, and expatriate markets across the Kingdom of Saudi Arabia. Every vehicle in the fleet is GPS-tracked through the WASL platform, fully insured, and maintained to the highest safety and compliance standards. The division holds Green+ Nitaqat certification, ensuring full regulatory alignment with Saudi labor and business requirements.</p>
+      <p class="mb-5 last:mb-0">The flagship division of the CNI portfolio, Automotive delivers the strongest financial performance with a projected <strong style="color:white;font-weight:500;">62.5% net profit margin</strong> on a SAR 1,000,000 Phase 1 fleet investment &#8212; generating SAR 600,000 in annual net profit. Phase 1 targets a 10-vehicle fleet, with phased expansion as B2B contracts with corporate clients and tourism operators are secured.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="sc">
+    <div class="sc-inner">
+      <div class="scard afu"><div class="font-serif-luxury" style="font-size:42px;color:#d8ae57;text-shadow:0 0 12px rgba(216,174,87,.4);">62.5%</div><div style="font-size:11px;font-weight:500;letter-spacing:.08em;color:#e2e8f0;text-transform:uppercase;margin-top:8px;">Net Profit Margin</div></div>
+      <div class="scard afu" style="transition-delay:.1s;"><div class="font-serif-luxury" style="font-size:42px;color:#d8ae57;text-shadow:0 0 12px rgba(216,174,87,.4);">SAR 600K</div><div style="font-size:11px;font-weight:500;letter-spacing:.08em;color:#e2e8f0;text-transform:uppercase;margin-top:8px;">Annual Net Profit</div></div>
+      <div class="scard afu" style="transition-delay:.2s;"><div class="font-serif-luxury" style="font-size:42px;color:#d8ae57;text-shadow:0 0 12px rgba(216,174,87,.4);">10</div><div style="font-size:11px;font-weight:500;letter-spacing:.08em;color:#e2e8f0;text-transform:uppercase;margin-top:8px;">Vehicles &#8212; Phase 1</div></div>
+      <div class="scard afu" style="transition-delay:.3s;"><div class="font-serif-luxury" style="font-size:42px;color:#d8ae57;text-shadow:0 0 12px rgba(216,174,87,.4);">SAR 1M</div><div style="font-size:11px;font-weight:500;letter-spacing:.08em;color:#e2e8f0;text-transform:uppercase;margin-top:8px;">Total Investment</div></div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE -->
+  <section style="padding:90px 24px;background:#061B2B;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;right:0;width:480px;height:480px;background:rgba(216,174,87,.04);border-radius:50%;filter:blur(90px);pointer-events:none;"></div>
+    <div style="max-width:1280px;margin:0 auto;position:relative;">
+      <div style="margin-bottom:48px;max-width:620px;" class="afu">
+        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,42px);color:white;margin-bottom:14px;">Full Regulatory <span style="color:#d8ae57;font-style:italic;">Compliance</span></h2>
+        <p style="color:#94a3b8;font-size:15px;line-height:1.75;font-weight:300;">Compliance is CNI's ultimate competitive advantage in the KSA rental market. By securing top-tier licensing, adopting mandatory tracking integrations, and aligning with nationalization mandates, we completely mitigate operational risk and guarantee uninterrupted service for our B2B partners.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;">
+        <div class="cc afu"><div style="width:42px;height:42px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 style="color:white;font-size:16px;font-weight:500;">TGA Licensed</h3><p style="color:#64748b;font-size:13px;font-weight:300;line-height:1.6;">Transport General Authority certified for commercial operations.</p></div>
+        <div class="cc afu" style="transition-delay:.15s;"><div style="width:42px;height:42px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 style="color:white;font-size:16px;font-weight:500;">WASL GPS Integration</h3><p style="color:#64748b;font-size:13px;font-weight:300;line-height:1.6;">Real-time government-mandated vehicle tracking platform.</p></div>
+        <div class="cc afu" style="transition-delay:.3s;"><div style="width:42px;height:42px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 style="color:white;font-size:16px;font-weight:500;">Green+ Nitaqat</h3><p style="color:#64748b;font-size:13px;font-weight:300;line-height:1.6;">Highest tier of Saudi labor nationalization compliance.</p></div>
+        <div class="cc afu" style="transition-delay:.45s;"><div style="width:42px;height:42px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 style="color:white;font-size:16px;font-weight:500;">Balady &amp; Salama</h3><p style="color:#64748b;font-size:13px;font-weight:300;line-height:1.6;">Fully compliant with municipal and civil defense safety standards.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section style="padding:90px 24px;background:#0B293B;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:48px;" class="afu">
+        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,42px);color:#d8ae57;margin-bottom:12px;">Who We Serve</h2>
+        <div style="width:56px;height:1px;background:rgba(216,174,87,.35);margin:0 auto;"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;">
+        <div class="mc afu"><div style="position:absolute;top:20px;right:20px;opacity:.07;"><svg width="72" height="72" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width=".8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div><h3 class="font-serif-luxury" style="font-size:21px;color:white;margin-bottom:12px;position:relative;">Corporate Clients</h3><p style="color:#94a3b8;font-size:14px;line-height:1.75;font-weight:300;position:relative;">Long-term vehicle contracts for companies and government entities needing reliable, premium transport without the capital burden of fleet ownership.</p></div>
+        <div class="mc afu" style="transition-delay:.1s;"><div style="position:absolute;top:20px;right:20px;opacity:.07;"><svg width="72" height="72" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width=".8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 class="font-serif-luxury" style="font-size:21px;color:white;margin-bottom:12px;position:relative;">Tourism Operators</h3><p style="color:#94a3b8;font-size:14px;line-height:1.75;font-weight:300;position:relative;">B2B partnerships with tour companies, hospitality groups, and airport transfer services providing seamless premium mobility for travelers.</p></div>
+        <div class="mc afu" style="transition-delay:.2s;"><div style="position:absolute;top:20px;right:20px;opacity:.07;"><svg width="72" height="72" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width=".8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div><h3 class="font-serif-luxury" style="font-size:21px;color:white;margin-bottom:12px;position:relative;">Expatriate Community</h3><p style="color:#94a3b8;font-size:14px;line-height:1.75;font-weight:300;position:relative;">Premium rental solutions for the 2.5M+ Pakistani and international expatriate population living across the Kingdom of Saudi Arabia.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVENUE MODEL -->
+  <section style="padding:90px 24px;background:#061B2B;">
+    <div style="max-width:1040px;margin:0 auto;" class="afu">
+      <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,42px);color:white;margin-bottom:14px;">Investment &amp; <span style="color:#d8ae57;font-style:italic;">Returns</span></h2>
+      <p style="color:#94a3b8;font-size:15px;line-height:1.75;font-weight:300;max-width:660px;margin-bottom:44px;">Our B2B contract pipeline secures long-term engagements with corporate clients before vehicles are even deployed &#8212; de-risking the revenue model and enabling rapid payback for Phase 1 investors.</p>
+      <div style="background:linear-gradient(135deg,#0B293B,#061B2B);border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.5);">
+        <div style="background:rgba(11,41,59,.97);border-radius:21px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;">
+          <div>
+            <div class="rr"><span style="color:#64748b;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Total Phase 1 Investment</span><span style="color:white;font-size:19px;font-weight:700;">SAR 1,000,000</span></div>
+            <div class="rr"><span style="color:#64748b;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Fleet Size</span><span style="color:white;font-size:17px;font-weight:500;">10 Vehicles</span></div>
+            <div class="rr"><span style="color:#64748b;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Projected Annual Revenue</span><span style="color:#d8ae57;font-size:17px;font-weight:600;">SAR 960,000</span></div>
+            <div class="rr"><span style="color:#64748b;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Projected Annual Net Profit</span><span style="color:#d8ae57;font-size:17px;font-weight:600;">SAR 600,000</span></div>
+            <div class="rr" style="border:none;"><span style="color:#64748b;font-size:11px;letter-spacing:.08em;text-transform:uppercase;">Break-even Period</span><span style="color:white;font-size:17px;font-weight:500;">~20 Months</span></div>
+          </div>
+          <div style="display:flex;gap:14px;">
+            <div style="flex:1;background:#061B2B;border:1px solid rgba(216,174,87,.2);border-radius:14px;padding:28px;text-align:center;">
+              <div class="font-serif-luxury" style="font-size:46px;color:#d8ae57;line-height:1;">62.5<span style="font-size:26px;">%</span></div>
+              <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8;margin-top:10px;">Net Profit Margin</div>
+            </div>
+            <div style="flex:1;background:#061B2B;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px;text-align:center;">
+              <div class="font-serif-luxury" style="font-size:46px;color:white;line-height:1;">~20</div>
+              <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8;margin-top:10px;">Months to Break-even</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:90px 24px;background:#080E1A;border-top:1px solid rgba(216,174,87,.15);position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2000');background-size:cover;background-position:center;opacity:.07;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,#080E1A,rgba(8,14,26,.6));"></div>
+    <div style="max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:10;" class="afu">
+      <h2 class="font-serif-luxury" style="font-size:clamp(26px,5vw,50px);line-height:1.15;color:white;margin-bottom:22px;">Ready to Invest in KSA's<br/><span style="color:#d8ae57;font-style:italic;">Premium Fleet Market?</span></h2>
+      <p style="color:#94a3b8;font-size:15px;line-height:1.75;font-weight:300;max-width:520px;margin:0 auto 34px;">Join CNI's Automotive Division as an investment partner and access a fully compliant, GPS-tracked, TGA-licensed fleet business with a 62.5% net profit margin.</p>
+      <a href="/" class="bg" style="font-size:15px;padding:16px 40px;">Request a Proposal &#8594;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-[#061B2B] border-t border-[#E3BC70]/20 pt-16 pb-8 px-5 sm:px-8 xl:px-14 relative z-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
+      
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col items-start text-left">
+        <a href="/" class="inline-block mb-4">
+          <img src="/public/logo.png" alt="CNI Logo" class="h-20 w-auto object-contain rounded" onerror="this.src='../public/logo.png'" />
+        </a>
+        <p class="text-white/80 font-light text-sm leading-relaxed mb-6 max-w-xs">
+          Bridging Pakistani Ambition with Saudi Opportunity
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#E3BC70] hover:border-[#E3BC70]/50 hover:bg-[#E3BC70]/10 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#E3BC70] hover:border-[#E3BC70]/50 hover:bg-[#E3BC70]/10 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="/contact" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#E3BC70] hover:border-[#E3BC70]/50 hover:bg-[#E3BC70]/10 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE COLUMN 1: Quick Links -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#E3BC70] font-serif-luxury text-xl mb-6">Quick Links</h3>
+        <nav class="flex flex-col gap-3">
+          <a href="/" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Home</a>
+          <a href="/about.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">About</a>
+          <a href="/investors.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Investors</a>
+          <a href="/#why-ksa" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Why KSA</a>
+          <a href="/contact" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Contact</a>
+        </nav>
+      </div>
+
+      <!-- MIDDLE COLUMN 2: Our Divisions -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#E3BC70] font-serif-luxury text-xl mb-6">Our Divisions</h3>
+        <nav class="flex flex-col gap-3">
+          <a href="/divisions/automotive.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Automotive Division</a>
+          <a href="/divisions/business-facilitation.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Business Facilitation</a>
+          <a href="/divisions/tour-travel.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Tour & Travel</a>
+          <a href="/divisions/real-estate.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Real Estate & Advisory</a>
+          <a href="/divisions/home-services.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Home Services — Mundus</a>
+          <a href="/divisions/hospitality.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Hospitality Management</a>
+          <a href="/divisions/logistics.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">Logistics — My Truck</a>
+          <a href="/divisions/ai-digital.html" class="text-white/80 hover:text-[#E3BC70] hover:translate-x-1 transition-all text-sm">CNI AI & Digital</a>
+        </nav>
+      </div>
+
+      <!-- RIGHT COLUMN: Regional Offices -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#E3BC70] font-serif-luxury text-xl mb-6">Regional Offices</h3>
+        
+        <div class="mb-5">
+          <h4 class="text-white font-semibold text-sm mb-2 uppercase tracking-wider opacity-90">Pakistan Head Office</h4>
+          <p class="text-white/70 text-sm leading-relaxed mb-1">
+            Attari Group of Companies<br />
+            Office # 004, Ground Floor<br />
+            Green Trust Tower, Jinnah Avenue<br />
+            Blue Area, Islamabad
+          </p>
+          <a href="tel:+923311110210" class="text-[#E3BC70] hover:text-white transition-colors text-sm font-medium">+92 331 11 10 210</a>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2 uppercase tracking-wider opacity-90">KSA Regional Offices</h4>
+          <div class="text-white/70 text-sm leading-relaxed mb-1 flex items-center gap-2">
+            <span class="font-medium text-white/90">Riyadh</span> 
+            <span class="text-[#E3BC70] opacity-50">&bull;</span>
+            <a href="tel:+966593209505" class="text-[#E3BC70] hover:text-white transition-colors text-sm">+966 59 320 9505</a>
+          </div>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Jeddah <span class="text-[#E3BC70] opacity-50 mx-1">&bull;</span> Jazan
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="max-w-7xl mx-auto border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <p>&copy; 2025 Crescent Nova International. All Rights Reserved.</p>
+      <p>Registered in Saudi Arabia | Riyadh</p>
+    </div>
+  </footer>
+
+  <script>
+    const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ob.unobserve(e.target);}});},{threshold:.1});
+    document.querySelectorAll('.afu').forEach(el=>ob.observe(el));
+    setTimeout(()=>{document.getElementById('hero')?.classList.add('vis');},80);
+  </script>
+</body>
+</html>

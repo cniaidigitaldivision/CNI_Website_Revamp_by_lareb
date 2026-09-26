@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll Animation Integration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'gold-btn': '#d8ae57',
+            'cni-navy': '#061B2B',
+            'cni-navy-sec': '#0B293B',
+            'cni-gold': '#E3BC70',
+            'cni-ivory': '#F5F0E7',
+          },
+          fontFamily: {
+            'sans-clean': ['Inter', 'sans-serif'],
+            'serif-luxury': ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-sans-clean text-slate-100 select-none">
+
+  <div id="scroll-container">
+    <div id="canvas-wrapper">
+      <!-- The Background Canvas -->
+      <canvas id="frame-canvas"></canvas>
+
+      <!-- SECTION 1: HEADER -->
+      <header id="section-header" class="scroll-section z-50 relative w-full px-5 sm:px-8 xl:px-14 pt-6 pb-2">
+        <div class="w-full flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center gap-3 shrink-0">
+            <img src="public/logo.png" alt="CNI Logo" class="h-16 sm:h-20 w-auto object-contain rounded" />
+          </div>
+
+          <!-- Nav Links -->
+          <div class="hidden lg:flex flex-1 justify-center">
+            <nav class="flex items-center gap-7 xl:gap-9 text-[14px]">
+              <button class="relative py-1 cursor-pointer text-[#f0d08a] font-semibold">Home
+                <span
+                  class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#d8ae57] rounded-full shadow-[0_0_8px_rgba(216,174,87,0.8)]"></span>
+              </button>
+              <a href="/about.html" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">About</a>
+              <div class="relative group" tabindex="0">
+                <button
+                  class="flex items-center gap-1 relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal transition-colors outline-none focus:outline-none">
+                  Divisions
+                  <svg
+                    class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 top-full -mt-2 pt-4 px-8 pb-8 w-[350px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-opacity duration-200 z-50">
+                  <div
+                    class="w-full bg-[#061B2B]/95 backdrop-blur-md border border-[#E3BC70]/20 rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col py-2 translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-200">
+                    <a href="/divisions/automotive.html"
+                      class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">
+                      Automotive Division
+                      <span
+                        class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#d8ae57]">→</span>
+                    </a>
+                    <a href="/divisions/business-facilitation.html"
+                      class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">
+                      Business Facilitation Centre
+                      <span
+                        class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#d8ae57]">→</span>
+                    </a>
+                    <a href="/divisions/tour-travel.html"
+                      class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">
+                      Tour & Travel
+                      <span
+                        class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#d8ae57]">→</span>
+                    </a>
+                    <a href="/divisions/real-estate.html"
+                      class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">
+                      Real Estate & Advisory
+                      <span
+                        class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#d8ae57]">→</span>
+                    </a>
+                    <a href="/divisions/home-services.html"
+                      class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">
+                      Home Services — Mundus
+                      <span
+                        class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#d8ae57]">→</span>
+                    </a>
+                    <a href="/divisions/hospitality.html"
+                      class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">
+                      Hospitality Management
+                      <span
+                        class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#d8ae57]">→</span>
+                    </a>
+                    <a href="/divisions/logistics.html"
+                      class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">
+                      Logistics — My Truck
+                      <span
+                        class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#d8ae57]">→</span>
+                    </a>
+                    <a href="/divisions/ai-digital.html"
+                      class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">
+                      CNI AI & Digital Division
+                      <span
+                        class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#d8ae57]">→</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a href="/investors.html"
+                class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Investors</a>
+              <button class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Why KSA</button>
+              <button class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Contact</button>
+            </nav>
+          </div>
+
+          <!-- Right CTA -->
+          <div class="flex items-center gap-4 sm:gap-6 shrink-0">
+            <button
+              class="bg-[#d8ae57] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(214,171,88,0.25)] hover:shadow-[0_6px_22px_rgba(214,171,88,0.4)] transition-all">
+              <span>Request a Proposal</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+            <div class="flex items-center text-xs tracking-wider font-semibold text-slate-300">
+              <button class="px-1 py-0.5 text-[#f0d08a] font-bold">EN</button>
+              <span class="text-slate-600 px-1 font-light">|</span>
+              <button class="px-1 py-0.5 text-slate-400 hover:text-white">عربي</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- SECTION 2: MAIN HERO -->
+      <main id="section-main"
+        class="scroll-section flex-1 flex flex-col justify-center px-5 sm:px-8 xl:px-14 py-6 md:py-8 pointer-events-none">
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-y-8 items-start pointer-events-auto">
+          <div class="hidden lg:block lg:col-span-2 xl:col-span-2"></div>
+          <div class="lg:col-span-7 xl:col-span-7 flex flex-col items-start max-w-xl xl:max-w-2xl pt-[50px]">
+            <div class="flex items-center gap-3.5 mb-4 sm:mb-5">
+              <span class="text-xs sm:text-[13px] uppercase tracking-[0.24em] text-[#d6ab58] font-medium">PAKISTAN TO
+                SAUDI ARABIA</span>
+              <div class="w-14 sm:w-18 h-[1.5px] bg-[#d6ab58]/70"></div>
+            </div>
+            <h1
+              class="font-serif-luxury text-4xl sm:text-5xl md:text-[54px] xl:text-[64px] font-normal text-[#fcfbfa] tracking-[-0.01em] leading-[1.12] mb-5 sm:mb-6">
+              Your Gateway to <br /> Saudi Arabia’s <br /> <span class="text-[#dfb256] font-medium">Vision 2030</span>
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-[15px] xl:text-[16px] leading-[1.65] max-w-lg mb-7 font-light">
+              Crescent Nova International connects Pakistani investors, businesses, and enterprises with high-growth
+              opportunities across the Kingdom of Saudi Arabia.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <button
+                class="bg-[#d8ae57] text-[#15120b] font-semibold text-xs sm:text-[13.5px] px-6 sm:px-7 py-3 sm:py-3.5 rounded-full flex items-center gap-2.5 shadow-[0_6px_20px_rgba(214,171,88,0.28)] transition-all">
+                <span>Explore Opportunities</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+              <button
+                class="bg-white/5 border border-white/20 text-slate-100 hover:text-[#f3d38c] font-medium text-xs sm:text-[13.5px] px-5 sm:px-6 py-3 sm:py-3.5 rounded-full flex items-center gap-3 transition-all">
+                <span>View Our Divisions</span>
+                <div class="w-5 h-5 rounded-full border border-current flex items-center justify-center pl-0.5"><svg
+                    class="w-2 h-2 fill-current" viewBox="0 0 24 24" fill="none" stroke="none">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg></div>
+              </button>
+            </div>
+          </div>
+          <div class="hidden lg:flex lg:col-span-3 xl:col-span-3 flex-col items-start lg:pl-6 xl:pl-10 pt-[66px]">
+            <div class="flex flex-col items-start text-left">
+              <div
+                class="text-[13px] xl:text-[14px] text-[#caa866]/90 font-normal tracking-[0.24em] leading-[1.8] text-left">
+                <div>STRONGER</div>
+                <div>PARTNERSHIPS</div>
+                <div>BRIGHTER</div>
+                <div>TOMORROWS</div>
+              </div>
+              <div class="w-14 h-[1.5px] bg-[#caa866]/70 mt-3"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- SECTION 3: FOOTER METRICS -->
+      <footer id="section-footer" class="scroll-section w-full px-5 sm:px-8 xl:px-14 pb-5 pt-2">
+        <div class="w-full max-w-[1360px] mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 py-3 items-center">
+            <!-- Item 1 -->
+            <div class="flex items-center gap-3.5 lg:pr-8">
+              <div class="shrink-0 text-[#d8ae57]">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10" />
+                  <line x1="12" y1="20" x2="12" y2="4" />
+                  <line x1="6" y1="20" x2="6" y2="14" />
+                  <polyline points="3 8 9 2 15 8 21 2" />
+                  <polyline points="17 2 21 2 21 6" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-xl md:text-[22px] font-bold text-white tracking-tight tabular-nums leading-tight">15 –
+                  22%</div>
+                <div class="text-xs text-slate-300 font-light mt-0.5">Projected Annual ROI</div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="flex items-center gap-3.5 lg:px-8 lg:border-l lg:border-slate-600/40">
+              <div class="shrink-0 text-[#d8ae57]">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M12 2v20" />
+                  <path d="M4 11h16" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-base md:text-lg font-bold text-white tracking-tight leading-tight">Sharia-aligned</div>
+                <div class="text-xs text-slate-300 font-light mt-0.5">& Escrow-Protected</div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="flex items-center gap-3.5 lg:px-8 lg:border-l lg:border-slate-600/40">
+              <div class="shrink-0 text-[#d8ae57]">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="2" width="16" height="20" rx="2" />
+                  <line x1="8" y1="6" x2="8" y2="6.01" />
+                  <line x1="12" y1="6" x2="12" y2="6.01" />
+                  <line x1="16" y1="6" x2="16" y2="6.01" />
+                  <line x1="8" y1="10" x2="8" y2="10.01" />
+                  <line x1="12" y1="10" x2="12" y2="10.01" />
+                  <line x1="16" y1="10" x2="16" y2="10.01" />
+                  <line x1="8" y1="14" x2="8" y2="14.01" />
+                  <line x1="12" y1="14" x2="12" y2="14.01" />
+                  <line x1="16" y1="14" x2="16" y2="14.01" />
+                  <line x1="10" y1="22" x2="10" y2="18" />
+                  <line x1="14" y1="22" x2="14" y2="18" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-base md:text-lg font-bold text-white tracking-tight leading-tight">Saudi Registered
+                </div>
+                <div class="text-xs text-slate-300 font-light mt-0.5">Riyadh HQ</div>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="flex items-center gap-3.5 lg:pl-8 lg:border-l lg:border-slate-600/40">
+              <div class="shrink-0 text-[#d8ae57]">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-base md:text-lg font-bold text-white tracking-tight leading-tight">Backed by</div>
+                <div class="text-xs text-slate-300 font-light mt-0.5">Attari Group's 18-Year Legacy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="about-us-wrapper">
+    <section class="about-us-section" id="about">
+
+      <div class="about-top-grid">
+        <h2 class="about-title">
+          <span class="title-abo">ABO</span>
+          <span class="title-u">U</span>
+          <span class="title-t">T</span>
+          <span class="title-s">S</span>
+        </h2>
+
+        <div class="about-top-right">
+          <div class="about-top-text-box">
+            <p>
+              Crescent Nova International is a Saudi-registered multi-sector platform connecting Pakistani investors,
+              businesses and enterprises with opportunities across the Kingdom of Saudi Arabia. Backed by Attari Group’s
+              18-year legacy, we bring together market intelligence, strategic partnerships, regulatory guidance and
+              business facilitation. Through our specialist divisions, we help businesses explore opportunities,
+              establish their presence and build long-term commercial relationships in Saudi Arabia.
+            </p>
+            <a href="#about-details" class="about-cta-outline">
+              READ MORE
+            </a>
+          </div>
+
+          <div class="about-visual">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600"
+              alt="Corporate office view" />
+          </div>
+        </div>
+      </div>
+
+      <div class="about-mid-text">
+        <p>
+          We bring together deep <strong>market expertise</strong>,<br>
+          <strong>strategic partnerships</strong> and<br>
+          <strong>business facilitation</strong> to connect Pakistani<br>
+          enterprise with opportunities in Saudi Arabia.
+        </p>
+      </div>
+
+      <div class="about-stats-container">
+
+        <svg class="about-curve-bg" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-100,500 C100,400 300,100 600,300 C800,433 1000,200 1200,400" fill="none"
+            stroke="rgba(227,188,112,0.15)" stroke-width="1.5" />
+          <path d="M-100,530 C150,420 320,120 620,320 C820,453 1020,220 1220,420" fill="none"
+            stroke="rgba(227,188,112,0.12)" stroke-width="1" />
+          <path d="M-100,560 C200,440 340,140 640,340 C840,473 1040,240 1240,440" fill="none"
+            stroke="rgba(227,188,112,0.09)" stroke-width="1" />
+          <path d="M-100,590 C250,460 360,160 660,360 C860,493 1060,260 1260,460" fill="none"
+            stroke="rgba(227,188,112,0.06)" stroke-width="0.5" />
+        </svg>
+
+        <div class="stat-card" data-index="01">
+          <div class="stat-value">18+</div>
+          <div class="stat-label">Years of Legacy</div>
+        </div>
+
+        <div class="stat-card light" data-index="02">
+          <div class="stat-value">8</div>
+          <div class="stat-label">Flagship Divisions</div>
+        </div>
+
+        <div class="stat-card" data-index="03">
+          <div class="stat-value">HQ</div>
+          <div class="stat-label">Riyadh Headquarters</div>
+        </div>
+
+        <div class="stat-card" data-index="04">
+          <div class="stat-value">2.5M+</div>
+          <div class="stat-label">Pakistani Diaspora</div>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+  <div class="cni-reference-wrapper text-left">
+    <!-- REFERENCE SECTION 02: White numbered selection, central circular image, spare content -->
+    <section class="division-scroll" id="divisions" aria-label="Explore eight flagship divisions">
+      <div class="division-sticky">
+        <div class="division-layout">
+          <header class="editorial-nav">
+            <div class="editorial-nav-left"></div>
+            <a class="editorial-brand" href="https://crescentnovainternational.com/"
+              aria-label="Crescent Nova International home">Our Divisions</a>
+            <div class="editorial-nav-right"><a class="round-icon" aria-label="Contact CNI"
+                href="https://crescentnovainternational.com/contact">↗</a><span class="round-icon decorative"
+                aria-hidden="true">✳</span></div>
+          </header>
+          <div class="division-workspace">
+            <div class="division-numbers" aria-label="Select a division" id="divisionNumbers"></div>
+            <figure class="division-orbit" aria-label="Photograph representing the selected CNI division">
+              <div class="division-photo" id="divisionPhoto">
+                <img id="divisionImageOutgoing" class="layer outgoing"
+                  src="https://crescentnovainternational.com/divisions/automotive.webp"
+                  alt="Automotive division visual" />
+                <img id="divisionImageIncomingDark" class="layer incoming-dark"
+                  src="https://crescentnovainternational.com/divisions/business-facilitation.webp" alt=""
+                  style="filter: brightness(0.4); -webkit-mask-image: conic-gradient(black 0deg, transparent 0deg); mask-image: conic-gradient(black 0deg, transparent 0deg);" />
+                <img id="divisionImageIncomingNormal" class="layer incoming-normal"
+                  src="https://crescentnovainternational.com/divisions/business-facilitation.webp" alt=""
+                  style="-webkit-mask-image: conic-gradient(black 0deg, transparent 0deg); mask-image: conic-gradient(black 0deg, transparent 0deg);" />
+              </div>
+            </figure>
+            <div class="division-content" aria-live="polite">
+              <p class="division-kicker" id="divisionKicker">01 / 08 · Premium mobility</p>
+              <h2 id="divisionTitle">Automotive<br />Division</h2>
+              <p class="division-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span id="divisionLocation">Riyadh · Saudi Arabia</span>
+              </p>
+              <div class="division-divider"></div>
+              <p class="division-description" id="divisionDescription">TGA-licensed premium rental fleet, luxury VIP
+                transport and
+                commercial car hire.</p>
+              <a class="explore-btn" id="divisionLink"
+                href="https://crescentnovainternational.com/divisions#automotive">Explore division <span
+                  aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <footer class="division-footbar">
+            <div>
+              <div class="division-scroll-cue" aria-hidden="true">SCROLL TO EXPLORE <span>↓</span></div>
+            </div>
+            <span class="foot-location"><span id="divisionPlace">RIYADH · SAUDI ARABIA</span><span
+                class="foot-location-line"></span></span>
+            <div></div>
+          </footer>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCE SECTION 03: Full-bleed architectural image, thin grid, interactive white tile -->
+    <section class="experience" id="ksa-experience" aria-label="CNI connected platform">
+      <div class="experience-image" role="img"
+        aria-label="Illustrative modern architecture representing CNI's Saudi real estate interests"></div>
+      <div class="experience-shade"></div>
+      <div class="experience-inner">
+        <nav class="experience-header" aria-label="Experience section navigation">
+          <div class="experience-header-left"><a href="#divisions">Divisions</a><a
+              href="https://crescentnovainternational.com/why-ksa">Why KSA</a></div>
+          <span class="experience-header-brand">Crescent Nova International</span>
+          <a class="experience-header-link" href="https://crescentnovainternational.com/contact">Contact
+            <span>↗</span></a>
+        </nav>
+        <div class="experience-grid">
+          <div class="experience-top-left"><span>YOUR JOURNEY WITH CNI</span></div>
+          <div class="experience-top-middle"><span>Eight divisions, one platform.</span></div>
+          <div class="experience-top-right"><span>SAUDI ARABIA · VISION 2030</span></div>
+          <div class="experience-story">
+            <p class="experience-overline">HOW WE WORK</p>
+            <h2>Your Gateway to Saudi Arabia Starts Here.</h2>
+            <p>From your first consultation to establishing your business in Saudi Arabia, discover how Crescent Nova
+              International can support your journey.</p>
+          </div>
+          <div class="experience-tile is-active" data-tile="step1" aria-pressed="true" tabindex="0">
+            <div class="tile-front">
+              <span>01 — Tell Us Your Goals</span>
+              <span class="experience-tile-hint">Select step</span>
+              <button class="tile-circle" aria-label="Details">details <span>↘</span></button>
+            </div>
+          </div>
+          <div class="experience-tile" data-tile="step2" tabindex="0">
+            <div class="tile-front">
+              <span>02 — Expert Consultation</span>
+              <span class="experience-tile-hint">Select step</span>
+              <button class="tile-circle" aria-label="Details">details <span>↘</span></button>
+            </div>
+          </div>
+          <div class="experience-tile" data-tile="step3" tabindex="0">
+            <div class="tile-front">
+              <span>03 — Your Market Entry Roadmap</span>
+              <span class="experience-tile-hint">Select step</span>
+              <button class="tile-circle" aria-label="Details">details <span>↘</span></button>
+            </div>
+          </div>
+          <div class="experience-tile" data-tile="step4" tabindex="0">
+            <div class="tile-front">
+              <span>04 — Documentation &amp; Coordination</span>
+              <span class="experience-tile-hint">Select step</span>
+              <button class="tile-circle" aria-label="Details">details <span>↘</span></button>
+            </div>
+          </div>
+          <div class="experience-tile" data-tile="step5" tabindex="0">
+            <div class="tile-front">
+              <span>05 — Ongoing Business Support</span>
+              <span class="experience-tile-hint">Select step</span>
+              <button class="tile-circle" aria-label="Details">details <span>↘</span></button>
+            </div>
+          </div>
+
+          <div class="experience-empty" aria-hidden="true"></div>
+          <div class="experience-empty" aria-hidden="true"></div>
+          <div class="experience-empty" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="investments-section" id="investments">
+    <div class="investments-container">
+      <div class="investments-header">
+        <p class="investments-eyebrow">INVESTMENT OPPORTUNITIES</p>
+        <h2 class="investments-heading">Explore Opportunities.<br>Build for the Future.</h2>
+        <p class="investments-description">Discover structured investment options designed for different capital
+          requirements and investment horizons.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left mt-12 mb-16">
+        <!-- Silver -->
+        <div class="tier-card p-8 lg:p-10 rounded-xl">
+          <div class="tier-card-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=400');">
+          </div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="flex justify-between items-start mb-6">
+              <h3 class="text-cni-gold tracking-widest text-xs font-semibold uppercase">SILVER TIER</h3>
+              <span class="text-white/50 text-sm">01</span>
+            </div>
+            <div class="font-serif-luxury text-6xl text-white mb-2">15<span class="text-3xl text-cni-gold">%</span>
+            </div>
+            <div class="text-[10px] uppercase tracking-wider text-slate-400 mb-10">Target Annual ROI</div>
+
+            <div class="mt-auto space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-cni-gold mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-width="1.5"
+                    d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                  </path>
+                </svg>
+                <div>
+                  <div class="text-white font-semibold text-sm">SAR 500,000 – 2,000,000</div>
+                  <div class="text-xs text-slate-400">Capital Requirement</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 pb-8 border-b border-white/10">
+                <svg class="w-5 h-5 text-cni-gold mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <div class="text-white font-semibold text-sm">3 Years</div>
+                  <div class="text-xs text-slate-400">Investment Horizon</div>
+                </div>
+              </div>
+              <a href="/investors.html"
+                class="inline-flex items-center gap-2 text-xs font-semibold text-white hover:text-cni-gold transition-colors pt-4">
+                View Tier Details →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gold -->
+        <div class="tier-card p-8 lg:p-10 rounded-xl border border-cni-gold">
+          <div
+            class="absolute top-0 right-8 bg-cni-gold text-cni-navy text-[9px] font-bold px-3 py-1 uppercase tracking-widest rounded-b-md z-20">
+            MOST POPULAR</div>
+          <div class="tier-card-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=400');">
+          </div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="flex justify-between items-start mb-6">
+              <h3 class="text-cni-gold tracking-widest text-xs font-semibold uppercase">GOLD TIER</h3>
+              <span class="text-white/50 text-sm">02</span>
+            </div>
+            <div class="font-serif-luxury text-6xl text-white mb-2">18<span class="text-3xl text-cni-gold">%</span>
+            </div>
+            <div class="text-[10px] uppercase tracking-wider text-slate-400 mb-10">Target Annual ROI</div>
+
+            <div class="mt-auto space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-cni-gold mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-width="1.5"
+                    d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                  </path>
+                </svg>
+                <div>
+                  <div class="text-white font-semibold text-sm">SAR 2,000,000 – 10,000,000</div>
+                  <div class="text-xs text-slate-400">Capital Requirement</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 pb-8 border-b border-white/10">
+                <svg class="w-5 h-5 text-cni-gold mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <div class="text-white font-semibold text-sm">5 Years</div>
+                  <div class="text-xs text-slate-400">Investment Horizon</div>
+                </div>
+              </div>
+              <a href="/investors.html"
+                class="inline-flex items-center gap-2 text-xs font-semibold text-white hover:text-cni-gold transition-colors pt-4">
+                View Tier Details →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platinum -->
+        <div class="tier-card p-8 lg:p-10 rounded-xl">
+          <div class="tier-card-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400');">
+          </div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="flex justify-between items-start mb-6">
+              <h3 class="text-c-ni-gold tracking-widest text-xs font-semibold uppercase text-cni-gold">PLATINUM TIER
+              </h3>
+              <span class="text-white/50 text-sm">03</span>
+            </div>
+            <div class="font-serif-luxury text-6xl text-white mb-2">22<span class="text-3xl text-cni-gold">%</span>
+            </div>
+            <div class="text-[10px] uppercase tracking-wider text-slate-400 mb-10">Target Annual ROI</div>
+
+            <div class="mt-auto space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-cni-gold mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-width="1.5"
+                    d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                  </path>
+                </svg>
+                <div>
+                  <div class="text-white font-semibold text-sm">SAR 10,000,000+</div>
+                  <div class="text-xs text-slate-400">Capital Requirement</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 pb-8 border-b border-white/10">
+                <svg class="w-5 h-5 text-cni-gold mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <div class="text-white font-semibold text-sm">7 Years</div>
+                  <div class="text-xs text-slate-400">Investment Horizon</div>
+                </div>
+              </div>
+              <a href="/investors.html"
+                class="inline-flex items-center gap-2 text-xs font-semibold text-white hover:text-cni-gold transition-colors pt-4">
+                View Tier Details →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="investments-actions">
+        <a href="/investors" class="btn-gold-primary">Explore Investment Options <span aria-hidden="true">→</span></a>
+      </div>
+
+      <p class="investments-disclosure">
+        All returns shown are projected targets for illustration only, not guaranteed returns. Investment capital is at
+        risk. Terms and eligibility are subject to approved documentation.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 06: CLIENT TESTIMONIALS -->
+  <section
+    class="testimonials-section relative overflow-hidden bg-[#061B2B] py-24 px-6 lg:px-12 border-t border-[#E3BC70]/15">
+    <!-- Background elements -->
+    <div
+      class="absolute inset-0 z-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1577983087094-54199c0da9cc?q=80&w=1200')] bg-cover bg-left blend-luminosity mix-blend-luminosity">
+    </div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-r from-[#061B2B] via-[#061B2B]/90 to-[#061B2B]/60"></div>
+
+    <div class="relative z-10 max-w-[1300px] mx-auto">
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div class="max-w-2xl">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-[#E3BC70] mb-4 font-semibold">CLIENT TESTIMONIALS</p>
+          <h2 class="font-serif-luxury text-4xl lg:text-5xl text-white leading-tight mb-4">
+            Trusted Partnerships.<br>
+            <span class="italic text-[#E3BC70]">Real Success Stories.</span>
+          </h2>
+          <p class="text-[#8d9294] text-base leading-relaxed max-w-lg">
+            Discover the experiences of clients and business partners who have worked with Crescent Nova International.
+          </p>
+        </div>
+        <div class="hidden md:block text-right border-l border-[#E3BC70]/30 pl-6 py-1">
+          <p class="text-[10px] tracking-[0.15em] text-[#8d9294] uppercase leading-[2]">
+            PEOPLE<br>PARTNERSHIPS<br>PROGRESS</p>
+        </div>
+      </div>
+
+      <!-- Testimonial Cards Carousel -->
+      <div class="testimonials-carousel-wrapper relative">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          <!-- Card 1 -->
+          <div
+            class="testimonial-card relative overflow-hidden rounded-xl border border-[#E3BC70]/30 bg-[#0B293B]/80 flex flex-col group transition-all duration-500 hover:border-[#E3BC70]/70 min-h-[380px]">
+            <div class="absolute inset-y-0 right-0 w-[55%] z-0 mask-image-left">
+              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=400" alt="Placeholder Portrait"
+                class="w-full h-full object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+            <div class="relative z-10 p-8 lg:p-10 flex flex-col h-full w-[75%] lg:w-[85%]">
+              <div class="text-[#E3BC70] text-5xl font-serif-luxury leading-none mb-4">"</div>
+              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">[Placeholder Testimonial] Crescent Nova
+                International made our market entry into Saudi Arabia seamless. Their team's local expertise and
+                professional support gave us complete confidence at every step.</p>
+              <div class="mt-auto pt-6 border-t border-[#E3BC70]/20">
+                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">[Placeholder Name]</h4>
+                <p class="text-[11px] text-white/60 mb-0.5">[Placeholder Designation]</p>
+                <p class="text-[11px] text-slate-400">[Placeholder Company]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="testimonial-card relative overflow-hidden rounded-xl border border-[#E3BC70]/30 bg-[#0B293B]/80 flex flex-col group transition-all duration-500 hover:border-[#E3BC70]/70 min-h-[380px]">
+            <div class="absolute inset-y-0 right-0 w-[55%] z-0 mask-image-left">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400"
+                alt="Placeholder Portrait"
+                class="w-full h-full object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+            <div class="relative z-10 p-8 lg:p-10 flex flex-col h-full w-[75%] lg:w-[85%]">
+              <div class="text-[#E3BC70] text-5xl font-serif-luxury leading-none mb-4">"</div>
+              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">[Placeholder Testimonial] Their investment
+                advisory and business facilitation services are truly world-class. CNI's team understood our goals and
+                provided practical solutions that delivered real results.</p>
+              <div class="mt-auto pt-6 border-t border-[#E3BC70]/20">
+                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">[Placeholder Name]</h4>
+                <p class="text-[11px] text-white/60 mb-0.5">[Placeholder Designation]</p>
+                <p class="text-[11px] text-slate-400">[Placeholder Company]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="testimonial-card relative overflow-hidden rounded-xl border border-[#E3BC70]/30 bg-[#0B293B]/80 flex flex-col group transition-all duration-500 hover:border-[#E3BC70]/70 min-h-[380px]">
+            <div class="absolute inset-y-0 right-0 w-[55%] z-0 mask-image-left">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400" alt="Placeholder Portrait"
+                class="w-full h-full object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+            <div class="relative z-10 p-8 lg:p-10 flex flex-col h-full w-[75%] lg:w-[85%]">
+              <div class="text-[#E3BC70] text-5xl font-serif-luxury leading-none mb-4">"</div>
+              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">[Placeholder Testimonial] CNI's integrated
+                platform gave us access to multiple opportunities under one roof. Their transparency, dedication and
+                deep understanding of the Saudi market set them apart.</p>
+              <div class="mt-auto pt-6 border-t border-[#E3BC70]/20">
+                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">[Placeholder Name]</h4>
+                <p class="text-[11px] text-white/60 mb-0.5">[Placeholder Designation]</p>
+                <p class="text-[11px] text-slate-400">[Placeholder Company]</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center justify-between mt-12">
+          <div class="flex items-center gap-2 mx-auto lg:mx-0 lg:absolute lg:-bottom-2 lg:left-1/2 lg:-translate-x-1/2">
+            <div class="w-6 h-1.5 bg-[#E3BC70] rounded-full"></div>
+            <div class="w-4 h-1.5 bg-white/20 rounded-full cursor-pointer hover:bg-white/40 transition-colors"></div>
+            <div class="w-4 h-1.5 bg-white/20 rounded-full cursor-pointer hover:bg-white/40 transition-colors"></div>
+          </div>
+          <div class="hidden lg:flex items-center gap-3 ml-auto">
+            <button
+              class="w-11 h-11 rounded-full border border-[#E3BC70]/50 flex items-center justify-center text-[#E3BC70] hover:bg-[#E3BC70] hover:text-[#061B2B] transition-colors"
+              aria-label="Previous">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button
+              class="w-11 h-11 rounded-full border border-[#E3BC70]/50 flex items-center justify-center text-[#E3BC70] hover:bg-[#E3BC70] hover:text-[#061B2B] transition-colors"
+              aria-label="Next">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 07: FINAL CTA -->
+  <section
+    class="final-cta-section relative flex flex-col lg:flex-row w-full border-t border-white/5 bg-[#061B2B] overflow-hidden">
+
+    <!-- LEFT SIDE: Architectural Photography -->
+    <div class="w-full lg:w-[60%] relative h-[400px] lg:h-auto z-0 flex-shrink-0">
+      <img src="/riyadh-cta.jpg" alt="Riyadh Skyline"
+        class="absolute inset-0 w-full h-full object-cover object-center z-0 block">
+
+      <!-- Diagonal cut overlay (Desktop only) -->
+      <div class="hidden lg:block absolute right-0 top-0 bottom-0 w-[25%] z-20 pointer-events-none">
+        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <!-- The solid navy background to create the diagonal -->
+          <polygon points="100,0 100,100 0,100" fill="#061B2B" />
+          <!-- Delicate gold architectural contour lines -->
+          <line x1="100" y1="0" x2="0" y2="100" stroke="#E3BC70" stroke-width="0.3" opacity="0.8" />
+          <line x1="85" y1="0" x2="-15" y2="100" stroke="#E3BC70" stroke-width="0.1" opacity="0.6" />
+          <line x1="70" y1="0" x2="-30" y2="100" stroke="#E3BC70" stroke-width="0.1" opacity="0.4" />
+        </svg>
+      </div>
+
+      <!-- Gradient fade for mobile -->
+      <div class="absolute inset-0 z-10 bg-gradient-to-t from-[#061B2B] to-transparent lg:hidden"></div>
+    </div>
+
+    <!-- RIGHT SIDE: Content Panel -->
+    <div
+      class="w-full lg:w-[40%] bg-[#061B2B] relative z-20 flex flex-col justify-center px-8 lg:pr-[7%] lg:pl-[2%] py-16 lg:py-6 flex-shrink-0">
+
+      <!-- Content -->
+      <div class="w-full max-w-[580px] mx-auto lg:mr-auto lg:ml-0">
+
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-4 mb-3">
+          <p
+            class="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#E3BC70] font-semibold whitespace-nowrap">
+            YOUR NEXT CHAPTER STARTS HERE</p>
+          <div class="h-px bg-[#E3BC70]/40 flex-1"></div>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="font-serif-luxury text-[36px] lg:text-[46px] xl:text-[50px] text-[#F5F0E7] leading-[1.05] mb-4">
+          Ready to Explore<br>
+          Opportunities in<br>
+          <span class="italic text-[#E3BC70]">Saudi Arabia?</span>
+        </h2>
+
+        <!-- Description -->
+        <p class="text-[#8d9294] text-[15px] lg:text-[16px] leading-relaxed max-w-[480px] mb-6">
+          Connect with Crescent Nova International to discuss your business objectives, investment interests and
+          potential partnership opportunities.
+        </p>
+
+        <!-- Features -->
+        <div class="flex flex-wrap sm:flex-nowrap items-start gap-3 sm:gap-4 lg:gap-6 mb-8">
+          <!-- Discuss -->
+          <div class="flex flex-col gap-2 flex-1 min-w-[90px]">
+            <svg class="w-6 h-6 text-[#E3BC70]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <circle cx="12" cy="12" r="9" stroke-width="1.2" />
+              <circle cx="12" cy="12" r="5" stroke-width="1.2" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 12l7 -7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 5h4v4" />
+            </svg>
+            <p class="text-[9px] uppercase tracking-widest font-bold text-white leading-[1.4]">DISCUSS<br><span
+                class="text-[#8d9294] font-medium mt-0.5 block">YOUR GOALS</span></p>
+          </div>
+
+          <div class="hidden sm:block w-px h-10 bg-white/10 mt-2"></div>
+
+          <!-- Guidance -->
+          <div class="flex flex-col gap-2 flex-1 min-w-[90px]">
+            <svg class="w-6 h-6 text-[#E3BC70]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                d="M12 13c-3.866 0-7 3.134-7 7h14c0-3.866-3.134-7-7-7z" />
+              <circle cx="12" cy="6" r="4" stroke-width="1.2" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                d="M5 14c-2.761 0-5 2.239-5 5h3" />
+              <circle cx="4" cy="8" r="3" stroke-width="1.2" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                d="M19 14c2.761 0 5 2.239 5 5h-3" />
+              <circle cx="20" cy="8" r="3" stroke-width="1.2" />
+            </svg>
+            <p class="text-[9px] uppercase tracking-widest font-bold text-white leading-[1.4]">GET EXPERT<br><span
+                class="text-[#8d9294] font-medium mt-0.5 block">GUIDANCE</span></p>
+          </div>
+
+          <div class="hidden sm:block w-px h-10 bg-white/10 mt-2"></div>
+
+          <!-- Explore -->
+          <div class="flex flex-col gap-2 flex-1 min-w-[90px]">
+            <svg class="w-6 h-6 text-[#E3BC70]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <rect x="4" y="14" width="3" height="6" stroke-width="1.2" />
+              <rect x="10.5" y="10" width="3" height="10" stroke-width="1.2" />
+              <rect x="17" y="5" width="3" height="15" stroke-width="1.2" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2 20h20" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 11l5-4 5 2 7-6" />
+            </svg>
+            <p class="text-[9px] uppercase tracking-widest font-bold text-white leading-[1.4]">EXPLORE<br><span
+                class="text-[#8d9294] font-medium mt-0.5 block">REAL OPPORTUNITIES</span></p>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 mb-8">
+          <a href="/#contact"
+            class="w-full sm:w-auto h-[48px] bg-[#E3BC70] text-[#061B2B] font-bold text-[13px] px-8 rounded-[4px] flex justify-center items-center gap-3 hover:bg-[#F4D38F] transition-colors duration-300">
+            <span>Request a Proposal</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="/#contact"
+            class="w-full sm:w-auto h-[48px] bg-transparent border border-[#E3BC70] text-[#F5F0E7] hover:text-[#E3BC70] font-medium text-[13px] px-8 rounded-[4px] flex justify-center items-center transition-colors duration-300">
+            Speak to an Advisor
+          </a>
+        </div>
+
+        <!-- Bottom Tagline -->
+        <div class="flex items-center gap-4">
+          <p class="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#8d9294]">PARTNERSHIPS TODAY. A STRONGER
+            TOMORROW.</p>
+          <div class="h-px bg-[#E3BC70]/40 flex-1 hidden lg:block"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const TOTAL_FRAMES = 300;
+    const FRAME_DIR = './frames/';
+    function frameName(n) { return FRAME_DIR + String(n).padStart(5, '0') + '.png'; }
+
+    const canvas = document.getElementById('frame-canvas');
+    const ctx = canvas.getContext('2d');
+    const images = new Array(TOTAL_FRAMES).fill(null);
+
+    function drawFrame(index) {
+      const img = images[index];
+      if (!img) return;
+      const W = canvas.offsetWidth || window.innerWidth;
+      const H = canvas.offsetHeight || window.innerHeight;
+      canvas.width = W;
+      canvas.height = H;
+      const scale = Math.max(W / img.naturalWidth, H / img.naturalHeight);
+      const sw = img.naturalWidth * scale;
+      const sh = img.naturalHeight * scale;
+      const sx = (W - sw) / 2;
+      const sy = (H - sh) / 2;
+      ctx.clearRect(0, 0, W, H);
+      ctx.drawImage(img, sx, sy, sw, sh);
+    }
+
+    let currentFrame = 0;
+    let rafPending = false;
+
+    const header = document.getElementById('section-header');
+    const main = document.getElementById('section-main');
+    const footer = document.getElementById('section-footer');
+    const footerCards = footer.querySelectorAll('.grid > div');
+
+    function mapRange(val, inMin, inMax, outMin, outMax) {
+      if (val <= inMin) return outMin;
+      if (val >= inMax) return outMax;
+      return (val - inMin) / (inMax - inMin) * (outMax - outMin) + outMin;
+    }
+
+    function updateSections(progress) {
+      // 1. Navbar / Header - stays visible
+      header.style.opacity = 1;
+      header.style.transform = 'translateY(0)';
+      header.style.pointerEvents = 'auto';
+
+      // 2. Center text (Main hero) - fade out on scroll
+      // Starts fully visible, completely invisible at ~50% scroll progress
+      const mainOpacity = mapRange(progress, 0.0, 0.5, 1, 0);
+      const mainY = mapRange(progress, 0.0, 0.5, 0, -50);
+      main.style.opacity = mainOpacity;
+      main.style.transform = `translateY(${mainY}px)`;
+      main.style.pointerEvents = mainOpacity > 0.1 ? 'auto' : 'none';
+
+      // 3. Bottom information cards - reveal at the end
+      // Hidden initially, stagger appear at 85-100%
+      footerCards.forEach((card, index) => {
+        // Stagger logic: each card starts slightly later
+        const startProg = 0.85 + (index * 0.02);
+        const endProg = startProg + 0.09;
+
+        const cardOpacity = mapRange(progress, startProg, endProg, 0, 1);
+        const cardY = mapRange(progress, startProg, endProg, 30, 0);
+
+        card.style.opacity = cardOpacity;
+        card.style.transform = `translateY(${cardY}px)`;
+        card.style.pointerEvents = cardOpacity > 0.5 ? 'auto' : 'none';
+      });
+    }
+
+    function onScroll() {
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(() => {
+        rafPending = false;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const heroWrapper = document.getElementById('scroll-container');
+        const maxScroll = heroWrapper.offsetHeight - window.innerHeight;
+        const progress = maxScroll > 0 ? Math.max(0, Math.min(scrollTop / maxScroll, 1)) : 0;
+        const frameIndex = Math.min(Math.floor(progress * TOTAL_FRAMES), TOTAL_FRAMES - 1);
+
+        if (frameIndex !== currentFrame) {
+          currentFrame = frameIndex;
+          drawFrame(currentFrame);
+        }
+
+        updateSections(progress);
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    function loadImage(index) {
+      return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => {
+          images[index] = img;
+          if (index === 0) {
+            drawFrame(0);
+            updateSections(0);
+          }
+          resolve();
+        };
+        img.onerror = () => resolve();
+        img.src = frameName(index + 1);
+      });
+    }
+
+    loadImage(0).then(() => {
+      const rest = [];
+      for (let i = 1; i < TOTAL_FRAMES; i++) rest.push(loadImage(i));
+      Promise.all(rest);
+    });
+
+    // --- CNI REFERENCE JS ---
+    const divisions = [
+      { title: 'Automotive Division', kicker: 'Premium mobility', location: 'Riyadh · Saudi Arabia', description: 'TGA-licensed premium rental fleet, luxury VIP transport and commercial car hire.', image: 'https://crescentnovainternational.com/divisions/automotive.webp', fallback: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200', alt: 'Premium automotive and transport', href: 'https://crescentnovainternational.com/divisions#automotive' },
+      { title: 'Business Facilitation Centre', kicker: 'Market entry', location: 'Kingdom of Saudi Arabia', description: 'Support for company setup, licensing, corporate banking, office leasing and joint-venture structuring.', image: 'https://crescentnovainternational.com/divisions/business-facilitation.webp', fallback: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200', alt: 'Contemporary commercial architecture', href: 'https://crescentnovainternational.com/divisions#business-facilitation' },
+      { title: 'Tour & Travel', kicker: 'Journey & concierge', location: 'Makkah · Madinah', description: 'Umrah packages, corporate delegations, premium travel and concierge services.', image: 'https://crescentnovainternational.com/divisions/tour-travel.webp', fallback: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1200', alt: 'Architecture and travel', href: 'https://crescentnovainternational.com/divisions#tour-travel' },
+      { title: 'Real Estate & Advisory', kicker: 'Property & advisory', location: 'Riyadh · Jeddah', description: 'Access to commercial, residential and industrial assets informed by feasibility research.', image: 'https://crescentnovainternational.com/divisions/real-estate.webp', fallback: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200', alt: 'Contemporary residential architecture', href: 'https://crescentnovainternational.com/divisions#real-estate' },
+      { title: 'Home Services — Mundus', kicker: 'Connected home care', location: 'Kingdom of Saudi Arabia', description: 'Residential maintenance, MEP, cleaning and subscription-based care for corporate compounds.', image: 'https://crescentnovainternational.com/divisions/mundus.webp', fallback: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200', alt: 'Contemporary residential interior', href: 'https://crescentnovainternational.com/divisions#mundus' },
+      { title: 'Hospitality Management', kicker: 'Executive accommodation', location: 'Riyadh · Saudi Arabia', description: 'Boutique hotel management, serviced apartments and corporate accommodation.', image: 'https://crescentnovainternational.com/divisions/hospitality.webp', fallback: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200', alt: 'Hospitality and hotel architecture', href: 'https://crescentnovainternational.com/divisions#hospitality' },
+      { title: 'Logistics — My Truck', kicker: 'Connected freight', location: 'Dammam · Riyadh · Jeddah', description: 'Shared-load freight matching between the Kingdom’s major logistics hubs.', image: 'https://crescentnovainternational.com/divisions/my-truck.webp', fallback: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200', alt: 'Freight logistics warehouse', href: 'https://crescentnovainternational.com/divisions#my-truck' },
+      { title: 'CNI AI & Digital Division', kicker: 'Digital growth', location: 'Kingdom of Saudi Arabia', description: 'AI automation, CRM and sales systems, enterprise software, creative marketing, cloud, data and cybersecurity.', image: 'https://crescentnovainternational.com/divisions/ai-and-digital.webp', fallback: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200', alt: 'Modern digital workspace', href: 'https://crescentnovainternational.com/divisions#ai-digital' }
+    ];
+    const pad = n => String(n + 1).padStart(2, '0');
+    const numWrap = document.getElementById('divisionNumbers'); const photo = document.querySelector('.division-photo');
+    const imgOut = document.getElementById('divisionImageOutgoing');
+    const imgInDark = document.getElementById('divisionImageIncomingDark');
+    const imgInNorm = document.getElementById('divisionImageIncomingNormal');
+    const content = document.querySelector('.division-content');
+    const currentTitle = document.getElementById('divisionTitle'); const currentDesc = document.getElementById('divisionDescription'); const currentKicker = document.getElementById('divisionKicker'); const currentLocation = document.getElementById('divisionLocation'); const currentPlace = document.getElementById('divisionPlace'); const currentLink = document.getElementById('divisionLink');
+    const root = document.getElementById('divisions'); let current = 0, updateToken = 0, programmaticScroll = false, framePending = false;
+    function drawNumbers() { numWrap.innerHTML = ''; for (let i = 0; i < divisions.length; i++) { const b = document.createElement('button'); b.className = 'division-number' + (i === current ? ' is-active' : ''); b.dataset.index = String(i); b.type = 'button'; b.setAttribute('aria-label', `Show division ${i + 1}: ${divisions[i].title}`); b.setAttribute('aria-current', i === current ? 'true' : 'false'); const delta = Math.abs(i - current); b.dataset.hidden = delta > 1 ? 'true' : 'false'; b.innerHTML = `${pad(i)}${i === current ? '<small>• 08</small>' : ''}`; b.addEventListener('click', () => selectDivision(i, true)); numWrap.appendChild(b); } }
+
+    function setWipe(angleDark, angleNormal) {
+      imgInDark.style.webkitMaskImage = `conic-gradient(black ${angleDark}deg, transparent ${angleDark}deg)`;
+      imgInDark.style.maskImage = `conic-gradient(black ${angleDark}deg, transparent ${angleDark}deg)`;
+      imgInNorm.style.webkitMaskImage = `conic-gradient(black ${angleNormal}deg, transparent ${angleNormal}deg)`;
+      imgInNorm.style.maskImage = `conic-gradient(black ${angleNormal}deg, transparent ${angleNormal}deg)`;
+    }
+
+    function selectDivision(index, scrollToIndex = false) {
+      index = Math.max(0, Math.min(divisions.length - 1, index));
+      if (index !== current || !currentTitle.textContent.trim()) {
+        current = index;
+        const myToken = ++updateToken;
+        content.classList.add('is-changing');
+        window.setTimeout(() => {
+          if (myToken !== updateToken) return;
+          const item = divisions[index];
+          currentTitle.textContent = item.title;
+          currentKicker.textContent = `${pad(index)} / 08 · ${item.kicker}`;
+          currentDesc.textContent = item.description;
+          currentLocation.textContent = item.location;
+          currentPlace.textContent = item.location.toUpperCase();
+          currentLink.href = item.href;
+          drawNumbers();
+          content.classList.remove('is-changing');
+        }, 185);
+      } else { drawNumbers(); }
+      if (scrollToIndex && window.matchMedia('(min-width:691px)').matches) {
+        const rect = root.getBoundingClientRect(), travel = root.offsetHeight - window.innerHeight;
+        programmaticScroll = true;
+        window.scrollTo({ top: window.scrollY + rect.top + (index / (divisions.length - 1)) * travel, behavior: 'smooth' });
+        window.setTimeout(() => programmaticScroll = false, 850);
+      }
+    }
+
+    function syncToScroll() {
+      framePending = false;
+      if (programmaticScroll || window.matchMedia('(max-width:690px)').matches) return;
+      const rect = root.getBoundingClientRect(), travel = rect.height - window.innerHeight;
+      if (travel <= 0) return;
+
+      const rawProgress = Math.min(1, Math.max(0, -rect.top / travel));
+      const totalTransitions = divisions.length - 1;
+
+      const scrollPos = rawProgress * totalTransitions;
+      const baseIndex = Math.floor(scrollPos);
+      const localProgress = scrollPos - baseIndex;
+
+      let nextIndex = baseIndex + 1;
+      if (nextIndex >= divisions.length) nextIndex = baseIndex;
+
+      const outItem = divisions[baseIndex];
+      const inItem = divisions[nextIndex];
+
+      imgOut.src = outItem.image;
+      imgInDark.src = inItem.image;
+      imgInNorm.src = inItem.image;
+
+      let angleDark = 0;
+      let angleNormal = 0;
+
+      if (localProgress < 0.5) {
+        angleDark = (localProgress / 0.5) * 360;
+        angleNormal = 0;
+      } else {
+        angleDark = 360;
+        angleNormal = ((localProgress - 0.5) / 0.5) * 360;
+      }
+
+      if (baseIndex >= divisions.length - 1) {
+        angleDark = 0;
+        angleNormal = 0;
+        imgOut.src = divisions[divisions.length - 1].image;
+      }
+
+      setWipe(angleDark, angleNormal);
+
+      const activeTextIndex = Math.round(scrollPos);
+      if (activeTextIndex !== current) selectDivision(activeTextIndex, false);
+    }
+    window.addEventListener('scroll', () => { if (!framePending) { framePending = true; requestAnimationFrame(syncToScroll); } }, { passive: true }); window.addEventListener('resize', syncToScroll);
+    drawNumbers(); syncToScroll();
+    // Mobile is swipe- and button-friendly without trapping the normal page scroll.
+    let touchX = 0; const orbit = document.querySelector('.division-orbit'); orbit.addEventListener('touchstart', e => touchX = e.touches[0].clientX, { passive: true }); orbit.addEventListener('touchend', e => { let dx = e.changedTouches[0].clientX - touchX; if (Math.abs(dx) > 60) selectDivision(current + (dx < 0 ? 1 : -1), true); }, { passive: true });
+    // The reference's small white selection panel moves between cells. Click a cell for its detail.
+    const tiles = {
+      step1: { number: '01 / 05', title: 'Tell Us Your Goals', text: 'Every business journey starts here. Tell us your plans and sector requirements so we can identify next steps.' },
+      step2: { number: '02 / 05', title: 'Expert Consultation', text: 'Our team discusses your objectives, answers questions, and helps navigate relevant market opportunities.' },
+      step3: { number: '03 / 05', title: 'Your Market Entry Roadmap', text: 'Explore the documentation, requirements, and next steps needed to achieve your business objectives.' },
+      step4: { number: '04 / 05', title: 'Documentation & Coordination', text: 'Receive full guidance on business setup, licensing, and administrative procedures in Saudi Arabia.' },
+      step5: { number: '05 / 05', title: 'Ongoing Business Support', text: 'Discover advisory and coordination services available to help your business develop and grow in the Kingdom.' }
+    };
+    const tileElements = [...document.querySelectorAll('.experience-tile')];
+    let activeStep = 'step1';
+    let isDetailsOpen = false;
+
+    const detailView = document.createElement('div');
+    detailView.className = 'tile-detail-view';
+    detailView.innerHTML = `
+      <div class="tile-detail-inner">
+        <button class="tile-back-btn" aria-label="Go back">← Back</button>
+        <p class="tile-detail-number"></p>
+        <h3 class="tile-detail-title"></h3>
+        <p class="tile-detail-copy"></p>
+        <a class="tile-detail-link" href="#contact">Start Your Journey <span aria-hidden="true">→</span></a>
+      </div>
+    `;
+
+    const numEl = detailView.querySelector('.tile-detail-number');
+    const titleEl = detailView.querySelector('.tile-detail-title');
+    const copyEl = detailView.querySelector('.tile-detail-copy');
+    const backBtn = detailView.querySelector('.tile-back-btn');
+
+    backBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isDetailsOpen = false;
+      renderState();
+    });
+
+    function renderState() {
+      tileElements.forEach(t => {
+        const isThisActive = t.dataset.tile === activeStep;
+        t.classList.toggle('is-active', isThisActive);
+        t.setAttribute('aria-pressed', String(isThisActive));
+
+        const front = t.querySelector('.tile-front');
+
+        if (isThisActive && isDetailsOpen) {
+          if (!t.contains(detailView)) {
+            t.appendChild(detailView);
+          }
+          const d = tiles[activeStep];
+          numEl.textContent = d.number;
+          titleEl.textContent = d.title;
+          copyEl.textContent = d.text;
+
+          front.style.opacity = '0';
+          front.style.pointerEvents = 'none';
+
+          detailView.style.display = 'flex';
+          setTimeout(() => { detailView.style.opacity = '1'; }, 10);
+        } else {
+          front.style.opacity = '1';
+          front.style.pointerEvents = 'auto';
+
+          if (t.contains(detailView)) {
+            detailView.style.opacity = '0';
+            setTimeout(() => {
+              if (detailView.parentNode === t && (!isThisActive || !isDetailsOpen)) {
+                detailView.style.display = 'none';
+                t.removeChild(detailView);
+              }
+            }, 350);
+          }
+        }
+      });
+    }
+
+    tileElements.forEach(t => {
+      t.addEventListener('click', (e) => {
+        if (e.target.closest('.tile-circle')) {
+          activeStep = t.dataset.tile;
+          isDetailsOpen = true;
+          renderState();
+        } else if (!e.target.closest('.tile-detail-view')) {
+          activeStep = t.dataset.tile;
+          if (isDetailsOpen) isDetailsOpen = false;
+          renderState();
+        }
+      });
+
+      t.addEventListener('mouseenter', () => {
+        if (!isDetailsOpen) {
+          activeStep = t.dataset.tile;
+          renderState();
+        }
+      });
+    });
+    const experience = document.querySelector('.experience'); if ('IntersectionObserver' in window) { new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) experience.classList.add('is-visible'); }), { threshold: .12 }).observe(experience) } else experience.classList.add('is-visible');
+    const investments = document.querySelector('.investments-section'); if ('IntersectionObserver' in window) { new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) investments.classList.add('is-visible'); }), { threshold: .12 }).observe(investments) } else investments.classList.add('is-visible');
+    const testimonials = document.querySelector('.testimonials-section'); if ('IntersectionObserver' in window) { new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) testimonials.classList.add('is-visible'); }), { threshold: .12 }).observe(testimonials) } else testimonials.classList.add('is-visible');
+    const finalCta = document.querySelector('.final-cta-section'); if ('IntersectionObserver' in window) { new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) finalCta.classList.add('is-visible'); }), { threshold: .12 }).observe(finalCta) } else finalCta.classList.add('is-visible');
+
+  </script>
+  <footer class="w-full bg-[#061B2B] border-t border-[#D4A574]/20 pt-16 pb-8 px-5 sm:px-8 xl:px-14 relative z-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
+      
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col items-start text-left">
+        <a href="/" class="inline-block mb-4">
+          <img src="/public/logo.png" alt="CNI Logo" class="h-20 w-auto object-contain rounded" onerror="this.src='../public/logo.png'" />
+        </a>
+        <p class="text-white/80 font-light text-sm leading-relaxed mb-6 max-w-xs">
+          Bridging Pakistani Ambition with Saudi Opportunity
+        </p>
+        <div class="flex items-center gap-4">
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="/contact" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#D4A574] hover:border-[#D4A574]/50 hover:bg-[#D4A574]/10 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- MIDDLE COLUMN 1: Quick Links -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Quick Links</h3>
+        <nav class="flex flex-col gap-3">
+          <a href="/" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Home</a>
+          <a href="/#about" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">About</a>
+          <a href="/investors.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Investors</a>
+          <a href="/#why-ksa" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Why KSA</a>
+          <a href="/contact" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Contact</a>
+        </nav>
+      </div>
+
+      <!-- MIDDLE COLUMN 2: Our Divisions -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Our Divisions</h3>
+        <nav class="flex flex-col gap-3">
+          <a href="/divisions/automotive.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Automotive Division</a>
+          <a href="/divisions/business-facilitation.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Business Facilitation</a>
+          <a href="/divisions/tour-travel.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Tour & Travel</a>
+          <a href="/divisions/real-estate.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Real Estate & Advisory</a>
+          <a href="/divisions/home-services.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Home Services — Mundus</a>
+          <a href="/divisions/hospitality.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Hospitality Management</a>
+          <a href="/divisions/logistics.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Logistics — My Truck</a>
+          <a href="/divisions/ai-digital.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">CNI AI & Digital</a>
+        </nav>
+      </div>
+
+      <!-- RIGHT COLUMN: Regional Offices -->
+      <div class="flex flex-col text-left">
+        <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Regional Offices</h3>
+        
+        <div class="mb-5">
+          <h4 class="text-white font-semibold text-sm mb-2 uppercase tracking-wider opacity-90">Pakistan Head Office</h4>
+          <p class="text-white/70 text-sm leading-relaxed mb-1">
+            Attari Group of Companies<br />
+            Office # 004, Ground Floor<br />
+            Green Trust Tower, Jinnah Avenue<br />
+            Blue Area, Islamabad
+          </p>
+          <a href="tel:+923311110210" class="text-[#D4A574] hover:text-white transition-colors text-sm font-medium">+92 331 11 10 210</a>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2 uppercase tracking-wider opacity-90">KSA Regional Offices</h4>
+          <div class="text-white/70 text-sm leading-relaxed mb-1 flex items-center gap-2">
+            <span class="font-medium text-white/90">Riyadh</span> 
+            <span class="text-[#D4A574] opacity-50">&bull;</span>
+            <a href="tel:+966593209505" class="text-[#D4A574] hover:text-white transition-colors text-sm">+966 59 320 9505</a>
+          </div>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Jeddah <span class="text-[#D4A574] opacity-50 mx-1">&bull;</span> Jazan
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="max-w-7xl mx-auto border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <p>&copy; 2025 Crescent Nova International. All Rights Reserved.</p>
+      <p>Registered in Saudi Arabia | Riyadh</p>
+    </div>
+  </footer>
+</body>
+
+</html>

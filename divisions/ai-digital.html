@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>AI & Digital Division — Crescent Nova International</title>
+  <meta name="description" content="CNI AI & Digital Division: Enterprise software, intelligent automation, and digital growth for the KSA market."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend: { colors: { 'cni-gold': '#E3BC70' },fontFamily:{'sans-clean':['Inter','sans-serif'],'serif-luxury':['Playfair Display','serif']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:#061B2B;color:#f1f5f9;font-family:'Inter',sans-serif;overflow-x:hidden;}
+    .afu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+    .afu.vis{opacity:1;transform:translateY(0);}
+    .nd{position:relative;}
+    .nd .dm{position:absolute;left:50%;top:100%;transform:translateX(-50%);padding-top:12px;width:300px;opacity:0;pointer-events:none;transition:opacity .18s ease;z-index:200;}
+    .nd:hover .dm,.nd:focus-within .dm{opacity:1;pointer-events:auto;}
+    .nd .di{background:rgba(6,27,43,.97);backdrop-filter:blur(12px);border:1px solid rgba(227,188,112,.2);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.6);padding:8px 0;}
+    .dm a{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;font-size:13px;color:#cbd5e1;text-decoration:none;transition:background .15s,color .15s;white-space:nowrap;}
+    .dm a:hover,.dm a.act{background:rgba(255,255,255,.05);color:#d8ae57;}
+    .dm a .ar{opacity:0;transform:translateX(-5px);transition:opacity .15s,transform .15s;color:#d8ae57;}
+    .dm a:hover .ar,.dm a.act .ar{opacity:1;transform:translateX(0);}
+    .chev{transition:transform .25s;}.nd:hover .chev{transform:rotate(180deg);}
+    nav a{color:#94a3b8;text-decoration:none;transition:color .2s;}
+    nav a:hover{color:white;}
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:#d8ae57;color:#061B2B;font-weight:700;font-size:14px;padding:14px 32px;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 20px rgba(216,174,87,.3);}
+    .btn-gold:hover{transform:scale(1.04);box-shadow:0 0 30px rgba(216,174,87,.5);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:#d8ae57;font-weight:600;font-size:14px;padding:13px 30px;border-radius:50px;text-decoration:none;border:1px solid rgba(216,174,87,.4);transition:background .2s;}
+    .btn-outline:hover{background:rgba(216,174,87,.08);}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:#94a3b8;font-size:14px;text-decoration:none;transition:color .2s;}
+    .btn-ghost:hover{color:white;}
+    .gold-line{width:56px;height:1px;background:rgba(216,174,87,.35);margin:0 auto;}
+    /* Cards */
+    .svc-card{background:linear-gradient(135deg,rgba(11,41,59,.7),rgba(6,27,43,.8));border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:32px 28px;transition:border-color .3s,transform .3s;text-align:center;display:flex;flex-direction:column;align-items:center;}
+    .svc-card:hover{border-color:rgba(216,174,87,.4);transform:translateY(-5px);}
+    .step-card{background:linear-gradient(135deg,rgba(11,41,59,.8),rgba(6,27,43,.6));border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:36px 30px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
+    .step-card:hover{border-color:rgba(216,174,87,.4);transform:translateY(-5px);}
+    .adv-item{display:flex;align-items:center;gap:16px;padding:20px;background:rgba(6,27,43,.5);border:1px solid rgba(216,174,87,.15);border-radius:12px;transition:border-color .3s;}
+    .adv-item:hover{border-color:rgba(216,174,87,.4);}
+    .tech-badge{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:30px;color:#cbd5e1;font-size:14px;font-weight:500;transition:all .2s;}
+    .tech-badge:hover{background:rgba(216,174,87,.1);border-color:rgba(216,174,87,.4);color:white;transform:translateY(-2px);}
+    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+    @media(max-width:768px){
+      header{padding:14px 20px!important;}
+      nav{display:none!important;}
+      section>div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+    }
+  </style>
+</head>
+<body class="font-sans-clean">
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header style="position:fixed;top:0;left:0;width:100%;z-index:999;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,27,43,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(227,188,112,.08);">
+    <a href="/"><img src="/public/logo.png" alt="CNI" style="height:52px;width:auto;object-fit:contain;"/></a>
+    <nav style="display:flex;align-items:center;gap:30px;font-size:14px;">
+      <a href="/">Home</a>
+      <a href="/#about">About</a>
+      <div class="nd">
+        <button style="display:flex;align-items:center;gap:5px;background:none;border:none;color:#d8ae57;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">
+          Divisions <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dm"><div class="di">
+          <a href="/divisions/automotive.html">Automotive Division <span class="ar">&#8594;</span></a>
+          <a href="/divisions/business-facilitation.html">Business Facilitation Centre <span class="ar">&#8594;</span></a>
+          <a href="/divisions/tour-travel.html">Tour &amp; Travel <span class="ar">&#8594;</span></a>
+          <a href="/divisions/real-estate.html">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
+          <a href="/divisions/home-services.html">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
+          <a href="/divisions/hospitality.html">Hospitality Management <span class="ar">&#8594;</span></a>
+          <a href="/divisions/logistics.html">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
+          <a href="/divisions/ai-digital.html" class="act">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
+        </div></div>
+      </div>
+      <a href="/investors.html">Investors</a>
+      <a href="/">Why KSA</a>
+      <a href="/">Contact</a>
+    </nav>
+    <a href="/" class="btn-gold" style="font-size:12px;padding:10px 22px;">Request a Proposal &#8594;</a>
+  </header>
+
+  <!-- ═══ 1. HERO ═══ -->
+  <section class="hero" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000');background-size:cover;background-position:center;opacity:.35;mix-blend-mode:luminosity;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,27,43,.4) 0%,rgba(6,27,43,.2) 50%,#061B2B 100%) 50%,#061B2B 100%);"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,174,87,.25),transparent);"></div>
+    <div style="position:relative;z-index:10;text-align:center;padding:130px 24px 70px;max-width:960px;margin:0 auto;" class="afu" id="hero">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(216,174,87,.08);border:1px solid rgba(216,174,87,.2);border-radius:30px;padding:7px 20px;margin-bottom:26px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+        <span style="font-size:11px;letter-spacing:.25em;color:#d8ae57;font-weight:600;text-transform:uppercase;">AI &amp; Digital Division</span>
+      </div>
+      <h1 class="font-serif-luxury" style="font-size:clamp(36px,6vw,74px);line-height:1.1;color:white;margin-bottom:20px;">
+        AI, Enterprise Software &amp;<br/><span style="color:#d8ae57;font-style:italic;">Digital Growth</span>
+      </h1>
+      <p style="font-size:clamp(14px,1.8vw,17px);color:#cbd5e1;font-weight:300;margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.75;">
+        Integrated Intelligence &nbsp;&middot;&nbsp; Measurable Performance &nbsp;&middot;&nbsp; Built for KSA
+      </p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="/" class="btn-gold">Get a Free Consultation &#8594;</a>
+        <a href="#services" class="btn-ghost">Our Services &#8595;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="pt-[60px] pb-[120px] px-6 relative z-10 bg-gradient-to-b from-[#061B2B] via-[#081f33] to-[#061B2B] flex flex-col items-center text-center">
+    <!-- Small label -->
+    <span class="fade-up inline-block text-[#E3BC70] uppercase tracking-[0.15em] text-[11px] md:text-[12px] font-medium mb-[20px]">
+      Division Overview
+    </span>
+
+    <!-- Large Editorial Heading -->
+    <h2 class="fade-up font-serif-luxury text-[#E3BC70] text-[34px] md:text-[42px] lg:text-[64px] leading-[1.2] max-w-[800px] mx-auto font-normal mb-[32px]" style="transition-delay: 200ms;">
+      The <em class="italic text-[#E3BC70]">Intelligence Engine</em>
+    </h2>
+
+    <!-- Paragraphs -->
+    <div class="fade-up text-slate-300 font-sans-clean text-[16px] md:text-[17px] leading-[1.7] max-w-[680px] mx-auto font-light" style="transition-delay: 400ms;">
+      <p class="mb-5 last:mb-0">CNI's AI &amp; Digital Division is the intelligence engine behind the entire CNI ecosystem &#8212; building and deploying AI solutions, enterprise software, and digital growth strategies first for CNI's own divisions, then scaling those proven capabilities to external clients across Saudi Arabia. This inside-out model means every solution we offer has been battle-tested in a real business environment before it reaches a client.</p>
+      <p class="mb-5 last:mb-0">From intelligent automation and CRM systems to WhatsApp sales bots, digital marketing, cloud infrastructure, and cybersecurity &#8212; the AI &amp; Digital Division delivers end-to-end digital transformation that produces measurable business outcomes. We don't just sell software; we deliver performance.</p>
+    </div>
+  </section>
+
+  <!-- ═══ 3. SERVICE LINES ═══ -->
+  <section id="services" style="padding:90px 24px;background:#0B293B;position:relative;overflow:hidden;">
+    <div style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;background:rgba(216,174,87,.04);border-radius:50%;filter:blur(120px);pointer-events:none;"></div>
+    <div style="max-width:1280px;margin:0 auto;position:relative;">
+      <div style="text-align:center;margin-bottom:56px;" class="afu">
+        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,44px);color:white;margin-bottom:12px;">Our <span style="color:#d8ae57;font-style:italic;">Capabilities</span></h2>
+        <div class="gold-line"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+        
+        <div class="svc-card afu">
+          <div style="width:56px;height:56px;border-radius:14px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin-bottom:20px;">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:10px;">AI &amp; Intelligent Automation</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.7;">Process automation, AI chatbots, predictive analytics, and custom ML models to streamline operations.</p>
+        </div>
+
+        <div class="svc-card afu" style="transition-delay:.1s;">
+          <div style="width:56px;height:56px;border-radius:14px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin-bottom:20px;">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:10px;">Software &amp; Enterprise Systems</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.7;">ERP, CRM, and custom web and mobile applications built for scale and seamless integration.</p>
+        </div>
+
+        <div class="svc-card afu" style="transition-delay:.2s;">
+          <div style="width:56px;height:56px;border-radius:14px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin-bottom:20px;">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+          </div>
+          <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:10px;">CRM, WhatsApp &amp; Sales Auto</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.7;">Lead management, automated follow-up sequences, and official WhatsApp Business API integration.</p>
+        </div>
+
+        <div class="svc-card afu" style="transition-delay:.3s;">
+          <div style="width:56px;height:56px;border-radius:14px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin-bottom:20px;">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+          </div>
+          <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:10px;">Digital Marketing &amp; Creative</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.7;">SEO, paid media strategies, social media management, content creation, and brand identity.</p>
+        </div>
+
+        <div class="svc-card afu" style="transition-delay:.4s;">
+          <div style="width:56px;height:56px;border-radius:14px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin-bottom:20px;">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+          </div>
+          <h3 style="color:white;font-size:16px;font-weight:600;margin-bottom:10px;">Cloud, Data &amp; Cybersecurity</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.7;">Cloud infrastructure setup (AWS/Azure/Oracle), data analytics, and rigorous security audits.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. OUR APPROACH ═══ -->
+  <section style="padding:90px 24px;background:#061B2B;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:56px;" class="afu">
+        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,44px);color:white;margin-bottom:12px;">Our <span style="color:#d8ae57;font-style:italic;">Approach</span></h2>
+        <div class="gold-line"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;position:relative;">
+        
+        <div class="step-card afu">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#d8ae57,#c49a40);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#061B2B;margin-bottom:22px;box-shadow:0 0 20px rgba(216,174,87,.35);">1</div>
+          <h3 style="color:white;font-size:18px;font-weight:600;margin-bottom:12px;">Discovery &amp; Strategy</h3>
+          <p style="color:#64748b;font-size:14px;line-height:1.7;font-weight:300;">We dive deep into your business operations, goals, and digital maturity to identify the highest ROI opportunities.</p>
+        </div>
+
+        <div class="step-card afu" style="transition-delay:.15s;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#d8ae57,#c49a40);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#061B2B;margin-bottom:22px;box-shadow:0 0 20px rgba(216,174,87,.35);">2</div>
+          <h3 style="color:white;font-size:18px;font-weight:600;margin-bottom:12px;">Architecture &amp; Build</h3>
+          <p style="color:#64748b;font-size:14px;line-height:1.7;font-weight:300;">Our engineers and designers architect and build a custom solution, prioritizing security, scale, and user experience.</p>
+        </div>
+
+        <div class="step-card afu" style="transition-delay:.3s;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#d8ae57,#c49a40);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#061B2B;margin-bottom:22px;box-shadow:0 0 20px rgba(216,174,87,.35);">3</div>
+          <h3 style="color:white;font-size:18px;font-weight:600;margin-bottom:12px;">Deploy &amp; Integrate</h3>
+          <p style="color:#64748b;font-size:14px;line-height:1.7;font-weight:300;">We execute a seamless deployment into your existing operations with minimal disruption and comprehensive training.</p>
+        </div>
+
+        <div class="step-card afu" style="transition-delay:.45s;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#d8ae57,#c49a40);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#061B2B;margin-bottom:22px;box-shadow:0 0 20px rgba(216,174,87,.35);">4</div>
+          <h3 style="color:white;font-size:18px;font-weight:600;margin-bottom:12px;">Optimize &amp; Scale</h3>
+          <p style="color:#64748b;font-size:14px;line-height:1.7;font-weight:300;">Post-launch, we provide ongoing monitoring, data-driven iterations, and the support needed to scale the solution globally.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 5 & 6. WHY US & TECH STACK ═══ -->
+  <section style="padding:90px 24px;background:#0B293B;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;">
+      
+      <!-- Why Us -->
+      <div class="afu">
+        <h2 class="font-serif-luxury" style="font-size:clamp(24px,3vw,36px);color:white;margin-bottom:16px;">Why CNI <span style="color:#d8ae57;font-style:italic;">AI &amp; Digital?</span></h2>
+        <div style="width:40px;height:1px;background:rgba(216,174,87,.5);margin-bottom:32px;"></div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="adv-item">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <div style="color:white;font-size:15px;font-weight:600;">Proven Inside Our Ecosystem</div>
+              <div style="color:#64748b;font-size:13px;margin-top:2px;">Solutions are battle-tested across CNI's own 8 divisions before external deployment.</div>
+            </div>
+          </div>
+          <div class="adv-item">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <div style="color:white;font-size:15px;font-weight:600;">Arabic-First Design</div>
+              <div style="color:#64748b;font-size:13px;margin-top:2px;">Native, localized UX/UI and NLP solutions built specifically for the Saudi market.</div>
+            </div>
+          </div>
+          <div class="adv-item">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <div style="color:white;font-size:15px;font-weight:600;">Vision 2030 Aligned</div>
+              <div style="color:#64748b;font-size:13px;margin-top:2px;">Our architectures support the Kingdom's goal of becoming a global digital leader.</div>
+            </div>
+          </div>
+          <div class="adv-item">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <div style="color:white;font-size:15px;font-weight:600;">Transparent, Outcome-Based</div>
+              <div style="color:#64748b;font-size:13px;margin-top:2px;">We focus strictly on measurable performance metrics, not just delivering lines of code.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="afu" style="transition-delay:.15s;">
+        <h2 class="font-serif-luxury" style="font-size:clamp(24px,3vw,36px);color:white;margin-bottom:16px;">Our <span style="color:#d8ae57;font-style:italic;">Tech Stack</span></h2>
+        <div style="width:40px;height:1px;background:rgba(216,174,87,.5);margin-bottom:32px;"></div>
+        <p style="color:#94a3b8;font-size:15px;line-height:1.75;font-weight:300;margin-bottom:28px;">We build on world-class, scalable technologies to ensure security, high performance, and rapid deployment capabilities.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <div class="tech-badge">React</div>
+          <div class="tech-badge">Next.js</div>
+          <div class="tech-badge">Node.js</div>
+          <div class="tech-badge">Python</div>
+          <div class="tech-badge">Oracle Cloud</div>
+          <div class="tech-badge">AWS</div>
+          <div class="tech-badge">WhatsApp Business API</div>
+          <div class="tech-badge">OpenAI</div>
+          <div class="tech-badge">Supabase</div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ═══ 7. CLOSING CTA ═══ -->
+  <section style="padding:96px 24px;background:#080E1A;border-top:1px solid rgba(216,174,87,.15);position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000');background-size:cover;background-position:center;opacity:.08;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,#080E1A 60%,rgba(8,14,26,.5));"></div>
+    <div style="max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:10;" class="afu">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(216,174,87,.08);border:1px solid rgba(216,174,87,.2);border-radius:30px;padding:7px 20px;margin-bottom:26px;">
+        <div style="width:6px;height:6px;border-radius:50%;background:#d8ae57;animation:pulse 2s infinite;"></div>
+        <span style="font-size:11px;letter-spacing:.2em;color:#d8ae57;font-weight:600;text-transform:uppercase;">Accelerate Your Transformation</span>
+      </div>
+      <h2 class="font-serif-luxury" style="font-size:clamp(28px,5vw,52px);line-height:1.12;color:white;margin-bottom:22px;">
+        Transform Your Business With AI<br/><span style="color:#d8ae57;font-style:italic;">Starting Today</span>
+      </h2>
+      <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;max-width:520px;margin:0 auto 36px;">Unlock the power of intelligent automation, scalable software, and digital growth with CNI's expert engineering team.</p>
+      <a href="/" class="btn-gold" style="font-size:15px;padding:16px 40px;">Request a Free Consultation &#8594;</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer style="padding:28px 48px;background:#061B2B;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+    <div style="font-size:13px;color:#475569;">&copy; 2026 Crescent Nova International. All rights reserved.</div>
+    <div style="display:flex;gap:22px;">
+      <a href="#" style="font-size:13px;color:#475569;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#475569'">Privacy Policy</a>
+      <a href="#" style="font-size:13px;color:#475569;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#475569'">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script>
+    const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ob.unobserve(e.target);}});},{threshold:.1});
+    document.querySelectorAll('.afu').forEach(el=>ob.observe(el));
+    setTimeout(()=>{document.getElementById('hero')?.classList.add('vis');},80);
+  </script>
+</body>
+</html>

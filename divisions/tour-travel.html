@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Tour &amp; Travel — Crescent Nova International</title>
+  <meta name="description" content="CNI Tour &amp; Travel: Umrah packages, airline ticketing, hotel bookings and group tours for the Pakistani diaspora across Saudi Arabia."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend: { colors: { 'cni-gold': '#E3BC70' },fontFamily:{'sans-clean':['Inter','sans-serif'],'serif-luxury':['Playfair Display','serif']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:#061B2B;color:#f1f5f9;font-family:'Inter',sans-serif;overflow-x:hidden;}
+    .afu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+    .afu.vis{opacity:1;transform:translateY(0);}
+    /* NAV DROPDOWN */
+    .nd{position:relative;}
+    .nd .dm{position:absolute;left:50%;top:100%;transform:translateX(-50%);padding-top:12px;width:300px;opacity:0;pointer-events:none;transition:opacity .18s ease;z-index:200;}
+    .nd:hover .dm,.nd:focus-within .dm{opacity:1;pointer-events:auto;}
+    .nd .di{background:rgba(6,27,43,.97);backdrop-filter:blur(12px);border:1px solid rgba(227,188,112,.2);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.6);padding:8px 0;}
+    .dm a{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;font-size:13px;color:#cbd5e1;text-decoration:none;transition:background .15s,color .15s;white-space:nowrap;}
+    .dm a:hover,.dm a.act{background:rgba(255,255,255,.05);color:#d8ae57;}
+    .dm a .ar{opacity:0;transform:translateX(-5px);transition:opacity .15s,transform .15s;color:#d8ae57;}
+    .dm a:hover .ar,.dm a.act .ar{opacity:1;transform:translateX(0);}
+    .chev{transition:transform .25s;}.nd:hover .chev{transform:rotate(180deg);}
+    nav a{color:#94a3b8;text-decoration:none;transition:color .2s;}
+    nav a:hover{color:white;}
+    /* HERO */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+    .hbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2000');background-size:cover;background-position:center;opacity:.45;mix-blend-mode:luminosity;}
+    .hov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,27,43,.75) 0%,rgba(6,27,43,.45) 45%,#061B2B 100%);}
+    /* SERVICE CARD */
+    .svc{background:rgba(6,27,43,.6);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:36px 30px;transition:border-color .3s,transform .3s,background .3s;overflow:hidden;position:relative;}
+    .svc:hover{border-color:rgba(216,174,87,.45);transform:translateY(-6px);background:rgba(6,27,43,.9);}
+    .svc-icon{width:52px;height:52px;border-radius:14px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin-bottom:22px;transition:background .3s;}
+    .svc:hover .svc-icon{background:rgba(216,174,87,.18);}
+    .svc-tag{display:inline-block;background:rgba(216,174,87,.12);color:#d8ae57;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;}
+    /* REVENUE ROW */
+    .rev-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+    .rev-row:last-child{border:none;}
+    .rev-num{min-width:80px;font-family:'Playfair Display',serif;font-size:28px;color:#d8ae57;}
+    /* MARKET CARD */
+    .mkt{background:rgba(11,41,59,.6);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px 24px;text-align:center;transition:border-color .3s;}
+    .mkt:hover{border-color:rgba(216,174,87,.3);}
+    /* BUTTONS */
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:#d8ae57;color:#061B2B;font-weight:700;font-size:14px;padding:14px 32px;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 20px rgba(216,174,87,.3);}
+    .btn-gold:hover{transform:scale(1.04);box-shadow:0 0 30px rgba(216,174,87,.5);}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:#94a3b8;font-size:14px;text-decoration:none;transition:color .2s;}
+    .btn-ghost:hover{color:white;}
+    /* DIVIDER */
+    .gold-line{width:56px;height:1px;background:rgba(216,174,87,.35);margin:0 auto;}
+    /* QUOTE STRIP */
+    .quote-strip{background:linear-gradient(90deg,rgba(216,174,87,.12),rgba(216,174,87,.04));border-left:3px solid #d8ae57;border-radius:0 10px 10px 0;padding:24px 28px;}
+  </style>
+</head>
+<body class="font-sans-clean">
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header style="position:fixed;top:0;left:0;width:100%;z-index:999;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,27,43,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(227,188,112,.08);">
+    <a href="/"><img src="/public/logo.png" alt="CNI" style="height:52px;width:auto;object-fit:contain;"/></a>
+    <nav style="display:flex;align-items:center;gap:30px;font-size:14px;">
+      <a href="/">Home</a>
+      <a href="/#about">About</a>
+      <div class="nd">
+        <button style="display:flex;align-items:center;gap:5px;background:none;border:none;color:#d8ae57;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">
+          Divisions <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dm"><div class="di">
+          <a href="/divisions/automotive.html">Automotive Division <span class="ar">&#8594;</span></a>
+          <a href="/divisions/business-facilitation.html">Business Facilitation Centre <span class="ar">&#8594;</span></a>
+          <a href="/divisions/tour-travel.html" class="act">Tour &amp; Travel <span class="ar">&#8594;</span></a>
+          <a href="/divisions/real-estate.html">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
+          <a href="/divisions/home-services.html">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
+          <a href="/divisions/hospitality.html">Hospitality Management <span class="ar">&#8594;</span></a>
+          <a href="/divisions/logistics.html">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
+          <a href="/divisions/ai-digital.html">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
+        </div></div>
+      </div>
+      <a href="/investors.html">Investors</a>
+      <a href="/">Why KSA</a>
+      <a href="/">Contact</a>
+    </nav>
+    <a href="/" class="btn-gold" style="font-size:12px;padding:10px 22px;">Request a Proposal &#8594;</a>
+  </header>
+
+  <!-- ═══ 1. HERO ═══ -->
+  <section class="hero">
+    <div class="hbg"></div>
+    <div class="hov"></div>
+    <!-- Subtle crescent watermark -->
+    <div style="position:absolute;bottom:10%;right:5%;opacity:.05;pointer-events:none;">
+      <svg width="340" height="340" viewBox="0 0 24 24" fill="white"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </div>
+    <div style="position:relative;z-index:10;text-align:center;padding:130px 24px 60px;max-width:960px;margin:0 auto;" class="afu" id="hero">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;">
+        <div style="width:36px;height:1px;background:rgba(216,174,87,.7);"></div>
+        <span style="font-size:11px;letter-spacing:.3em;color:#d8ae57;font-weight:600;text-transform:uppercase;">CNI Tour &amp; Travel Division</span>
+        <div style="width:36px;height:1px;background:rgba(216,174,87,.7);"></div>
+      </div>
+      <h1 class="font-serif-luxury" style="font-size:clamp(40px,7vw,80px);line-height:1.08;color:white;margin-bottom:18px;">
+        Umrah, Travel<br/><span style="color:#d8ae57;font-style:italic;">&amp; Beyond</span>
+      </h1>
+      <p style="font-size:clamp(14px,1.8vw,17px);color:#cbd5e1;font-weight:300;margin-bottom:38px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.75;">
+        Serving the Pakistani Diaspora Across KSA &mdash;<br/>Packages, Ticketing, Hotels &amp; Group Tours
+      </p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
+        <a href="#services" class="btn-gold">Explore Packages &#8594;</a>
+        <a href="/" class="btn-ghost">Contact Us &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="pt-[60px] pb-[120px] px-6 relative z-10 bg-gradient-to-b from-[#061B2B] via-[#081f33] to-[#061B2B] flex flex-col items-center text-center">
+    <!-- Small label -->
+    <span class="fade-up inline-block text-[#E3BC70] uppercase tracking-[0.15em] text-[11px] md:text-[12px] font-medium mb-[20px]">
+      Division Overview
+    </span>
+
+    <!-- Large Editorial Heading -->
+    <h2 class="fade-up font-serif-luxury text-[#E3BC70] text-[34px] md:text-[42px] lg:text-[64px] leading-[1.2] max-w-[800px] mx-auto font-normal mb-[32px]" style="transition-delay: 200ms;">
+      Travel Rooted in Trust <em class="italic text-[#E3BC70]">&amp; Community</em>
+    </h2>
+
+    <!-- Paragraphs -->
+    <div class="fade-up text-slate-300 font-sans-clean text-[16px] md:text-[17px] leading-[1.7] max-w-[680px] mx-auto font-light" style="transition-delay: 400ms;">
+      <p class="mb-5 last:mb-0">CNI's Tour &amp; Travel division is dedicated to serving the Pakistani diaspora and Muslim community in KSA with comprehensive, affordable, and spiritually enriching travel services. From Umrah packages to airline ticketing, hotel bookings, and group tours &mdash; we are a one-stop platform built on trust, relationships, and deep knowledge of KSA's travel ecosystem.</p>
+      <p class="mb-5 last:mb-0">Our business model is built on commission-based revenue, earning 8&ndash;15% per transaction across all service lines &mdash; a capital-light model with high transaction volume potential given the 2.5M+ strong Pakistani community in the Kingdom. As Umrah visitor numbers continue to grow toward Saudi Arabia's Vision 2030 target of 30 million pilgrims annually, the opportunity for our division scales proportionally.</p>
+      <p class="mb-5 last:mb-0">Every journey we facilitate is handled with the same care and attention that our clients deserve &mdash; from the first inquiry call to the final return flight. CNI's Tour &amp; Travel team combines local KSA expertise with an intimate understanding of what Pakistani families, first-time pilgrims, and corporate groups need from a travel partner.</p>
+    </div>
+  </section>
+
+  <!-- ═══ 3. SERVICE CARDS ═══ -->
+  <section id="services" style="padding:90px 24px;background:#0B293B;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:52px;" class="afu">
+        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,44px);color:white;margin-bottom:12px;">Our <span style="color:#d8ae57;font-style:italic;">Services</span></h2>
+        <div class="gold-line"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;">
+
+        <!-- Umrah -->
+        <div class="svc afu">
+          <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(216,174,87,.07),transparent);border-radius:50%;pointer-events:none;"></div>
+          <div class="svc-icon">
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <span class="svc-tag">Most Popular</span>
+          <h3 style="color:white;font-size:18px;font-weight:600;margin-bottom:10px;">Umrah Packages</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.72;margin-bottom:18px;">Customized packages for families, groups, and corporate clients. Full-service arrangements including flights, hotels near Haram, and guided support.</p>
+          <div style="display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span style="color:#d8ae57;font-size:13px;font-weight:600;">SAR 500 &ndash; 1,500 margin / booking</span>
+          </div>
+        </div>
+
+        <!-- Ticketing -->
+        <div class="svc afu" style="transition-delay:.1s;">
+          <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(216,174,87,.07),transparent);border-radius:50%;pointer-events:none;"></div>
+          <div class="svc-icon">
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
+            </svg>
+          </div>
+          <span class="svc-tag">High Volume</span>
+          <h3 style="color:white;font-size:18px;font-weight:600;margin-bottom:10px;">Airline Ticketing</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.72;margin-bottom:18px;">Competitive fares and group booking expertise for all major routes between Pakistan and KSA. Business, economy, and charter options available.</p>
+          <div style="display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span style="color:#d8ae57;font-size:13px;font-weight:600;">8 &ndash; 12% commission per ticket</span>
+          </div>
+        </div>
+
+        <!-- Hotels -->
+        <div class="svc afu" style="transition-delay:.2s;">
+          <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(216,174,87,.07),transparent);border-radius:50%;pointer-events:none;"></div>
+          <div class="svc-icon">
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <span class="svc-tag">Curated</span>
+          <h3 style="color:white;font-size:18px;font-weight:600;margin-bottom:10px;">Hotel Bookings</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.72;margin-bottom:18px;">Handpicked hotels near Masjid al-Haram and across Riyadh, Jeddah, and Dammam. Every property vetted for quality, proximity, and value.</p>
+          <div style="display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span style="color:#d8ae57;font-size:13px;font-weight:600;">10 &ndash; 15% commission per booking</span>
+          </div>
+        </div>
+
+        <!-- Group Tours -->
+        <div class="svc afu" style="transition-delay:.3s;">
+          <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(216,174,87,.07),transparent);border-radius:50%;pointer-events:none;"></div>
+          <div class="svc-icon">
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <span class="svc-tag">End-to-End</span>
+          <h3 style="color:white;font-size:18px;font-weight:600;margin-bottom:10px;">Group Tours &amp; Visa Facilitation</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.72;margin-bottom:18px;">Fully organized group travel with end-to-end logistics and visa support. Ideal for corporate groups, family reunions, and community pilgrimages.</p>
+          <div style="display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span style="color:#d8ae57;font-size:13px;font-weight:600;">Full logistics + visa support included</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. REVENUE MODEL ═══ -->
+  <section style="padding:90px 24px;background:#061B2B;position:relative;overflow:hidden;">
+    <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;background:rgba(216,174,87,.04);border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;">
+
+      <div class="afu">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+          <div style="width:32px;height:1px;background:rgba(216,174,87,.5);"></div>
+          <span style="font-size:11px;letter-spacing:.25em;color:#d8ae57;font-weight:600;text-transform:uppercase;">Revenue Model</span>
+        </div>
+        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,44px);color:white;margin-bottom:18px;line-height:1.2;">Commission-Based, <span style="color:#d8ae57;font-style:italic;">Capital-Light</span></h2>
+        <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;margin-bottom:24px;">Our model requires minimal capital outlay. Revenue is earned on every transaction — no inventory, no heavy overheads. As the Pakistani diaspora in KSA grows and Umrah demand compounds toward Vision 2030's 30M pilgrim target, our transaction volume scales proportionally.</p>
+        <div class="quote-strip">
+          <p style="color:#e2e8f0;font-size:14px;line-height:1.75;font-style:italic;">"Every booking is a relationship. Every relationship is a repeat client. That is the foundation of CNI's Tour &amp; Travel model."</p>
+        </div>
+      </div>
+
+      <div class="afu" style="transition-delay:.15s;">
+        <div style="background:linear-gradient(135deg,#0B293B,#07202e);border:1px solid rgba(216,174,87,.12);border-radius:20px;padding:40px;">
+          <h3 style="color:#d8ae57;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:28px;">Revenue by Service Line</h3>
+          <div class="rev-row">
+            <div class="rev-num">8–15%</div>
+            <div>
+              <div style="color:white;font-size:14px;font-weight:500;margin-bottom:3px;">Overall Commission Range</div>
+              <div style="color:#64748b;font-size:12px;">Across all service lines per transaction</div>
+            </div>
+          </div>
+          <div class="rev-row">
+            <div class="rev-num" style="font-size:22px;white-space:nowrap;">SAR 1.5K</div>
+            <div>
+              <div style="color:white;font-size:14px;font-weight:500;margin-bottom:3px;">Max Margin — Umrah</div>
+              <div style="color:#64748b;font-size:12px;">Per family or group Umrah booking</div>
+            </div>
+          </div>
+          <div class="rev-row">
+            <div class="rev-num">12%</div>
+            <div>
+              <div style="color:white;font-size:14px;font-weight:500;margin-bottom:3px;">Avg. Ticketing Commission</div>
+              <div style="color:#64748b;font-size:12px;">PK–KSA routes, group &amp; corporate fares</div>
+            </div>
+          </div>
+          <div class="rev-row">
+            <div class="rev-num">2.5M+</div>
+            <div>
+              <div style="color:white;font-size:14px;font-weight:500;margin-bottom:3px;">Total Addressable Market</div>
+              <div style="color:#64748b;font-size:12px;">Pakistani residents in KSA alone</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ 5. OUR MARKET ═══ -->
+  <section style="padding:90px 24px;background:#0B293B;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:52px;" class="afu">
+        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,44px);color:#d8ae57;margin-bottom:12px;">Who We Serve</h2>
+        <div class="gold-line"></div>
+        <p style="color:#94a3b8;font-size:15px;font-weight:300;margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7;">A massive, underserved community that trusts word-of-mouth, values relationships, and transacts in high volume.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:52px;">
+        <div class="mkt afu">
+          <div style="font-size:36px;margin-bottom:12px;">&#127968;</div>
+          <h3 style="color:white;font-size:15px;font-weight:600;margin-bottom:8px;">Pakistani Families in KSA</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.65;">Annual Umrah trips, family vacations, and ticketing for relatives visiting from Pakistan.</p>
+        </div>
+        <div class="mkt afu" style="transition-delay:.1s;">
+          <div style="font-size:36px;margin-bottom:12px;">&#127981;</div>
+          <h3 style="color:white;font-size:15px;font-weight:600;margin-bottom:8px;">First-Time Umrah Pilgrims</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.65;">Guidance, full packages, and hand-holding support for individuals and families performing Umrah for the first time.</p>
+        </div>
+        <div class="mkt afu" style="transition-delay:.2s;">
+          <div style="font-size:36px;margin-bottom:12px;">&#128188;</div>
+          <h3 style="color:white;font-size:15px;font-weight:600;margin-bottom:8px;">Corporate Group Travel</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.65;">Organized group travel for companies, trade delegations, and corporate Umrah programs with full logistics management.</p>
+        </div>
+        <div class="mkt afu" style="transition-delay:.3s;">
+          <div style="font-size:36px;margin-bottom:12px;">&#9992;</div>
+          <h3 style="color:white;font-size:15px;font-weight:600;margin-bottom:8px;">Returning Diaspora</h3>
+          <p style="color:#64748b;font-size:13px;line-height:1.65;">Expats returning to Pakistan and back, seeking reliable, affordable ticketing on Pakistan&#8211;KSA routes.</p>
+        </div>
+      </div>
+
+      <!-- Large market stat banner -->
+      <div style="background:linear-gradient(135deg,rgba(6,27,43,.9),rgba(11,41,59,.7));border:1px solid rgba(216,174,87,.18);border-radius:18px;padding:44px 52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;text-align:center;" class="afu">
+        <div>
+          <div class="font-serif-luxury" style="font-size:44px;color:#d8ae57;margin-bottom:8px;">2.5M+</div>
+          <div style="color:white;font-size:13px;font-weight:500;margin-bottom:4px;">Pakistanis in KSA</div>
+          <div style="color:#64748b;font-size:12px;">Active, repeat travel market</div>
+        </div>
+        <div>
+          <div class="font-serif-luxury" style="font-size:44px;color:#d8ae57;margin-bottom:8px;">30M</div>
+          <div style="color:white;font-size:13px;font-weight:500;margin-bottom:4px;">Vision 2030 Umrah Target</div>
+          <div style="color:#64748b;font-size:12px;">Annual pilgrims by 2030</div>
+        </div>
+        <div>
+          <div class="font-serif-luxury" style="font-size:44px;color:#d8ae57;margin-bottom:8px;">12+</div>
+          <div style="color:white;font-size:13px;font-weight:500;margin-bottom:4px;">Airlines Serving PK&#8211;KSA</div>
+          <div style="color:#64748b;font-size:12px;">Competitive fares, high frequency</div>
+        </div>
+        <div>
+          <div class="font-serif-luxury" style="font-size:44px;color:#d8ae57;margin-bottom:8px;">365</div>
+          <div style="color:white;font-size:13px;font-weight:500;margin-bottom:4px;">Days of Demand</div>
+          <div style="color:#64748b;font-size:12px;">Year-round Umrah &amp; travel volume</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. CLOSING CTA ═══ -->
+  <section style="padding:96px 24px;background:#080E1A;border-top:1px solid rgba(216,174,87,.15);position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2000');background-size:cover;background-position:center top;opacity:.09;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,#080E1A 60%,rgba(8,14,26,.6));"></div>
+    <div style="max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:10;" class="afu">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;">
+        <div style="width:32px;height:1px;background:rgba(216,174,87,.6);"></div>
+        <span style="font-size:10px;letter-spacing:.3em;color:#d8ae57;font-weight:600;text-transform:uppercase;">Start Your Journey</span>
+        <div style="width:32px;height:1px;background:rgba(216,174,87,.6);"></div>
+      </div>
+      <h2 class="font-serif-luxury" style="font-size:clamp(28px,5vw,50px);line-height:1.15;color:white;margin-bottom:22px;">
+        Plan Your Journey With Us<br/><span style="color:#d8ae57;font-style:italic;">From Umrah to Family Vacations</span>
+      </h2>
+      <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;max-width:540px;margin:0 auto 36px;">Whether it's your first Umrah, a family vacation, or a corporate group trip — CNI's Tour &amp; Travel team is ready to plan every detail so you can focus on the journey.</p>
+      <a href="/" class="btn-gold" style="font-size:15px;padding:16px 42px;">Get a Quote &#8594;</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer style="padding:28px 48px;background:#061B2B;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+    <div style="font-size:13px;color:#475569;">&copy; 2026 Crescent Nova International. All rights reserved.</div>
+    <div style="display:flex;gap:22px;">
+      <a href="#" style="font-size:13px;color:#475569;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#475569'">Privacy Policy</a>
+      <a href="#" style="font-size:13px;color:#475569;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#475569'">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script>
+    const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ob.unobserve(e.target);}});},{threshold:.1});
+    document.querySelectorAll('.afu').forEach(el=>ob.observe(el));
+    setTimeout(()=>{document.getElementById('hero')?.classList.add('vis');},80);
+  </script>
+</body>
+</html>

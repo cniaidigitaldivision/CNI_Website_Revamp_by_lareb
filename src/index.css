@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-serif-luxury {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+  .font-brand {
+    font-family: 'Cinzel', 'Playfair Display', serif;
+  }
+  .font-sans-clean {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  .font-arabic {
+    font-family: 'Tajawal', system-ui, sans-serif;
+  }
+}
+
+/* Subtle gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f7dfa5 0%, #d4a853 50%, #b88628 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold button gradient */
+.bg-gold-btn {
+  background: linear-gradient(135deg, #e8c882 0%, #d8ae57 50%, #be8e31 100%);
+}
+
+.bg-gold-btn:hover {
+  background: linear-gradient(135deg, #f2d494 0%, #e0b863 50%, #cb9738 100%);
+}
+
+/* Mouse wheel animation */
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-wheel {
+  animation: scrollWheel 1.6s ease-in-out infinite;
+}
+
