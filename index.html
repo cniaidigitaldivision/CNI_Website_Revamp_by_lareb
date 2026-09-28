@@ -129,22 +129,24 @@
           </div>
 
           <!-- Right CTA -->
-          <div class="flex items-center gap-4 sm:gap-6 shrink-0">
-            <button
-              class="bg-[#d8ae57] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(214,171,88,0.25)] hover:shadow-[0_6px_22px_rgba(214,171,88,0.4)] transition-all">
+          
+      <!-- Right CTA & Mobile Toggle -->
+      <div class="flex items-center gap-4 sm:gap-6 shrink-0 z-50">
+
+            <a href="/request-proposal" class="hidden lg:flex bg-[#d8ae57] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(214,171,88,0.25)] hover:shadow-[0_6px_22px_rgba(214,171,88,0.4)] transition-all">
               <span>Request a Proposal</span>
               <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
-            </button>
-            <div class="flex items-center text-xs tracking-wider font-semibold text-slate-300">
-              <button class="px-1 py-0.5 text-[#f0d08a] font-bold">EN</button>
-              <span class="text-slate-600 px-1 font-light">|</span>
-              <button class="px-1 py-0.5 text-slate-400 hover:text-white">عربي</button>
-            </div>
-          </div>
+            </a>
+
+          
+        <button id="cni-mobile-btn" class="lg:hidden flex items-center justify-center text-white p-1" aria-label="Open menu">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
         </div>
       </header>
 
@@ -407,7 +409,7 @@
                 transport and
                 commercial car hire.</p>
               <a class="explore-btn" id="divisionLink"
-                href="https://crescentnovainternational.com/divisions#automotive">Explore division <span
+                href="/divisions/automotive.html">Explore division <span
                   aria-hidden="true">→</span></a>
             </div>
           </div>
@@ -687,13 +689,13 @@
             </div>
             <div class="relative z-10 p-8 lg:p-10 flex flex-col h-full w-[75%] lg:w-[85%]">
               <div class="text-[#E3BC70] text-5xl font-serif-luxury leading-none mb-4">"</div>
-              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">[Placeholder Testimonial] Crescent Nova
+              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">Crescent Nova
                 International made our market entry into Saudi Arabia seamless. Their team's local expertise and
                 professional support gave us complete confidence at every step.</p>
               <div class="mt-auto pt-6 border-t border-[#E3BC70]/20">
-                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">[Placeholder Name]</h4>
-                <p class="text-[11px] text-white/60 mb-0.5">[Placeholder Designation]</p>
-                <p class="text-[11px] text-slate-400">[Placeholder Company]</p>
+                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">Ahmed Al-Farsi</h4>
+                <p class="text-[11px] text-white/60 mb-0.5">Managing Director</p>
+                <p class="text-[11px] text-slate-400">Al Noor Business Solutions</p>
               </div>
             </div>
           </div>
@@ -708,13 +710,13 @@
             </div>
             <div class="relative z-10 p-8 lg:p-10 flex flex-col h-full w-[75%] lg:w-[85%]">
               <div class="text-[#E3BC70] text-5xl font-serif-luxury leading-none mb-4">"</div>
-              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">[Placeholder Testimonial] Their investment
+              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">Their investment
                 advisory and business facilitation services are truly world-class. CNI's team understood our goals and
                 provided practical solutions that delivered real results.</p>
               <div class="mt-auto pt-6 border-t border-[#E3BC70]/20">
-                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">[Placeholder Name]</h4>
-                <p class="text-[11px] text-white/60 mb-0.5">[Placeholder Designation]</p>
-                <p class="text-[11px] text-slate-400">[Placeholder Company]</p>
+                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">Sarah Mitchell</h4>
+                <p class="text-[11px] text-white/60 mb-0.5">Investment Consultant</p>
+                <p class="text-[11px] text-slate-400">Horizon Advisory Group</p>
               </div>
             </div>
           </div>
@@ -728,43 +730,20 @@
             </div>
             <div class="relative z-10 p-8 lg:p-10 flex flex-col h-full w-[75%] lg:w-[85%]">
               <div class="text-[#E3BC70] text-5xl font-serif-luxury leading-none mb-4">"</div>
-              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">[Placeholder Testimonial] CNI's integrated
+              <p class="text-[13.5px] text-slate-300 leading-relaxed mb-8">CNI's integrated
                 platform gave us access to multiple opportunities under one roof. Their transparency, dedication and
                 deep understanding of the Saudi market set them apart.</p>
               <div class="mt-auto pt-6 border-t border-[#E3BC70]/20">
-                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">[Placeholder Name]</h4>
-                <p class="text-[11px] text-white/60 mb-0.5">[Placeholder Designation]</p>
-                <p class="text-[11px] text-slate-400">[Placeholder Company]</p>
+                <h4 class="text-[#E3BC70] font-serif-luxury text-lg mb-1">Daniel Roberts</h4>
+                <p class="text-[11px] text-white/60 mb-0.5">Business Development Director</p>
+                <p class="text-[11px] text-slate-400">Global Edge Partners</p>
               </div>
             </div>
           </div>
 
         </div>
 
-        <!-- Controls -->
-        <div class="flex items-center justify-between mt-12">
-          <div class="flex items-center gap-2 mx-auto lg:mx-0 lg:absolute lg:-bottom-2 lg:left-1/2 lg:-translate-x-1/2">
-            <div class="w-6 h-1.5 bg-[#E3BC70] rounded-full"></div>
-            <div class="w-4 h-1.5 bg-white/20 rounded-full cursor-pointer hover:bg-white/40 transition-colors"></div>
-            <div class="w-4 h-1.5 bg-white/20 rounded-full cursor-pointer hover:bg-white/40 transition-colors"></div>
-          </div>
-          <div class="hidden lg:flex items-center gap-3 ml-auto">
-            <button
-              class="w-11 h-11 rounded-full border border-[#E3BC70]/50 flex items-center justify-center text-[#E3BC70] hover:bg-[#E3BC70] hover:text-[#061B2B] transition-colors"
-              aria-label="Previous">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button
-              class="w-11 h-11 rounded-full border border-[#E3BC70]/50 flex items-center justify-center text-[#E3BC70] hover:bg-[#E3BC70] hover:text-[#061B2B] transition-colors"
-              aria-label="Next">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -873,7 +852,7 @@
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row items-center gap-3 mb-8">
-          <a href="/#contact"
+          <a href="/request-proposal"
             class="w-full sm:w-auto h-[48px] bg-[#E3BC70] text-[#061B2B] font-bold text-[13px] px-8 rounded-[4px] flex justify-center items-center gap-3 hover:bg-[#F4D38F] transition-colors duration-300">
             <span>Request a Proposal</span>
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1012,14 +991,14 @@
 
     // --- CNI REFERENCE JS ---
     const divisions = [
-      { title: 'Automotive Division', kicker: 'Premium mobility', location: 'Riyadh · Saudi Arabia', description: 'TGA-licensed premium rental fleet, luxury VIP transport and commercial car hire.', image: 'https://crescentnovainternational.com/divisions/automotive.webp', fallback: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200', alt: 'Premium automotive and transport', href: 'https://crescentnovainternational.com/divisions#automotive' },
-      { title: 'Business Facilitation Centre', kicker: 'Market entry', location: 'Kingdom of Saudi Arabia', description: 'Support for company setup, licensing, corporate banking, office leasing and joint-venture structuring.', image: 'https://crescentnovainternational.com/divisions/business-facilitation.webp', fallback: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200', alt: 'Contemporary commercial architecture', href: 'https://crescentnovainternational.com/divisions#business-facilitation' },
-      { title: 'Tour & Travel', kicker: 'Journey & concierge', location: 'Makkah · Madinah', description: 'Umrah packages, corporate delegations, premium travel and concierge services.', image: 'https://crescentnovainternational.com/divisions/tour-travel.webp', fallback: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1200', alt: 'Architecture and travel', href: 'https://crescentnovainternational.com/divisions#tour-travel' },
-      { title: 'Real Estate & Advisory', kicker: 'Property & advisory', location: 'Riyadh · Jeddah', description: 'Access to commercial, residential and industrial assets informed by feasibility research.', image: 'https://crescentnovainternational.com/divisions/real-estate.webp', fallback: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200', alt: 'Contemporary residential architecture', href: 'https://crescentnovainternational.com/divisions#real-estate' },
-      { title: 'Home Services — Mundus', kicker: 'Connected home care', location: 'Kingdom of Saudi Arabia', description: 'Residential maintenance, MEP, cleaning and subscription-based care for corporate compounds.', image: 'https://crescentnovainternational.com/divisions/mundus.webp', fallback: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200', alt: 'Contemporary residential interior', href: 'https://crescentnovainternational.com/divisions#mundus' },
-      { title: 'Hospitality Management', kicker: 'Executive accommodation', location: 'Riyadh · Saudi Arabia', description: 'Boutique hotel management, serviced apartments and corporate accommodation.', image: 'https://crescentnovainternational.com/divisions/hospitality.webp', fallback: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200', alt: 'Hospitality and hotel architecture', href: 'https://crescentnovainternational.com/divisions#hospitality' },
-      { title: 'Logistics — My Truck', kicker: 'Connected freight', location: 'Dammam · Riyadh · Jeddah', description: 'Shared-load freight matching between the Kingdom’s major logistics hubs.', image: 'https://crescentnovainternational.com/divisions/my-truck.webp', fallback: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200', alt: 'Freight logistics warehouse', href: 'https://crescentnovainternational.com/divisions#my-truck' },
-      { title: 'CNI AI & Digital Division', kicker: 'Digital growth', location: 'Kingdom of Saudi Arabia', description: 'AI automation, CRM and sales systems, enterprise software, creative marketing, cloud, data and cybersecurity.', image: 'https://crescentnovainternational.com/divisions/ai-and-digital.webp', fallback: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200', alt: 'Modern digital workspace', href: 'https://crescentnovainternational.com/divisions#ai-digital' }
+      { title: 'Automotive Division', kicker: 'Premium mobility', location: 'Riyadh · Saudi Arabia', description: 'TGA-licensed premium rental fleet, luxury VIP transport and commercial car hire.', image: 'https://crescentnovainternational.com/divisions/automotive.webp', fallback: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200', alt: 'Premium automotive and transport', href: '/divisions/automotive.html' },
+      { title: 'Business Facilitation Centre', kicker: 'Market entry', location: 'Kingdom of Saudi Arabia', description: 'Support for company setup, licensing, corporate banking, office leasing and joint-venture structuring.', image: 'https://crescentnovainternational.com/divisions/business-facilitation.webp', fallback: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200', alt: 'Contemporary commercial architecture', href: '/divisions/business-facilitation.html' },
+      { title: 'Tour & Travel', kicker: 'Journey & concierge', location: 'Makkah · Madinah', description: 'Umrah packages, corporate delegations, premium travel and concierge services.', image: 'https://crescentnovainternational.com/divisions/tour-travel.webp', fallback: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1200', alt: 'Architecture and travel', href: '/divisions/tour-travel.html' },
+      { title: 'Real Estate & Advisory', kicker: 'Property & advisory', location: 'Riyadh · Jeddah', description: 'Access to commercial, residential and industrial assets informed by feasibility research.', image: 'https://crescentnovainternational.com/divisions/real-estate.webp', fallback: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200', alt: 'Contemporary residential architecture', href: '/divisions/real-estate.html' },
+      { title: 'Home Services — Mundus', kicker: 'Connected home care', location: 'Kingdom of Saudi Arabia', description: 'Residential maintenance, MEP, cleaning and subscription-based care for corporate compounds.', image: 'https://crescentnovainternational.com/divisions/mundus.webp', fallback: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200', alt: 'Contemporary residential interior', href: '/divisions/home-services.html' },
+      { title: 'Hospitality Management', kicker: 'Executive accommodation', location: 'Riyadh · Saudi Arabia', description: 'Boutique hotel management, serviced apartments and corporate accommodation.', image: 'https://crescentnovainternational.com/divisions/hospitality.webp', fallback: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200', alt: 'Hospitality and hotel architecture', href: '/divisions/hospitality.html' },
+      { title: 'Logistics — My Truck', kicker: 'Connected freight', location: 'Dammam · Riyadh · Jeddah', description: 'Shared-load freight matching between the Kingdom’s major logistics hubs.', image: 'https://crescentnovainternational.com/divisions/my-truck.webp', fallback: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200', alt: 'Freight logistics warehouse', href: '/divisions/logistics.html' },
+      { title: 'CNI AI & Digital Division', kicker: 'Digital growth', location: 'Kingdom of Saudi Arabia', description: 'AI automation, CRM and sales systems, enterprise software, creative marketing, cloud, data and cybersecurity.', image: 'https://crescentnovainternational.com/divisions/ai-and-digital.webp', fallback: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200', alt: 'Modern digital workspace', href: '/divisions/ai-digital.html' }
     ];
     const pad = n => String(n + 1).padStart(2, '0');
     const numWrap = document.getElementById('divisionNumbers'); const photo = document.querySelector('.division-photo');
@@ -1344,6 +1323,94 @@
       <p>Registered in Saudi Arabia | Riyadh</p>
     </div>
   </footer>
+
+<!-- MOBILE MENU OVERLAY -->
+<div id="cni-mobile-menu" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#061B2B; z-index:99999; flex-direction:column; overflow-y:auto; overflow-x:hidden;">
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:20px; border-bottom:1px solid rgba(227,188,112,0.2);">
+    <a href="/index.html">
+      <img src="/public/logo.png" alt="CNI Logo" style="height:48px; width:auto; object-fit:contain;" onerror="this.src='/public/logo.png'" />
+    </a>
+    <button id="cni-close-menu" style="background:none; border:none; color:white; padding:8px; cursor:pointer;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  
+  <nav style="display:flex; flex-direction:column; padding:20px; gap:4px; font-family:'Inter',sans-serif; font-size:18px; font-weight:500;">
+    <a href="/index.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Home</a>
+    <a href="/about.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">About</a>
+    
+    <div style="display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05);">
+      <button id="cni-mob-div-toggle" style="display:flex; align-items:center; justify-content:space-between; width:100%; background:none; border:none; color:white; padding:16px 8px; font-size:18px; font-weight:500; font-family:inherit; cursor:pointer; text-align:left;">
+        Divisions
+        <svg id="cni-mob-div-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s;"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="cni-mob-div-menu" style="display:none; flex-direction:column; padding-left:16px; padding-bottom:8px; gap:12px; font-size:15px; font-weight:400;">
+        <a href="/divisions/automotive.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Automotive Division</a>
+        <a href="/divisions/business-facilitation.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Business Facilitation</a>
+        <a href="/divisions/tour-travel.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Tour &amp; Travel</a>
+        <a href="/divisions/real-estate.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Real Estate &amp; Advisory</a>
+        <a href="/divisions/home-services.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Home Services — Mundus</a>
+        <a href="/divisions/hospitality.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Hospitality Management</a>
+        <a href="/divisions/logistics.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Logistics — My Truck</a>
+        <a href="/divisions/ai-digital.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">CNI AI &amp; Digital</a>
+      </div>
+    </div>
+    
+    <a href="/investors.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Investors</a>
+    <a href="/why-ksa.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Why KSA</a>
+    <a href="/contact.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Contact</a>
+  </nav>
+  
+  <div style="padding:32px 20px; margin-top:auto; padding-bottom:60px;">
+    <a href="/request-proposal" class="cni-mob-link" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#d8ae57; color:#120f09; font-weight:600; font-size:16px; padding:16px 24px; border-radius:50px; text-decoration:none; box-shadow:0 4px 16px rgba(214,171,88,0.25);">
+      Request a Proposal &rarr;
+    </a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const openBtn = document.getElementById('cni-mobile-btn');
+  const closeBtn = document.getElementById('cni-close-menu');
+  const menu = document.getElementById('cni-mobile-menu');
+  const divToggle = document.getElementById('cni-mob-div-toggle');
+  const divMenu = document.getElementById('cni-mob-div-menu');
+  const divIcon = document.getElementById('cni-mob-div-icon');
+  
+  if(openBtn && closeBtn && menu) {
+    openBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      menu.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    closeBtn.addEventListener('click', function() {
+      menu.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+    
+    document.querySelectorAll('.cni-mob-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  
+  if(divToggle && divMenu && divIcon) {
+    divToggle.addEventListener('click', function() {
+      if(divMenu.style.display === 'none') {
+        divMenu.style.display = 'flex';
+        divIcon.style.transform = 'rotate(180deg)';
+      } else {
+        divMenu.style.display = 'none';
+        divIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+});
+</script>
+
 </body>
 
 </html>

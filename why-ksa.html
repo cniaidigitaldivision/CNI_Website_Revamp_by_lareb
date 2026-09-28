@@ -105,12 +105,12 @@
             </button>
             <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[280px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
               <div class="w-full bg-[#061B2B]/95 backdrop-blur-md border border-[#E3BC70]/20 rounded-lg shadow-2xl overflow-hidden flex flex-col py-2">
-                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Automotive Division</a>
+                <a href="/divisions/automotive.html" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Automotive Division</a>
                 <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Business Facilitation</a>
-                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Tour & Travel</a>
-                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Real Estate & Advisory</a>
+                <a href="/divisions/tour-travel.html" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Tour &amp; Travel</a>
+                <a href="/divisions/real-estate.html" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Real Estate &amp; Advisory</a>
                 <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Home Services — Mundus</a>
-                <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Hospitality Management</a>
+                <a href="/divisions/hospitality.html" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Hospitality Management</a>
                 <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">Logistics — My Truck</a>
                 <a href="" class="px-5 py-2.5 text-sm text-slate-200 hover:text-[#d8ae57] hover:bg-white/5 transition-colors">CNI AI & Digital</a>
               </div>
@@ -126,16 +126,19 @@
       </div>
 
       <!-- Right CTA -->
-      <div class="flex items-center gap-4 sm:gap-6 shrink-0">
-        <button class="bg-[#d8ae57] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(214,171,88,0.25)] hover:shadow-[0_6px_22px_rgba(214,171,88,0.4)] transition-all">
+      
+      <!-- Right CTA & Mobile Toggle -->
+      <div class="flex items-center gap-4 sm:gap-6 shrink-0 z-50">
+
+        <a href="/request-proposal" class="hidden lg:flex bg-[#d8ae57] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(214,171,88,0.25)] hover:shadow-[0_6px_22px_rgba(214,171,88,0.4)] transition-all">
           <span>Request a Proposal</span>
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+
+      
+        <button id="cni-mobile-btn" class="lg:hidden flex items-center justify-center text-white p-1" aria-label="Open menu">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
-        <div class="flex items-center text-xs tracking-wider font-semibold text-slate-300">
-          <button class="px-1 py-0.5 text-[#f0d08a] font-bold">EN</button>
-          <span class="text-slate-600 px-1 font-light">|</span>
-          <a href="/why-ksa-ar.html" class="px-1 py-0.5 text-slate-400 hover:text-white">عربي</a>
-        </div>
       </div>
     </div>
   </header>
@@ -648,9 +651,9 @@
         Explore your business opportunities in Saudi Arabia with guidance tailored to your objectives.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <button class="bg-[#d8ae57] text-[#120f09] font-semibold px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(214,171,88,0.3)] hover:shadow-[0_6px_25px_rgba(214,171,88,0.5)] transition-all flex items-center justify-center gap-2">
+        <a href="/request-proposal" class="bg-[#d8ae57] text-[#120f09] font-semibold px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(214,171,88,0.3)] hover:shadow-[0_6px_25px_rgba(214,171,88,0.5)] transition-all flex items-center justify-center gap-2">
           Request a Proposal →
-        </button>
+        </a>
         <button class="bg-transparent border border-white/30 text-white hover:border-[#E3BC70] hover:text-[#E3BC70] font-semibold px-8 py-3.5 rounded-full transition-all">
           Contact Our Team
         </button>
@@ -699,12 +702,12 @@
       <div class="flex flex-col text-left">
         <h3 class="text-[#D4A574] font-serif-luxury text-xl mb-6">Our Divisions</h3>
         <nav class="flex flex-col gap-3">
-          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Automotive Division</a>
+          <a href="/divisions/automotive.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Automotive Division</a>
           <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Business Facilitation</a>
-          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Tour & Travel</a>
-          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Real Estate & Advisory</a>
+          <a href="/divisions/tour-travel.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Tour &amp; Travel</a>
+          <a href="/divisions/real-estate.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Real Estate &amp; Advisory</a>
           <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Home Services — Mundus</a>
-          <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Hospitality Management</a>
+          <a href="/divisions/hospitality.html" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Hospitality Management</a>
           <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">Logistics — My Truck</a>
           <a href="" class="text-white/80 hover:text-[#D4A574] hover:translate-x-1 transition-all text-sm">CNI AI & Digital</a>
         </nav>
@@ -790,5 +793,93 @@
       }
     }
   </script>
+
+<!-- MOBILE MENU OVERLAY -->
+<div id="cni-mobile-menu" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#061B2B; z-index:99999; flex-direction:column; overflow-y:auto; overflow-x:hidden;">
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:20px; border-bottom:1px solid rgba(227,188,112,0.2);">
+    <a href="/index.html">
+      <img src="/public/logo.png" alt="CNI Logo" style="height:48px; width:auto; object-fit:contain;" onerror="this.src='/public/logo.png'" />
+    </a>
+    <button id="cni-close-menu" style="background:none; border:none; color:white; padding:8px; cursor:pointer;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  
+  <nav style="display:flex; flex-direction:column; padding:20px; gap:4px; font-family:'Inter',sans-serif; font-size:18px; font-weight:500;">
+    <a href="/index.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Home</a>
+    <a href="/about.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">About</a>
+    
+    <div style="display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05);">
+      <button id="cni-mob-div-toggle" style="display:flex; align-items:center; justify-content:space-between; width:100%; background:none; border:none; color:white; padding:16px 8px; font-size:18px; font-weight:500; font-family:inherit; cursor:pointer; text-align:left;">
+        Divisions
+        <svg id="cni-mob-div-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s;"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="cni-mob-div-menu" style="display:none; flex-direction:column; padding-left:16px; padding-bottom:8px; gap:12px; font-size:15px; font-weight:400;">
+        <a href="/divisions/automotive.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Automotive Division</a>
+        <a href="/divisions/business-facilitation.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Business Facilitation</a>
+        <a href="/divisions/tour-travel.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Tour &amp; Travel</a>
+        <a href="/divisions/real-estate.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Real Estate &amp; Advisory</a>
+        <a href="/divisions/home-services.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Home Services — Mundus</a>
+        <a href="/divisions/hospitality.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Hospitality Management</a>
+        <a href="/divisions/logistics.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Logistics — My Truck</a>
+        <a href="/divisions/ai-digital.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">CNI AI &amp; Digital</a>
+      </div>
+    </div>
+    
+    <a href="/investors.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Investors</a>
+    <a href="/why-ksa.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Why KSA</a>
+    <a href="/contact.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Contact</a>
+  </nav>
+  
+  <div style="padding:32px 20px; margin-top:auto; padding-bottom:60px;">
+    <a href="/request-proposal" class="cni-mob-link" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#d8ae57; color:#120f09; font-weight:600; font-size:16px; padding:16px 24px; border-radius:50px; text-decoration:none; box-shadow:0 4px 16px rgba(214,171,88,0.25);">
+      Request a Proposal &rarr;
+    </a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const openBtn = document.getElementById('cni-mobile-btn');
+  const closeBtn = document.getElementById('cni-close-menu');
+  const menu = document.getElementById('cni-mobile-menu');
+  const divToggle = document.getElementById('cni-mob-div-toggle');
+  const divMenu = document.getElementById('cni-mob-div-menu');
+  const divIcon = document.getElementById('cni-mob-div-icon');
+  
+  if(openBtn && closeBtn && menu) {
+    openBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      menu.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    closeBtn.addEventListener('click', function() {
+      menu.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+    
+    document.querySelectorAll('.cni-mob-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  
+  if(divToggle && divMenu && divIcon) {
+    divToggle.addEventListener('click', function() {
+      if(divMenu.style.display === 'none') {
+        divMenu.style.display = 'flex';
+        divIcon.style.transform = 'rotate(180deg)';
+      } else {
+        divMenu.style.display = 'none';
+        divIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+});
+</script>
+
 </body>
 </html>

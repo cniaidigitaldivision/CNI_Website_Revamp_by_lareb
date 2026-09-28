@@ -159,26 +159,6 @@ export default function App() {
               <ArrowRight className={`w-3.5 h-3.5 transition-transform duration-200 ${isRtl ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
             </button>
 
-            {/* Language Switcher: EN | عربي */}
-            <div className="flex items-center text-xs tracking-wider font-semibold text-slate-300">
-              <button
-                onClick={() => setLang('EN')}
-                className={`transition-colors cursor-pointer px-1 py-0.5 ${
-                  lang === 'EN' ? 'text-[#f0d08a] font-bold' : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                EN
-              </button>
-              <span className="text-slate-600 px-1 font-light">|</span>
-              <button
-                onClick={() => setLang('AR')}
-                className={`transition-colors cursor-pointer px-1 py-0.5 ${
-                  lang === 'AR' ? 'text-[#f0d08a] font-bold' : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                عربي
-              </button>
-            </div>
 
             {/* Mobile Menu Icon */}
             <button

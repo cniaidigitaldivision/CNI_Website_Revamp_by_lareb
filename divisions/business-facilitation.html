@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Business Facilitation Centre � Crescent Nova International</title>
+  <title>Business Facilitation Centre � Crescent Nova International</title>
   <meta name="description" content="CNI's Business Facilitation Centre: end-to-end company registration, licensing, PRO services, and JV structuring in Saudi Arabia."/>
-  <script src="/tailwind-cdn.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend: { colors: { 'cni-gold': '#E3BC70' },fontFamily:{'sans-clean':['Inter','sans-serif'],'serif-luxury':['Playfair Display','serif']}}}}</script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <style>
@@ -63,21 +63,22 @@
           Divisions <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="dm"><div class="di">
-          <a href="">Automotive Division <span class="ar">&#8594;</span></a>
-          <a href="" class="act">Business Facilitation Centre <span class="ar">&#8594;</span></a>
-          <a href="">Tour &amp; Travel <span class="ar">&#8594;</span></a>
-          <a href="">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
-          <a href="">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
-          <a href="">Hospitality Management <span class="ar">&#8594;</span></a>
-          <a href="">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
-          <a href="">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
+          <a href="/divisions/automotive.html">Automotive Division <span class="ar">&#8594;</span></a>
+          <a href="/divisions/business-facilitation.html" class="act">Business Facilitation Centre <span class="ar">&#8594;</span></a>
+          <a href="/divisions/tour-travel.html">Tour &amp; Travel <span class="ar">&#8594;</span></a>
+          <a href="/divisions/real-estate.html">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
+          <a href="/divisions/home-services.html">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
+          <a href="/divisions/hospitality.html">Hospitality Management <span class="ar">&#8594;</span></a>
+          <a href="/divisions/logistics.html">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
+          <a href="/divisions/ai-digital.html">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
         </div></div>
       </div>
       <a href="../investors.html">Investors</a>
       <a href="/">Why KSA</a>
       <a href="/">Contact</a>
     </nav>
-    <a href="/" class="btn-gold" style="font-size:12px;padding:10px 22px;">Request a Proposal &#8594;</a>
+    <a href="/request-proposal" class="btn-gold desktop-cta" style="font-size:12px;padding:10px 22px;">Request a Proposal &#8594;</a>
+    <button id="cni-mobile-btn" class="mobile-toggle" style="background:none;border:none;color:white;cursor:pointer;display:none;"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
   </header>
 
   <!-- --- 1. HERO --- -->
@@ -322,5 +323,93 @@
     document.querySelectorAll('.afu').forEach(el=>ob.observe(el));
     setTimeout(()=>{document.getElementById('hero')?.classList.add('vis');},80);
   </script>
+
+<!-- MOBILE MENU OVERLAY -->
+<div id="cni-mobile-menu" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#061B2B; z-index:99999; flex-direction:column; overflow-y:auto; overflow-x:hidden;">
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:20px; border-bottom:1px solid rgba(227,188,112,0.2);">
+    <a href="/index.html">
+      <img src="/public/logo.png" alt="CNI Logo" style="height:48px; width:auto; object-fit:contain;" onerror="this.src='/public/logo.png'" />
+    </a>
+    <button id="cni-close-menu" style="background:none; border:none; color:white; padding:8px; cursor:pointer;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  
+  <nav style="display:flex; flex-direction:column; padding:20px; gap:4px; font-family:'Inter',sans-serif; font-size:18px; font-weight:500;">
+    <a href="/index.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Home</a>
+    <a href="/about.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">About</a>
+    
+    <div style="display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05);">
+      <button id="cni-mob-div-toggle" style="display:flex; align-items:center; justify-content:space-between; width:100%; background:none; border:none; color:white; padding:16px 8px; font-size:18px; font-weight:500; font-family:inherit; cursor:pointer; text-align:left;">
+        Divisions
+        <svg id="cni-mob-div-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s;"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="cni-mob-div-menu" style="display:none; flex-direction:column; padding-left:16px; padding-bottom:8px; gap:12px; font-size:15px; font-weight:400;">
+        <a href="/divisions/automotive.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Automotive Division</a>
+        <a href="/divisions/business-facilitation.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Business Facilitation</a>
+        <a href="/divisions/tour-travel.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Tour &amp; Travel</a>
+        <a href="/divisions/real-estate.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Real Estate &amp; Advisory</a>
+        <a href="/divisions/home-services.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Home Services — Mundus</a>
+        <a href="/divisions/hospitality.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Hospitality Management</a>
+        <a href="/divisions/logistics.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Logistics — My Truck</a>
+        <a href="/divisions/ai-digital.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">CNI AI &amp; Digital</a>
+      </div>
+    </div>
+    
+    <a href="/investors.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Investors</a>
+    <a href="/why-ksa.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Why KSA</a>
+    <a href="/contact.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Contact</a>
+  </nav>
+  
+  <div style="padding:32px 20px; margin-top:auto; padding-bottom:60px;">
+    <a href="/request-proposal" class="cni-mob-link" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#d8ae57; color:#120f09; font-weight:600; font-size:16px; padding:16px 24px; border-radius:50px; text-decoration:none; box-shadow:0 4px 16px rgba(214,171,88,0.25);">
+      Request a Proposal &rarr;
+    </a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const openBtn = document.getElementById('cni-mobile-btn');
+  const closeBtn = document.getElementById('cni-close-menu');
+  const menu = document.getElementById('cni-mobile-menu');
+  const divToggle = document.getElementById('cni-mob-div-toggle');
+  const divMenu = document.getElementById('cni-mob-div-menu');
+  const divIcon = document.getElementById('cni-mob-div-icon');
+  
+  if(openBtn && closeBtn && menu) {
+    openBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      menu.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    closeBtn.addEventListener('click', function() {
+      menu.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+    
+    document.querySelectorAll('.cni-mob-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  
+  if(divToggle && divMenu && divIcon) {
+    divToggle.addEventListener('click', function() {
+      if(divMenu.style.display === 'none') {
+        divMenu.style.display = 'flex';
+        divIcon.style.transform = 'rotate(180deg)';
+      } else {
+        divMenu.style.display = 'none';
+        divIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+});
+</script>
+
 </body>
 </html>
