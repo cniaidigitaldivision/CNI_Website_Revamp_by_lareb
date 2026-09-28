@@ -48,38 +48,105 @@
     .btn-ghost:hover{color:white;}
     nav a{color:#94a3b8;text-decoration:none;transition:color .2s;}
     nav a:hover{color:white;}
+  
+    
+
+
+    
+
+  
+    /* === MOBILE MENU FIXES === */
+    #cni-mobile-menu {
+      display: none;
+    }
+    #cni-close-menu {
+      background: none !important;
+      border: none !important;
+      color: #ffffff !important;
+      padding: 8px !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 100001 !important;
+      position: relative !important;
+    }
+    #cni-close-menu svg {
+      stroke: #ffffff !important;
+      display: block !important;
+      width: 32px !important;
+      height: 32px !important;
+    }
+    #cni-mob-div-toggle {
+      color: #ffffff !important;
+    }
+    #cni-mob-div-icon {
+      stroke: #ffffff !important;
+      flex-shrink: 0 !important;
+      display: block !important;
+      width: 20px !important;
+      height: 20px !important;
+    }
   </style>
 </head>
 <body class="font-sans-clean">
 
-  <!-- --- NAVBAR --- -->
-  <header style="position:sticky;top:0;width:100%;z-index:999;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:#0B2233;border-bottom:1px solid rgba(227,188,112,.15);">
-    <a href="/"><img src="/public/logo.png" alt="CNI" style="height:52px;width:auto;object-fit:contain;"/></a>
-    <nav style="display:flex;align-items:center;gap:30px;font-size:14px;">
-      <a href="/">Home</a>
-      <a href="/#about">About</a>
-      <div class="nd">
-        <button style="display:flex;align-items:center;gap:5px;background:none;border:none;color:#d8ae57;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">
-          Divisions <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
-        <div class="dm"><div class="di">
-          <a href="/divisions/automotive.html">Automotive Division <span class="ar">&#8594;</span></a>
-          <a href="/divisions/business-facilitation.html" class="act">Business Facilitation Centre <span class="ar">&#8594;</span></a>
-          <a href="/divisions/tour-travel.html">Tour &amp; Travel <span class="ar">&#8594;</span></a>
-          <a href="/divisions/real-estate.html">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
-          <a href="/divisions/home-services.html">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
-          <a href="/divisions/hospitality.html">Hospitality Management <span class="ar">&#8594;</span></a>
-          <a href="/divisions/logistics.html">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
-          <a href="/divisions/ai-digital.html">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
-        </div></div>
+  <!-- NAVBAR -->
+  <header class="w-full px-5 sm:px-8 xl:px-14 pt-6 pb-2 absolute top-0 z-50">
+    <div class="w-full flex items-center justify-between">
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="/">
+          <img src="/public/logo.png" alt="CNI Logo" class="h-16 sm:h-20 w-auto object-contain rounded" onerror="this.src='../public/logo.png'" />
+        </a>
       </div>
-      <a href="../investors.html">Investors</a>
-      <a href="/">Why KSA</a>
-      <a href="/">Contact</a>
-    </nav>
-    <a href="/request-proposal" class="btn-gold desktop-cta" style="font-size:12px;padding:10px 22px;">Request a Proposal &#8594;</a>
-    <button id="cni-mobile-btn" class="mobile-toggle" style="background:none;border:none;color:white;cursor:pointer;display:none;"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      <div class="hidden lg:flex flex-1 justify-center">
+        <nav class="flex items-center gap-7 xl:gap-9 text-[14px]">
+          <a href="/" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Home</a>
+          <a href="/about.html" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">About</a>
+          <div class="relative group" tabindex="0">
+            <button class="flex items-center gap-1 relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal transition-colors outline-none focus:outline-none">
+              Divisions
+              <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full -mt-2 pt-4 px-8 pb-8 w-[350px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-opacity duration-200 z-50">
+              <div class="w-full bg-[#061B2B]/95 backdrop-blur-md border border-[#E3BC70]/20 rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col py-2 translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-200 text-left">
+                <a href="/divisions/automotive.html" class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Automotive Division <span class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/business-facilitation.html" class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Business Facilitation Centre <span class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/tour-travel.html" class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Tour &amp; Travel <span class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/real-estate.html" class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Real Estate &amp; Advisory <span class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="" class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Home Services — Mundus <span class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/hospitality.html" class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Hospitality Management <span class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="" class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Logistics — My Truck <span class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/ai-digital.html" class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">CNI AI &amp; Digital Division <span class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+              </div>
+            </div>
+          </div>
+          <a href="/investors" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Investors</a>
+          <a href="/why-ksa" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Why KSA</a>
+          <a href="/contact" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Contact</a>
+        </nav>
+      </div>
+      
+      <!-- Right CTA & Mobile Toggle -->
+      <div class="flex items-center gap-4 sm:gap-6 shrink-0 z-50">
+
+        <a href="/request-proposal" class="hidden lg:flex bg-[#E3BC70] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(227,188,112,0.25)] hover:shadow-[0_6px_22px_rgba(227,188,112,0.4)] transition-all">
+          <span>Request a Proposal</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+
+      
+        <button id="cni-mobile-btn" class="lg:hidden flex items-center justify-center text-white p-1" aria-label="Open menu">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
   </header>
+
+  <!-- --- NAVBAR --- -->
+  
 
   <!-- --- 1. HERO --- -->
   <section class="hero">
@@ -325,13 +392,21 @@
   </script>
 
 <!-- MOBILE MENU OVERLAY -->
+
+
+
+
+
+
+
+<!-- MOBILE MENU OVERLAY -->
 <div id="cni-mobile-menu" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#061B2B; z-index:99999; flex-direction:column; overflow-y:auto; overflow-x:hidden;">
   <div style="display:flex; align-items:center; justify-content:space-between; padding:20px; border-bottom:1px solid rgba(227,188,112,0.2);">
     <a href="/index.html">
       <img src="/public/logo.png" alt="CNI Logo" style="height:48px; width:auto; object-fit:contain;" onerror="this.src='/public/logo.png'" />
     </a>
-    <button id="cni-close-menu" style="background:none; border:none; color:white; padding:8px; cursor:pointer;">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    <button id="cni-close-menu" style="background:none; border:none; color:#ffffff !important; padding:8px; cursor:pointer; display:flex !important; align-items:center; justify-content:center; z-index:100000;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
   </div>
   
@@ -410,6 +485,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-
 </body>
 </html>

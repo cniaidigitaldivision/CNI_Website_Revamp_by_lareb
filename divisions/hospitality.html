@@ -1,100 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Hospitality Management — Crescent Nova International</title>
-  <meta name="description" content="CNI Hospitality Management: Corporate accommodation, hotel management contracts, and curated Hajj & Umrah packages across KSA."/>
+  <meta name="description"
+    content="CNI Hospitality Management: Corporate accommodation, hotel management contracts, and curated Hajj & Umrah packages across KSA." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend: { colors: { 'cni-gold': '#E3BC70' },fontFamily:{'sans-clean':['Inter','sans-serif'],'serif-luxury':['Playfair Display','serif']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <script>tailwind.config = { theme: { extend: { colors: { 'cni-gold': '#E3BC70' }, fontFamily: { 'sans-clean': ['Inter', 'sans-serif'], 'serif-luxury': ['Playfair Display', 'serif'] } } } }</script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{background:#061B2B;color:#f1f5f9;font-family:'Inter',sans-serif;overflow-x:hidden;}
-    .afu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
-    .afu.vis{opacity:1;transform:translateY(0);}
-    .nd{position:relative;}
-    .nd .dm{position:absolute;left:50%;top:100%;transform:translateX(-50%);padding-top:12px;width:300px;opacity:0;pointer-events:none;transition:opacity .18s ease;z-index:200;}
-    .nd:hover .dm,.nd:focus-within .dm{opacity:1;pointer-events:auto;}
-    .nd .di{background:rgba(6,27,43,.97);backdrop-filter:blur(12px);border:1px solid rgba(227,188,112,.2);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.6);padding:8px 0;}
-    .dm a{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;font-size:13px;color:#cbd5e1;text-decoration:none;transition:background .15s,color .15s;white-space:nowrap;}
-    .dm a:hover,.dm a.act{background:rgba(255,255,255,.05);color:#d8ae57;}
-    .dm a .ar{opacity:0;transform:translateX(-5px);transition:opacity .15s,transform .15s;color:#d8ae57;}
-    .dm a:hover .ar,.dm a.act .ar{opacity:1;transform:translateX(0);}
-    .chev{transition:transform .25s;}.nd:hover .chev{transform:rotate(180deg);}
-    nav a{color:#94a3b8;text-decoration:none;transition:color .2s;}
-    nav a:hover{color:white;}
-    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:#d8ae57;color:#061B2B;font-weight:700;font-size:14px;padding:14px 32px;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 20px rgba(216,174,87,.3);}
-    .btn-gold:hover{transform:scale(1.04);box-shadow:0 0 30px rgba(216,174,87,.5);}
-    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:#d8ae57;font-weight:600;font-size:14px;padding:13px 30px;border-radius:50px;text-decoration:none;border:1px solid rgba(216,174,87,.4);transition:background .2s;}
-    .btn-outline:hover{background:rgba(216,174,87,.08);}
-    .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:#94a3b8;font-size:14px;text-decoration:none;transition:color .2s;}
-    .btn-ghost:hover{color:white;}
-    .gold-line{width:56px;height:1px;background:rgba(216,174,87,.35);margin:0 auto;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #061B2B;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .afu {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .afu.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nd {
+      position: relative;
+    }
+
+    .nd .dm {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      padding-top: 12px;
+      width: 300px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease;
+      z-index: 200;
+    }
+
+    .nd:hover .dm,
+    .nd:focus-within .dm {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nd .di {
+      background: rgba(6, 27, 43, .97);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(227, 188, 112, .2);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .6);
+      padding: 8px 0;
+    }
+
+    .dm a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      font-size: 13px;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+
+    .dm a:hover,
+    .dm a.act {
+      background: rgba(255, 255, 255, .05);
+      color: #d8ae57;
+    }
+
+    .dm a .ar {
+      opacity: 0;
+      transform: translateX(-5px);
+      transition: opacity .15s, transform .15s;
+      color: #d8ae57;
+    }
+
+    .dm a:hover .ar,
+    .dm a.act .ar {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .chev {
+      transition: transform .25s;
+    }
+
+    .nd:hover .chev {
+      transform: rotate(180deg);
+    }
+
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #d8ae57;
+      color: #061B2B;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 0 20px rgba(216, 174, 87, .3);
+    }
+
+    .btn-gold:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 30px rgba(216, 174, 87, .5);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: #d8ae57;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 13px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1px solid rgba(216, 174, 87, .4);
+      transition: background .2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(216, 174, 87, .08);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #94a3b8;
+      font-size: 14px;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .btn-ghost:hover {
+      color: white;
+    }
+
+    .gold-line {
+      width: 56px;
+      height: 1px;
+      background: rgba(216, 174, 87, .35);
+      margin: 0 auto;
+    }
+
     /* Cards */
-    .pillar-card{background:linear-gradient(135deg,rgba(11,41,59,.7),rgba(6,27,43,.8));border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:40px 32px;transition:border-color .3s,transform .3s;text-align:center;position:relative;overflow:hidden;}
-    .pillar-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(216,174,87,.05),transparent);opacity:0;transition:opacity .3s;}
-    .pillar-card:hover{border-color:rgba(216,174,87,.4);transform:translateY(-5px);}
-    .pillar-card:hover::before{opacity:1;}
-    .segment-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:24px;display:flex;align-items:flex-start;gap:16px;transition:background .3s,border-color .3s;}
-    .segment-card:hover{background:rgba(255,255,255,.04);border-color:rgba(216,174,87,.2);}
-    .adv-item{display:flex;align-items:center;gap:16px;padding:20px;background:rgba(6,27,43,.5);border:1px solid rgba(216,174,87,.15);border-radius:12px;transition:border-color .3s;}
-    .adv-item:hover{border-color:rgba(216,174,87,.4);}
-    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
-    @media(max-width:768px){
-      header{padding:14px 20px!important;}
-      nav{display:none!important;}
-      section>div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+    .pillar-card {
+      background: linear-gradient(135deg, rgba(11, 41, 59, .7), rgba(6, 27, 43, .8));
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: 18px;
+      padding: 40px 32px;
+      transition: border-color .3s, transform .3s;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(216, 174, 87, .05), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .pillar-card:hover {
+      border-color: rgba(216, 174, 87, .4);
+      transform: translateY(-5px);
+    }
+
+    .pillar-card:hover::before {
+      opacity: 1;
+    }
+
+    .segment-card {
+      background: rgba(255, 255, 255, .02);
+      border: 1px solid rgba(255, 255, 255, .05);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: background .3s, border-color .3s;
+    }
+
+    .segment-card:hover {
+      background: rgba(255, 255, 255, .04);
+      border-color: rgba(216, 174, 87, .2);
+    }
+
+    .adv-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: rgba(6, 27, 43, .5);
+      border: 1px solid rgba(216, 174, 87, .15);
+      border-radius: 12px;
+      transition: border-color .3s;
+    }
+
+    .adv-item:hover {
+      border-color: rgba(216, 174, 87, .4);
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .4;
+      }
+    }
+
+    @media(max-width:768px) {
+
+
+      section>div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+        }
+  
+    
+
+  
+    /* === MOBILE MENU FIXES === */
+    #cni-mobile-menu {
+      display: none;
+    }
+    #cni-close-menu {
+      background: none !important;
+      border: none !important;
+      color: #ffffff !important;
+      padding: 8px !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 100001 !important;
+      position: relative !important;
+    }
+    #cni-close-menu svg {
+      stroke: #ffffff !important;
+      display: block !important;
+      width: 32px !important;
+      height: 32px !important;
+    }
+    #cni-mob-div-toggle {
+      color: #ffffff !important;
+    }
+    #cni-mob-div-icon {
+      stroke: #ffffff !important;
+      flex-shrink: 0 !important;
+      display: block !important;
+      width: 20px !important;
+      height: 20px !important;
     }
   </style>
 </head>
+
 <body class="font-sans-clean">
 
-  <!-- ═══ NAVBAR ═══ -->
-  <header style="position:sticky;top:0;width:100%;z-index:999;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:#0B2233;border-bottom:1px solid rgba(227,188,112,.15);">
-    <a href="/"><img src="/public/logo.png" alt="CNI" style="height:52px;width:auto;object-fit:contain;"/></a>
-    <nav style="display:flex;align-items:center;gap:30px;font-size:14px;">
-      <a href="/">Home</a>
-      <a href="/#about">About</a>
-      <div class="nd">
-        <button style="display:flex;align-items:center;gap:5px;background:none;border:none;color:#d8ae57;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;">
-          Divisions <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
-        <div class="dm"><div class="di">
-          <a href="/divisions/automotive.html">Automotive Division <span class="ar">&#8594;</span></a>
-          <a href="/divisions/business-facilitation.html">Business Facilitation Centre <span class="ar">&#8594;</span></a>
-          <a href="/divisions/tour-travel.html">Tour &amp; Travel <span class="ar">&#8594;</span></a>
-          <a href="/divisions/real-estate.html">Real Estate &amp; Advisory <span class="ar">&#8594;</span></a>
-          <a href="/divisions/home-services.html">Home Services &#8212; Mundus <span class="ar">&#8594;</span></a>
-          <a href="/divisions/hospitality.html" class="act">Hospitality Management <span class="ar">&#8594;</span></a>
-          <a href="/divisions/logistics.html">Logistics &#8212; My Truck <span class="ar">&#8594;</span></a>
-          <a href="/divisions/ai-digital.html">CNI AI &amp; Digital Division <span class="ar">&#8594;</span></a>
-        </div></div>
+  <!-- NAVBAR -->
+  <header class="w-full px-5 sm:px-8 xl:px-14 pt-6 pb-2 absolute top-0 z-50">
+    <div class="w-full flex items-center justify-between">
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="/">
+          <img src="/public/logo.png" alt="CNI Logo" class="h-16 sm:h-20 w-auto object-contain rounded"
+            onerror="this.src='../public/logo.png'" />
+        </a>
       </div>
-      <a href="../investors.html">Investors</a>
-      <a href="/">Why KSA</a>
-      <a href="/">Contact</a>
-    </nav>
-    <a href="/request-proposal" class="btn-gold desktop-cta" style="font-size:12px;padding:10px 22px;">Request a Proposal &#8594;</a>
-    <button id="cni-mobile-btn" class="mobile-toggle" style="background:none;border:none;color:white;cursor:pointer;display:none;"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      <div class="hidden lg:flex flex-1 justify-center">
+        <nav class="flex items-center gap-7 xl:gap-9 text-[14px]">
+          <a href="/" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Home</a>
+          <a href="/about.html"
+            class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">About</a>
+          <div class="relative group" tabindex="0">
+            <button
+              class="flex items-center gap-1 relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal transition-colors outline-none focus:outline-none">
+              Divisions
+              <svg
+                class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-full -mt-2 pt-4 px-8 pb-8 w-[350px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-opacity duration-200 z-50">
+              <div
+                class="w-full bg-[#061B2B]/95 backdrop-blur-md border border-[#E3BC70]/20 rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col py-2 translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-200 text-left">
+                <a href="/divisions/automotive.html"
+                  class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Automotive
+                  Division <span
+                    class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/business-facilitation.html"
+                  class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Business
+                  Facilitation Centre <span
+                    class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/tour-travel.html"
+                  class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Tour
+                  &amp; Travel <span
+                    class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/real-estate.html"
+                  class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Real
+                  Estate &amp; Advisory <span
+                    class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href=""
+                  class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Home
+                  Services — Mundus <span
+                    class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/hospitality.html"
+                  class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Hospitality
+                  Management <span
+                    class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href=""
+                  class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">Logistics
+                  — My Truck <span
+                    class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+                <a href="/divisions/ai-digital.html"
+                  class="group/item flex items-center justify-between px-5 py-2.5 text-sm text-slate-200 hover:text-[#E3BC70] hover:bg-white/5 transition-colors">CNI
+                  AI &amp; Digital Division <span
+                    class="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-[#E3BC70]">&#8594;</span></a>
+              </div>
+            </div>
+          </div>
+          <a href="/investors"
+            class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Investors</a>
+          <a href="/why-ksa" class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Why
+            KSA</a>
+          <a href="/contact"
+            class="relative py-1 cursor-pointer text-slate-300 hover:text-white font-normal">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Right CTA & Mobile Toggle -->
+      <div class="flex items-center gap-4 sm:gap-6 shrink-0 z-50">
+
+        <a href="/request-proposal"
+          class="hidden lg:flex bg-[#E3BC70] text-[#120f09] font-semibold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(227,188,112,0.25)] hover:shadow-[0_6px_22px_rgba(227,188,112,0.4)] transition-all">
+          <span>Request a Proposal</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+
+
+        <button id="cni-mobile-btn" class="lg:hidden flex items-center justify-center text-white p-1"
+          aria-label="Open menu">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
   </header>
 
+  <!-- ═══ NAVBAR ═══ -->
+
+
   <!-- ═══ 1. HERO ═══ -->
-  <section class="hero" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2000');background-size:cover;background-position:center;opacity:.4;mix-blend-mode:luminosity;"></div>
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,27,43,.4) 0%,rgba(6,27,43,.2) 50%,#061B2B 100%);"></div>
-    <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,174,87,.25),transparent);"></div>
-    <div style="position:relative;z-index:10;text-align:center;padding:130px 24px 70px;max-width:960px;margin:0 auto;" class="afu" id="hero">
-      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(216,174,87,.08);border:1px solid rgba(216,174,87,.2);border-radius:30px;padding:7px 20px;margin-bottom:26px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        <span style="font-size:11px;letter-spacing:.25em;color:#d8ae57;font-weight:600;text-transform:uppercase;">Hospitality Management Division</span>
+  <section class="hero"
+    style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+    <div
+      style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2000');background-size:cover;background-position:center;opacity:.4;mix-blend-mode:luminosity;">
+    </div>
+    <div
+      style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,27,43,.4) 0%,rgba(6,27,43,.2) 50%,#061B2B 100%);">
+    </div>
+    <div
+      style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,174,87,.25),transparent);">
+    </div>
+    <div style="position:relative;z-index:10;text-align:center;padding:130px 24px 70px;max-width:960px;margin:0 auto;"
+      class="afu" id="hero">
+      <div
+        style="display:inline-flex;align-items:center;gap:10px;background:rgba(216,174,87,.08);border:1px solid rgba(216,174,87,.2);border-radius:30px;padding:7px 20px;margin-bottom:26px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d8ae57" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+        <span
+          style="font-size:11px;letter-spacing:.25em;color:#d8ae57;font-weight:600;text-transform:uppercase;">Hospitality
+          Management Division</span>
       </div>
-      <h1 class="font-serif-luxury" style="font-size:clamp(36px,6vw,74px);line-height:1.1;color:white;margin-bottom:20px;">
-        Hospitality Management &amp;<br/><span style="color:#d8ae57;font-style:italic;">Corporate Accommodation</span>
+      <h1 class="font-serif-luxury"
+        style="font-size:clamp(36px,6vw,74px);line-height:1.1;color:white;margin-bottom:20px;">
+        Hospitality Management &amp;<br /><span style="color:#d8ae57;font-style:italic;">Corporate Accommodation</span>
       </h1>
-      <p style="font-size:clamp(14px,1.8vw,17px);color:#cbd5e1;font-weight:300;margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.75;">
-        Hajj &amp; Umrah Packages &nbsp;&middot;&nbsp; Hotel Management Contracts &nbsp;&middot;&nbsp; Business Traveler Solutions
+      <p
+        style="font-size:clamp(14px,1.8vw,17px);color:#cbd5e1;font-weight:300;margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.75;">
+        Hajj &amp; Umrah Packages &nbsp;&middot;&nbsp; Hotel Management Contracts &nbsp;&middot;&nbsp; Business Traveler
+        Solutions
       </p>
       <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
         <a href="/" class="btn-gold">Request a Partnership &#8594;</a>
@@ -104,56 +449,93 @@
   </section>
 
   <!-- OVERVIEW -->
-  <section id="overview" class="pt-[60px] pb-[120px] px-6 relative z-10 bg-gradient-to-b from-[#061B2B] via-[#081f33] to-[#061B2B] flex flex-col items-center text-center">
+  <section id="overview"
+    class="pt-[60px] pb-[120px] px-6 relative z-10 bg-gradient-to-b from-[#061B2B] via-[#081f33] to-[#061B2B] flex flex-col items-center text-center">
     <!-- Small label -->
-    <span class="fade-up inline-block text-[#E3BC70] uppercase tracking-[0.15em] text-[11px] md:text-[12px] font-medium mb-[20px]">
+    <span
+      class="fade-up inline-block text-[#E3BC70] uppercase tracking-[0.15em] text-[11px] md:text-[12px] font-medium mb-[20px]">
       Division Overview
     </span>
 
     <!-- Large Editorial Heading -->
-    <h2 class="fade-up font-serif-luxury text-[#E3BC70] text-[34px] md:text-[42px] lg:text-[64px] leading-[1.2] max-w-[800px] mx-auto font-normal mb-[32px]" style="transition-delay: 200ms;">
+    <h2
+      class="fade-up font-serif-luxury text-[#E3BC70] text-[34px] md:text-[42px] lg:text-[64px] leading-[1.2] max-w-[800px] mx-auto font-normal mb-[32px]"
+      style="transition-delay: 200ms;">
       Premium <em class="italic text-[#E3BC70]">Accommodation Solutions</em>
     </h2>
 
     <!-- Paragraphs -->
-    <div class="fade-up text-slate-300 font-sans-clean text-[16px] md:text-[17px] leading-[1.7] max-w-[680px] mx-auto font-light" style="transition-delay: 400ms;">
-      <p class="mb-5 last:mb-0">CNI's Hospitality Management division delivers premium accommodation and hospitality solutions for corporate travelers, business delegations, and the Pakistani diaspora performing Hajj and Umrah. Leveraging CNI's established relationships with Saudi hospitality providers, the division specializes in securing hotel management contracts, negotiating bulk corporate accommodation deals, and creating specialized packages for Muslim pilgrims.</p>
-      <p class="mb-5 last:mb-0">The Pakistani diaspora and Muslim world represent one of the largest and most loyal hospitality markets in KSA &#8212; with millions traveling each year for religious obligations, business, and family visits. CNI's deep community ties and on-ground presence in the Kingdom position us uniquely to capture this demand, offering unmatched reliability and culturally attuned service.</p>
+    <div
+      class="fade-up text-slate-300 font-sans-clean text-[16px] md:text-[17px] leading-[1.7] max-w-[680px] mx-auto font-light"
+      style="transition-delay: 400ms;">
+      <p class="mb-5 last:mb-0">CNI's Hospitality Management division delivers premium accommodation and hospitality
+        solutions for corporate travelers, business delegations, and the Pakistani diaspora performing Hajj and Umrah.
+        Leveraging CNI's established relationships with Saudi hospitality providers, the division specializes in
+        securing hotel management contracts, negotiating bulk corporate accommodation deals, and creating specialized
+        packages for Muslim pilgrims.</p>
+      <p class="mb-5 last:mb-0">The Pakistani diaspora and Muslim world represent one of the largest and most loyal
+        hospitality markets in KSA &#8212; with millions traveling each year for religious obligations, business, and
+        family visits. CNI's deep community ties and on-ground presence in the Kingdom position us uniquely to capture
+        this demand, offering unmatched reliability and culturally attuned service.</p>
     </div>
   </section>
 
   <!-- ═══ 3. SERVICE PILLARS ═══ -->
   <section id="services" style="padding:90px 24px;background:#0B293B;position:relative;overflow:hidden;">
-    <div style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;background:rgba(216,174,87,.04);border-radius:50%;filter:blur(120px);pointer-events:none;"></div>
+    <div
+      style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;background:rgba(216,174,87,.04);border-radius:50%;filter:blur(120px);pointer-events:none;">
+    </div>
     <div style="max-width:1280px;margin:0 auto;position:relative;">
       <div style="text-align:center;margin-bottom:56px;" class="afu">
-        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,44px);color:white;margin-bottom:12px;">Service <span style="color:#d8ae57;font-style:italic;">Pillars</span></h2>
+        <h2 class="font-serif-luxury" style="font-size:clamp(26px,4vw,44px);color:white;margin-bottom:12px;">Service
+          <span style="color:#d8ae57;font-style:italic;">Pillars</span></h2>
         <div class="gold-line"></div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-        
+
         <div class="pillar-card afu">
-          <div style="width:64px;height:64px;border-radius:16px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin:0 auto 24px;">
-            <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          <div
+            style="width:64px;height:64px;border-radius:16px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin:0 auto 24px;">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
           </div>
-          <h3 style="color:white;font-size:20px;font-weight:600;margin-bottom:14px;position:relative;z-index:2;">Corporate Accommodation Solutions</h3>
-          <p style="color:#64748b;font-size:14px;line-height:1.75;font-weight:300;position:relative;z-index:2;">Long-term and short-term accommodation contracts tailored for businesses, trade delegations, and relocated employees across major Saudi cities.</p>
+          <h3 style="color:white;font-size:20px;font-weight:600;margin-bottom:14px;position:relative;z-index:2;">
+            Corporate Accommodation Solutions</h3>
+          <p style="color:#64748b;font-size:14px;line-height:1.75;font-weight:300;position:relative;z-index:2;">
+            Long-term and short-term accommodation contracts tailored for businesses, trade delegations, and relocated
+            employees across major Saudi cities.</p>
         </div>
 
         <div class="pillar-card afu" style="transition-delay:.15s;">
-          <div style="width:64px;height:64px;border-radius:16px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin:0 auto 24px;">
-            <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
+          <div
+            style="width:64px;height:64px;border-radius:16px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin:0 auto 24px;">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+            </svg>
           </div>
-          <h3 style="color:white;font-size:20px;font-weight:600;margin-bottom:14px;position:relative;z-index:2;">Hotel Management Contracts</h3>
-          <p style="color:#64748b;font-size:14px;line-height:1.75;font-weight:300;position:relative;z-index:2;">Operational management partnerships with hotel properties across KSA, ensuring high occupancy rates, operational excellence, and premium guest experiences.</p>
+          <h3 style="color:white;font-size:20px;font-weight:600;margin-bottom:14px;position:relative;z-index:2;">Hotel
+            Management Contracts</h3>
+          <p style="color:#64748b;font-size:14px;line-height:1.75;font-weight:300;position:relative;z-index:2;">
+            Operational management partnerships with hotel properties across KSA, ensuring high occupancy rates,
+            operational excellence, and premium guest experiences.</p>
         </div>
 
         <div class="pillar-card afu" style="transition-delay:.3s;">
-          <div style="width:64px;height:64px;border-radius:16px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin:0 auto 24px;">
-            <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div
+            style="width:64px;height:64px;border-radius:16px;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;margin:0 auto 24px;">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
           </div>
-          <h3 style="color:white;font-size:20px;font-weight:600;margin-bottom:14px;position:relative;z-index:2;">Hajj &amp; Umrah Packages</h3>
-          <p style="color:#64748b;font-size:14px;line-height:1.75;font-weight:300;position:relative;z-index:2;">Curated, end-to-end packages for pilgrims encompassing flights, luxury accommodation near the Haram, ground transport, and dedicated guide services.</p>
+          <h3 style="color:white;font-size:20px;font-weight:600;margin-bottom:14px;position:relative;z-index:2;">Hajj
+            &amp; Umrah Packages</h3>
+          <p style="color:#64748b;font-size:14px;line-height:1.75;font-weight:300;position:relative;z-index:2;">Curated,
+            end-to-end packages for pilgrims encompassing flights, luxury accommodation near the Haram, ground
+            transport, and dedicated guide services.</p>
         </div>
 
       </div>
@@ -163,46 +545,71 @@
   <!-- ═══ 4 & 5. TARGET SEGMENTS & OUR ADVANTAGE ═══ -->
   <section style="padding:90px 24px;background:#061B2B;">
     <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;">
-      
+
       <!-- Target Segments -->
       <div class="afu">
-        <h2 class="font-serif-luxury" style="font-size:clamp(24px,3vw,36px);color:white;margin-bottom:16px;">Target <span style="color:#d8ae57;font-style:italic;">Segments</span></h2>
+        <h2 class="font-serif-luxury" style="font-size:clamp(24px,3vw,36px);color:white;margin-bottom:16px;">Target
+          <span style="color:#d8ae57;font-style:italic;">Segments</span></h2>
         <div style="width:40px;height:1px;background:rgba(216,174,87,.5);margin-bottom:32px;"></div>
         <div style="display:flex;flex-direction:column;gap:16px;">
           <div class="segment-card">
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;flex-shrink:0;">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <div
+              style="width:36px;height:36px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;flex-shrink:0;">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
             </div>
             <div>
-              <div style="color:white;font-weight:600;font-size:15px;margin-bottom:4px;">Pakistani Diaspora Performing Hajj/Umrah</div>
-              <div style="color:#64748b;font-size:13px;line-height:1.6;">Serving a loyal demographic with tailored, culturally-aware religious tourism packages.</div>
+              <div style="color:white;font-weight:600;font-size:15px;margin-bottom:4px;">Pakistani Diaspora Performing
+                Hajj/Umrah</div>
+              <div style="color:#64748b;font-size:13px;line-height:1.6;">Serving a loyal demographic with tailored,
+                culturally-aware religious tourism packages.</div>
             </div>
           </div>
           <div class="segment-card">
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;flex-shrink:0;">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div
+              style="width:36px;height:36px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;flex-shrink:0;">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
             <div>
-              <div style="color:white;font-weight:600;font-size:15px;margin-bottom:4px;">Corporate Delegations &amp; Business Travelers</div>
-              <div style="color:#64748b;font-size:13px;line-height:1.6;">Providing seamless accommodation and logistical support for trade missions and executives.</div>
+              <div style="color:white;font-weight:600;font-size:15px;margin-bottom:4px;">Corporate Delegations &amp;
+                Business Travelers</div>
+              <div style="color:#64748b;font-size:13px;line-height:1.6;">Providing seamless accommodation and logistical
+                support for trade missions and executives.</div>
             </div>
           </div>
           <div class="segment-card">
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;flex-shrink:0;">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <div
+              style="width:36px;height:36px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;flex-shrink:0;">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
             </div>
             <div>
-              <div style="color:white;font-weight:600;font-size:15px;margin-bottom:4px;">Newly Relocated Employees &amp; Expat Families</div>
-              <div style="color:#64748b;font-size:13px;line-height:1.6;">Smooth transitions with vetted short-to-medium-term housing solutions across the Kingdom.</div>
+              <div style="color:white;font-weight:600;font-size:15px;margin-bottom:4px;">Newly Relocated Employees &amp;
+                Expat Families</div>
+              <div style="color:#64748b;font-size:13px;line-height:1.6;">Smooth transitions with vetted
+                short-to-medium-term housing solutions across the Kingdom.</div>
             </div>
           </div>
           <div class="segment-card">
-            <div style="width:36px;height:36px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;flex-shrink:0;">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <div
+              style="width:36px;height:36px;border-radius:50%;background:rgba(216,174,87,.1);display:flex;align-items:center;justify-content:center;color:#d8ae57;flex-shrink:0;">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
             </div>
             <div>
-              <div style="color:white;font-weight:600;font-size:15px;margin-bottom:4px;">Government &amp; Semi-Government Delegations</div>
-              <div style="color:#64748b;font-size:13px;line-height:1.6;">Handling high-profile visits with the required level of privacy, luxury, and security.</div>
+              <div style="color:white;font-weight:600;font-size:15px;margin-bottom:4px;">Government &amp;
+                Semi-Government Delegations</div>
+              <div style="color:#64748b;font-size:13px;line-height:1.6;">Handling high-profile visits with the required
+                level of privacy, luxury, and security.</div>
             </div>
           </div>
         </div>
@@ -210,161 +617,217 @@
 
       <!-- Our Advantage -->
       <div class="afu" style="transition-delay:.15s;">
-        <h2 class="font-serif-luxury" style="font-size:clamp(24px,3vw,36px);color:white;margin-bottom:16px;">Our <span style="color:#d8ae57;font-style:italic;">Advantage</span></h2>
+        <h2 class="font-serif-luxury" style="font-size:clamp(24px,3vw,36px);color:white;margin-bottom:16px;">Our <span
+            style="color:#d8ae57;font-style:italic;">Advantage</span></h2>
         <div style="width:40px;height:1px;background:rgba(216,174,87,.5);margin-bottom:32px;"></div>
         <div style="display:flex;flex-direction:column;gap:16px;">
           <div class="adv-item">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
             <div>
               <div style="color:white;font-size:15px;font-weight:600;">Established Saudi Hospitality Network</div>
-              <div style="color:#64748b;font-size:13px;margin-top:2px;">Direct access to premium inventory across Makkah, Madinah, Riyadh, and Jeddah.</div>
+              <div style="color:#64748b;font-size:13px;margin-top:2px;">Direct access to premium inventory across
+                Makkah, Madinah, Riyadh, and Jeddah.</div>
             </div>
           </div>
           <div class="adv-item">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
             <div>
               <div style="color:white;font-size:15px;font-weight:600;">Deep Community Trust</div>
-              <div style="color:#64748b;font-size:13px;margin-top:2px;">Unmatched credibility among the 2.5M+ Pakistani diaspora residing in KSA.</div>
+              <div style="color:#64748b;font-size:13px;margin-top:2px;">Unmatched credibility among the 2.5M+ Pakistani
+                diaspora residing in KSA.</div>
             </div>
           </div>
           <div class="adv-item">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
             <div>
               <div style="color:white;font-size:15px;font-weight:600;">End-to-End Package Management</div>
-              <div style="color:#64748b;font-size:13px;margin-top:2px;">Comprehensive oversight from visa processing to on-ground transport and accommodation.</div>
+              <div style="color:#64748b;font-size:13px;margin-top:2px;">Comprehensive oversight from visa processing to
+                on-ground transport and accommodation.</div>
             </div>
           </div>
           <div class="adv-item">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#d8ae57" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
             <div>
               <div style="color:white;font-size:15px;font-weight:600;">Competitive Bulk-Contract Pricing</div>
-              <div style="color:#64748b;font-size:13px;margin-top:2px;">Leveraging volume to negotiate superior rates for corporate and group bookings.</div>
+              <div style="color:#64748b;font-size:13px;margin-top:2px;">Leveraging volume to negotiate superior rates
+                for corporate and group bookings.</div>
             </div>
           </div>
         </div>
       </div>
-      
+
     </div>
   </section>
 
   <!-- ═══ 6. CLOSING CTA ═══ -->
-  <section style="padding:96px 24px;background:#080E1A;border-top:1px solid rgba(216,174,87,.15);position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2000');background-size:cover;background-position:center;opacity:.08;"></div>
+  <section
+    style="padding:96px 24px;background:#080E1A;border-top:1px solid rgba(216,174,87,.15);position:relative;overflow:hidden;">
+    <div
+      style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2000');background-size:cover;background-position:center;opacity:.08;">
+    </div>
     <div style="position:absolute;inset:0;background:linear-gradient(to top,#080E1A 60%,rgba(8,14,26,.5));"></div>
     <div style="max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:10;" class="afu">
-      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(216,174,87,.08);border:1px solid rgba(216,174,87,.2);border-radius:30px;padding:7px 20px;margin-bottom:26px;">
+      <div
+        style="display:inline-flex;align-items:center;gap:10px;background:rgba(216,174,87,.08);border:1px solid rgba(216,174,87,.2);border-radius:30px;padding:7px 20px;margin-bottom:26px;">
         <div style="width:6px;height:6px;border-radius:50%;background:#d8ae57;animation:pulse 2s infinite;"></div>
-        <span style="font-size:11px;letter-spacing:.2em;color:#d8ae57;font-weight:600;text-transform:uppercase;">Elevate Your Hospitality Experience</span>
+        <span style="font-size:11px;letter-spacing:.2em;color:#d8ae57;font-weight:600;text-transform:uppercase;">Elevate
+          Your Hospitality Experience</span>
       </div>
-      <h2 class="font-serif-luxury" style="font-size:clamp(28px,5vw,52px);line-height:1.12;color:white;margin-bottom:22px;">
-        Partner With Us in<br/><span style="color:#d8ae57;font-style:italic;">Saudi Hospitality</span>
+      <h2 class="font-serif-luxury"
+        style="font-size:clamp(28px,5vw,52px);line-height:1.12;color:white;margin-bottom:22px;">
+        Partner With Us in<br /><span style="color:#d8ae57;font-style:italic;">Saudi Hospitality</span>
       </h2>
-      <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;max-width:520px;margin:0 auto 36px;">From curating specialized Umrah journeys to managing vast corporate accommodation portfolios, CNI is your trusted partner in KSA.</p>
+      <p style="color:#94a3b8;font-size:15px;line-height:1.8;font-weight:300;max-width:520px;margin:0 auto 36px;">From
+        curating specialized Umrah journeys to managing vast corporate accommodation portfolios, CNI is your trusted
+        partner in KSA.</p>
       <a href="/" class="btn-gold" style="font-size:15px;padding:16px 40px;">Request a Partnership &#8594;</a>
     </div>
   </section>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer style="padding:28px 48px;background:#061B2B;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+  <footer
+    style="padding:28px 48px;background:#061B2B;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
     <div style="font-size:13px;color:#475569;">&copy; 2026 Crescent Nova International. All rights reserved.</div>
     <div style="display:flex;gap:22px;">
-      <a href="#" style="font-size:13px;color:#475569;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#475569'">Privacy Policy</a>
-      <a href="#" style="font-size:13px;color:#475569;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#475569'">Terms of Service</a>
+      <a href="#" style="font-size:13px;color:#475569;text-decoration:none;" onmouseover="this.style.color='white'"
+        onmouseout="this.style.color='#475569'">Privacy Policy</a>
+      <a href="#" style="font-size:13px;color:#475569;text-decoration:none;" onmouseover="this.style.color='white'"
+        onmouseout="this.style.color='#475569'">Terms of Service</a>
     </div>
   </footer>
 
   <script>
-    const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ob.unobserve(e.target);}});},{threshold:.1});
-    document.querySelectorAll('.afu').forEach(el=>ob.observe(el));
-    setTimeout(()=>{document.getElementById('hero')?.classList.add('vis');},80);
+    const ob = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); ob.unobserve(e.target); } }); }, { threshold: .1 });
+    document.querySelectorAll('.afu').forEach(el => ob.observe(el));
+    setTimeout(() => { document.getElementById('hero')?.classList.add('vis'); }, 80);
   </script>
 
-<!-- MOBILE MENU OVERLAY -->
-<div id="cni-mobile-menu" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#061B2B; z-index:99999; flex-direction:column; overflow-y:auto; overflow-x:hidden;">
-  <div style="display:flex; align-items:center; justify-content:space-between; padding:20px; border-bottom:1px solid rgba(227,188,112,0.2);">
-    <a href="/index.html">
-      <img src="/public/logo.png" alt="CNI Logo" style="height:48px; width:auto; object-fit:contain;" onerror="this.src='/public/logo.png'" />
-    </a>
-    <button id="cni-close-menu" style="background:none; border:none; color:white; padding:8px; cursor:pointer;">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-    </button>
-  </div>
-  
-  <nav style="display:flex; flex-direction:column; padding:20px; gap:4px; font-family:'Inter',sans-serif; font-size:18px; font-weight:500;">
-    <a href="/index.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Home</a>
-    <a href="/about.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">About</a>
-    
-    <div style="display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05);">
-      <button id="cni-mob-div-toggle" style="display:flex; align-items:center; justify-content:space-between; width:100%; background:none; border:none; color:white; padding:16px 8px; font-size:18px; font-weight:500; font-family:inherit; cursor:pointer; text-align:left;">
-        Divisions
-        <svg id="cni-mob-div-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s;"><path d="m6 9 6 6 6-6"/></svg>
-      </button>
-      <div id="cni-mob-div-menu" style="display:none; flex-direction:column; padding-left:16px; padding-bottom:8px; gap:12px; font-size:15px; font-weight:400;">
-        <a href="/divisions/automotive.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Automotive Division</a>
-        <a href="/divisions/business-facilitation.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Business Facilitation</a>
-        <a href="/divisions/tour-travel.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Tour &amp; Travel</a>
-        <a href="/divisions/real-estate.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Real Estate &amp; Advisory</a>
-        <a href="/divisions/home-services.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Home Services — Mundus</a>
-        <a href="/divisions/hospitality.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Hospitality Management</a>
-        <a href="/divisions/logistics.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Logistics — My Truck</a>
-        <a href="/divisions/ai-digital.html" class="cni-mob-link" style="color:#cbd5e1; text-decoration:none; padding:8px 0;">CNI AI &amp; Digital</a>
-      </div>
-    </div>
-    
-    <a href="/investors.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Investors</a>
-    <a href="/why-ksa.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Why KSA</a>
-    <a href="/contact.html" class="cni-mob-link" style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Contact</a>
-  </nav>
-  
-  <div style="padding:32px 20px; margin-top:auto; padding-bottom:60px;">
-    <a href="/request-proposal" class="cni-mob-link" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#d8ae57; color:#120f09; font-weight:600; font-size:16px; padding:16px 24px; border-radius:50px; text-decoration:none; box-shadow:0 4px 16px rgba(214,171,88,0.25);">
-      Request a Proposal &rarr;
-    </a>
-  </div>
-</div>
+  <!-- MOBILE MENU OVERLAY -->
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const openBtn = document.getElementById('cni-mobile-btn');
-  const closeBtn = document.getElementById('cni-close-menu');
-  const menu = document.getElementById('cni-mobile-menu');
-  const divToggle = document.getElementById('cni-mob-div-toggle');
-  const divMenu = document.getElementById('cni-mob-div-menu');
-  const divIcon = document.getElementById('cni-mob-div-icon');
-  
-  if(openBtn && closeBtn && menu) {
-    openBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      menu.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    });
-    
-    closeBtn.addEventListener('click', function() {
-      menu.style.display = 'none';
-      document.body.style.overflow = '';
-    });
-    
-    document.querySelectorAll('.cni-mob-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.style.display = 'none';
-        document.body.style.overflow = '';
-      });
-    });
-  }
-  
-  if(divToggle && divMenu && divIcon) {
-    divToggle.addEventListener('click', function() {
-      if(divMenu.style.display === 'none') {
-        divMenu.style.display = 'flex';
-        divIcon.style.transform = 'rotate(180deg)';
-      } else {
-        divMenu.style.display = 'none';
-        divIcon.style.transform = 'rotate(0deg)';
+
+
+
+
+
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="cni-mobile-menu"
+    style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#061B2B; z-index:99999; flex-direction:column; overflow-y:auto; overflow-x:hidden;">
+    <div
+      style="display:flex; align-items:center; justify-content:space-between; padding:20px; border-bottom:1px solid rgba(227,188,112,0.2);">
+      <a href="/index.html">
+        <img src="/public/logo.png" alt="CNI Logo" style="height:48px; width:auto; object-fit:contain;"
+          onerror="this.src='/public/logo.png'" />
+      </a>
+      <button id="cni-close-menu" style="background:none; border:none; color:#ffffff !important; padding:8px; cursor:pointer; display:flex !important; align-items:center; justify-content:center; z-index:100000;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    </div>
+
+    <nav
+      style="display:flex; flex-direction:column; padding:20px; gap:4px; font-family:'Inter',sans-serif; font-size:18px; font-weight:500;">
+      <a href="/index.html" class="cni-mob-link"
+        style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Home</a>
+      <a href="/about.html" class="cni-mob-link"
+        style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">About</a>
+
+      <div style="display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05);">
+        <button id="cni-mob-div-toggle"
+          style="display:flex; align-items:center; justify-content:space-between; width:100%; background:none; border:none; color:white; padding:16px 8px; font-size:18px; font-weight:500; font-family:inherit; cursor:pointer; text-align:left;">
+          Divisions
+          <svg id="cni-mob-div-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s;">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        <div id="cni-mob-div-menu"
+          style="display:none; flex-direction:column; padding-left:16px; padding-bottom:8px; gap:12px; font-size:15px; font-weight:400;">
+          <a href="/divisions/automotive.html" class="cni-mob-link"
+            style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Automotive Division</a>
+          <a href="/divisions/business-facilitation.html" class="cni-mob-link"
+            style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Business Facilitation</a>
+          <a href="/divisions/tour-travel.html" class="cni-mob-link"
+            style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Tour &amp; Travel</a>
+          <a href="/divisions/real-estate.html" class="cni-mob-link"
+            style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Real Estate &amp; Advisory</a>
+          <a href="/divisions/home-services.html" class="cni-mob-link"
+            style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Home Services — Mundus</a>
+          <a href="/divisions/hospitality.html" class="cni-mob-link"
+            style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Hospitality Management</a>
+          <a href="/divisions/logistics.html" class="cni-mob-link"
+            style="color:#cbd5e1; text-decoration:none; padding:8px 0;">Logistics — My Truck</a>
+          <a href="/divisions/ai-digital.html" class="cni-mob-link"
+            style="color:#cbd5e1; text-decoration:none; padding:8px 0;">CNI AI &amp; Digital</a>
+        </div>
+      </div>
+
+      <a href="/investors.html" class="cni-mob-link"
+        style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Investors</a>
+      <a href="/why-ksa.html" class="cni-mob-link"
+        style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Why
+        KSA</a>
+      <a href="/contact.html" class="cni-mob-link"
+        style="color:white; text-decoration:none; padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.05);">Contact</a>
+    </nav>
+
+    <div style="padding:32px 20px; margin-top:auto; padding-bottom:60px;">
+      <a href="/request-proposal" class="cni-mob-link"
+        style="display:flex; align-items:center; justify-content:center; gap:8px; background:#d8ae57; color:#120f09; font-weight:600; font-size:16px; padding:16px 24px; border-radius:50px; text-decoration:none; box-shadow:0 4px 16px rgba(214,171,88,0.25);">
+        Request a Proposal &rarr;
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const openBtn = document.getElementById('cni-mobile-btn');
+      const closeBtn = document.getElementById('cni-close-menu');
+      const menu = document.getElementById('cni-mobile-menu');
+      const divToggle = document.getElementById('cni-mob-div-toggle');
+      const divMenu = document.getElementById('cni-mob-div-menu');
+      const divIcon = document.getElementById('cni-mob-div-icon');
+
+      if (openBtn && closeBtn && menu) {
+        openBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          menu.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', function () {
+          menu.style.display = 'none';
+          document.body.style.overflow = '';
+        });
+
+        document.querySelectorAll('.cni-mob-link').forEach(link => {
+          link.addEventListener('click', () => {
+            menu.style.display = 'none';
+            document.body.style.overflow = '';
+          });
+        });
+      }
+
+      if (divToggle && divMenu && divIcon) {
+        divToggle.addEventListener('click', function () {
+          if (divMenu.style.display === 'none') {
+            divMenu.style.display = 'flex';
+            divIcon.style.transform = 'rotate(180deg)';
+          } else {
+            divMenu.style.display = 'none';
+            divIcon.style.transform = 'rotate(0deg)';
+          }
+        });
       }
     });
-  }
-});
-</script>
-
+  </script>
 </body>
+
 </html>
